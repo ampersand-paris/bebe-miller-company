@@ -17,6 +17,7 @@ code {
 :root {
   --main-green: #578974;
   --main-black: #383838;
+  --light-brown: #a9937b;
   --white: #FFF;
 }
 
@@ -103,4 +104,112 @@ h2 {
 
 .wordmark {
   color: var(--white);
+}
+
+/* === FOOTER === */
+
+.footer-container {
+  align-items: center;
+  background-color: var(--main-black);
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  padding: 30px 50px;
+  width: auto;
+}
+
+.socials-container {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+}
+
+.socials-container a {
+  text-decoration: none;
+}
+
+.socials-container h3 {
+  color: var(--white);
+  margin: 0;
+}
+
+.mailing-list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 33%;
+}
+
+.mailing-list-container h3 {
+  color: var(--white);
+  margin: 0 0 0 20px;
+}
+
+label {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-size: 12px;
+}
+
+.input-field {
+  align-items: center;
+  border: 1px solid var(--main-green);
+  border-radius: 20px;
+  color: var(--white);
+  display: flex;
+  height: 35px;
+  margin-right: 10px;
+  padding-left: 20px;
+  transition-duration: 300ms;
+  width: 300px;
+}
+
+.input-field:hover {
+  background-color: var(--main-green);
+  border-radius: 0px;
+  color: var(--main-black);
+}
+
+.mailing-list-input {
+  display: flex;
+}
+
+#mailchimp-footer-subscribe {
+  background-color: var(--main-green);
+  border: 1px solid var(--main-green);
+  border-radius: 20px;
+  color: var(--main-black);
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  height: 35px;
+  text-transform: uppercase;
+  width: 35x;
+}
+
+#mailchimp-footer-subscribe:hover {
+  background-color: var(--main-black);
+  color: var(--main-green);
+  transition-duration: 300ms;
+}
+
+#mailchimp-footer-subscribe:active {
+  background-color: var(--light-brown);
+  border-color: var(--light-brown);
+  color: var(--main-black);
+  transition-duration: 0ms;
+}
+
+.IP-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 33%;
+}
+
+.IP-container a {
+  color: var(--white);
+}
+
+.IP-container p {
+  color: var(--white);
+  font-size: 12px;
+  margin: 0;
 }
