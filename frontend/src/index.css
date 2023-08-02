@@ -11,3 +11,96 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+ /* === VARIABLES === */
+
+:root {
+  --main-green: #578974;
+  --main-black: #383838;
+  --white: #FFF;
+}
+
+/* === HEADINGS === */
+
+h1 {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h2 {
+  color: var(--white);
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* === NAVIGATION === */
+
+.header-container {
+  align-items: center;
+  background-color: var(--main-green);
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  padding: 10px 50px;
+  width: auto;
+}
+
+#header-container {
+  justify-content: space-between;
+}
+
+.navigation-link-container {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.navigation-link-container a {
+  text-decoration: none;
+}
+
+.navigation-link-container h2 {
+  position: relative;
+}
+
+.navigation-link-container h2:hover {
+  cursor: pointer;
+}
+
+.navigation-link-container h2::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 3px;
+  bottom: -2px;
+  left: 0;
+  transform-origin: 0% 50%;
+  background-color: var(--white);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.navigation-link-container h2:hover::before {
+  transform: scaleX(1);
+}
+
+.bebe-miller-logo-container {
+  background-color: var(--main-black);
+  left: 50px;
+  padding: 30px 10px;
+  position: absolute;
+  top: 0px;
+}
+
+#bmc-logo-large {
+  fill: var(--white);
+  height: 200px;
+  width: auto;
+}
+
+.wordmark {
+  color: var(--white);
+}
