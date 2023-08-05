@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "calendars",
+  "info": {
+    "singularName": "calendar",
+    "pluralName": "calendars",
+    "displayName": "Calendar"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Start_Date": {
+      "type": "date"
+    },
+    "End_Date": {
+      "type": "date"
+    },
+    "Calendar_Year": {
+      "type": "integer"
+    },
+    "Location": {
+      "type": "string"
+    },
+    "Short_Description": {
+      "type": "richtext",
+      "maxLength": 250
+    },
+    "Time": {
+      "type": "time"
+    },
+    "Ticket_URL": {
+      "type": "string"
+    }
+  }
+}

@@ -1,7 +1,7 @@
 // React Dependendecies
 import React from "react";
 import { useState } from "react";
-import { Link, Routes, Route } from "react-router-dom";
+import { Link, BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Components
 import useFetch from "../useFetch";
@@ -62,19 +62,19 @@ const Navigation = () => {
         navLinks = data.data
 
         return (
-            <div className="header-container"> 
-               {logo}
-               <div></div> 
-               {/* This helps to solve the justify-content problem brought in by switching the logo in and out  */}
-                <div className="navigation-link-container">
-                    {navLinks.map((navLink) => 
-                        <a href={navLink.attributes.Link}>
-                            <h2>{navLink.attributes.Page_Title}</h2>
-                        </a>
-                    )}
+                <div className="header-container"> 
+                {logo}
+                <div></div> 
+                {/* This helps to solve the justify-content problem brought in by switching the logo in and out  */}
+                    <div className="navigation-link-container">
+                        {navLinks.map((navLink) => 
+                            <a href={navLink.attributes.Link}>
+                                <h2>{navLink.attributes.Page_Title}</h2>
+                            </a>
+                        )}
+                    </div>
+                    
                 </div>
-                
-            </div>
         )
     }
     
