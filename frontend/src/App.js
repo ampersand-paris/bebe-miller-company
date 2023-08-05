@@ -8,17 +8,16 @@ import Footer from "./partials/Footer";
 /* === Pages === */ 
 import appHeight from "./appHeight";
 
-import Calendar from "./pages/Calendar";
+import CalendarLogic from "./pages/CalendarLogic";
 
 function App() {
   return (
     <Router>
       <Navigation />
         <Routes>
-          <Route element={<Calendar />} path="/calendar"></Route>
+          <Route element={<CalendarLogic />} path="/calendar"></Route>
         </Routes>
       <Footer />
-
     </Router>
   );
 }

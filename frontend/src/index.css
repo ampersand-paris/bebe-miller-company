@@ -337,3 +337,17 @@ label {
   border-bottom: 1px solid var(--main-green);
   color: var(--main-green);
 }
+
+.calendar-year {
+  margin: 0px;
+  text-align: right;
+  width: calc(50% - 20px);
+}
+
+.calendar-logic-container {
+  color: var(--main-black);
+  display: flex;
+  flex-direction: column;
+  left: 50px;
+  position: absolute;
+}

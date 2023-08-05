@@ -4,7 +4,8 @@
   "info": {
     "singularName": "calendar",
     "pluralName": "calendars",
-    "displayName": "Calendar"
+    "displayName": "Calendar",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,13 +13,10 @@
   "pluginOptions": {},
   "attributes": {
     "Start_Date": {
-      "type": "date"
+      "type": "datetime"
     },
     "End_Date": {
-      "type": "date"
-    },
-    "Calendar_Year": {
-      "type": "integer"
+      "type": "datetime"
     },
     "Location": {
       "type": "string"
@@ -27,10 +25,22 @@
       "type": "richtext",
       "maxLength": 250
     },
-    "Time": {
-      "type": "time"
-    },
     "Ticket_URL": {
+      "type": "string"
+    },
+    "year": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::year.year",
+      "inversedBy": "calendars"
+    },
+    "Event_Title": {
+      "type": "string"
+    },
+    "Time": {
+      "type": "string"
+    },
+    "Additional_Date_Information": {
       "type": "string"
     }
   }
