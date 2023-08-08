@@ -19,6 +19,7 @@ code {
   --main-black: #383838;
   --light-brown: #a9937b;
   --light-grey: #6d6d6d;
+  --lightest-grey: #b1b1b1;
   --white: #FFF;
   --app-height: 100%;
 }
@@ -350,4 +351,89 @@ label {
   flex-direction: column;
   left: 50px;
   position: absolute;
+}
+
+/* === Archive Menu === */
+
+.archive-menu-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.archive-menu-bttn-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.archive-menu-bttn-container h1 {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 10px 50px;
+}
+
+.archive-menu-bttn-container h1:hover {
+  cursor: pointer;
+}
+.archive-menu-container {
+  position: relative;
+  height: 100%;
+}
+
+.archive-menu-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.archive-menu-bttn {
+  width: 50%;
+}
+
+.archive-menu-card {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0px; 
+  width: 100%;
+}
+
+.archive-menu-card h1{
+  color: var(--main-black);
+}
+
+.archive-menu-card a {
+  text-decoration: none;
+}
+
+.archive-menu-card h2 {
+  border-bottom: 2px solid var(--white);
+  color: var(--main-black);
+  margin: 2px 0px 0px 0px;
+  margin: 0px 50px; 
+}
+
+.archive-menu-card h2:hover {
+  color: var(--light-brown);
+  border-bottom: 2px solid var(--light-brown);
+}
+
+.archive-menu-link-container {
+  position: relative;
+  width: 50%;
+}
+
+.archive-menu-toggle {
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid var(--main-black);
+}
+
+#archive-menu-triangle {
+  height: 20px;
+  margin-bottom: 10px;
+  width: 20px;
+}
+
+#works-menu {
+  align-items: flex-end;
 }
