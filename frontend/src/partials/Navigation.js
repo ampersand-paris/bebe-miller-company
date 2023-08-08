@@ -5,12 +5,30 @@ import { Link, BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Components
 import useFetch from "../useFetch";
-import ArchiveMenu from "./ArchiveMenu/ArchiveMenu";
+import ArchiveMenu from "../pages/ArchiveMenu/ArchiveMenu";
 
 const Navigation = () => {
 
     const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}api/main-navigations`)
     
+    const [subMenuHeight, setSubMenuHeight] = useState('0fr');
+
+    function archiveHandler() {
+        // if(subMenuHeight === '100%') {
+        //     setSubMenuHeight('0px');
+
+        // } else {
+        //     setSubMenuHeight('100%');
+
+        // }
+        // console.log(subMenuHeight)
+        setSubMenuHeight('1fr');
+    }
+
+    function callBack(arg) {
+        setSubMenuHeight(arg)
+    }
+
     let navLinks = []
     let logo;
 
@@ -75,13 +93,13 @@ const Navigation = () => {
                         <a href="/calendar">
                             <h2>Calendar</h2>
                         </a>
-                        <h2 onClick=''>Archive</h2>
+                        <h2 onClick={() => archiveHandler()}>Archive</h2>
                         <a href="/forum">
                             <h2>Forum</h2>
                         </a>
                     </div>
                 </div>
-                <ArchiveMenu />
+                <ArchiveMenu height={subMenuHeight} handleCallBack={callBack}/>
             </>
 
         )

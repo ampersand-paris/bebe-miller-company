@@ -9,7 +9,7 @@ import Footer from "./partials/Footer";
 import appHeight from "./appHeight";
 
 import ArchiveDetail from "./pages/ArchiveDetail";
-import ArchiveMenu from "./partials/ArchiveMenu/ProjectMenu";
+import ArchiveMenu from "./pages/ArchiveMenu/ProjectMenu";
 import CalendarLogic from "./pages/CalendarLogic";
 
 function App() {
