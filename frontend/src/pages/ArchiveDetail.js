@@ -73,8 +73,7 @@ const ArchiveDetail = (props) => {
                     </div>
                 </div>
                 <div className="header-image-people-container">
-                    <div className="gallery">
-                        <img src={`http://localhost:1337${galleryImages[galleryInt].attributes.url}`} />
+                    <div className="gallery" style={{backgroundImage: `url(http://localhost:1337${galleryImages[galleryInt].attributes.url})`}}>
                         <div className="caption">
                             <p>{project.Gallery.data[galleryInt].attributes.caption}</p>
                         </div>

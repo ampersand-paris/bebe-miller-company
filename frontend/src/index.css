@@ -603,8 +603,13 @@ label {
 }
 
 .gallery {
+  background-color: var(--main-black);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;   
+  height: 40vW;
   position: relative; 
   width: 60vW;
 }
@@ -613,7 +618,7 @@ label {
   align-items: center;
   color: var(--white);
   display: flex;
-  height: calc( 100% - 4px);
+  height: calc(100%);
   justify-content: center;
   opacity: 50%;
   position: absolute;
@@ -628,6 +633,7 @@ label {
 .gallery-toggle:hover {
   background-color: var(--main-green);
   cursor: pointer;
+  opacity: 100%;
 }
 
 #gallery-toggle-left {
