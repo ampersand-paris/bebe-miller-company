@@ -18,9 +18,17 @@ code {
   --main-green: #578974;
   --main-black: #383838;
   --light-brown: #a9937b;
+  --light-grey: #6d6d6d;
+  --lightest-grey: #b1b1b1;
   --white: #FFF;
+  --app-height: 100%;
 }
 
+.green-bar {
+  background-color: var(--main-green);
+  height: 20px;
+  width: 100%;
+}
 /* === HEADINGS === */
 
 h1 {
@@ -34,6 +42,38 @@ h2 {
   font-family: "neue-haas-grotesk-display", sans-serif;
   font-weight: 700;
   font-style: normal;
+}
+
+h3 {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h4 {
+
+}
+
+h5 {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+h6 {
+
+}
+
+p {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* === STYLING SPECIALS === */
+
+.thin-roman {
+  font-weight: 500;
 }
 
 /* === NAVIGATION === */
@@ -212,4 +252,205 @@ label {
   color: var(--white);
   font-size: 12px;
   margin: 0;
+}
+
+/* === Calendar === */
+
+.calendar-page {
+  display: flex;
+  height: calc(var(--app-height) - 100px);
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.calendar-page h3 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.calendar-page h5 {
+  margin: 0;
+}
+
+.calendar-page p {
+  font-size: 20px;
+  margin: 0;
+}
+
+.calendar-line {
+  background-color: var(--main-green);
+  height: 80%;
+  position: absolute;
+  width: 3px;
+}
+
+.calendar-container {
+  display: flex;
+  height: 80%;
+  overflow: scroll;
+  position: relative;
+  width: 80%;
+  z-index: 0;
+  -webkit-mask-image: linear-gradient(0deg, rgba(0,0,0,1), rgba(0,0,0,0)), linear-gradient(180deg, rgba(0,0,0,1), rgba(0,0,0,0));
+  -webkit-mask-size: 100% 50%;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: left top, left bottom;
+}
+
+.event-list {
+  height: 100%;
+  padding-top: calc(var(--app-height) / 3);
+  margin-bottom: calc(var(--app-height) / 3);
+}
+
+.event-container {
+  margin-bottom: 40px;
+  display: flex;
+}
+
+.time-location-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 20px;
+  width: 50%;
+}
+
+.description-link-container {
+  padding-left: 20px;
+  width: 50%;
+}
+
+.description-link-container a {
+  color: var(--main-black);
+  text-decoration: none;
+}
+
+.description-link-container h5 {
+  border-bottom: 1px solid var(--light-grey);
+  color: var(--light-grey);
+  margin-top: 5px;
+  width: 50%;
+}
+
+.description-link-container h5:hover {
+  border-bottom: 1px solid var(--main-green);
+  color: var(--main-green);
+}
+
+.calendar-year {
+  margin: 0px;
+  text-align: right;
+  width: calc(50% - 20px);
+}
+
+.calendar-logic-container {
+  color: var(--main-black);
+  display: flex;
+  flex-direction: column;
+  left: 50px;
+  position: absolute;
+}
+
+/* === Archive Menu === */
+
+.archive-menu-wrapper {
+  background-color: var(--white);
+  border-bottom: 2px solid var(--main-black);
+  display: grid;
+  flex-direction: column;
+  overflow: hidden;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 200ms ease-out;
+}
+
+.inner{
+  overflow: hidden;
+  position: relative;
+}
+
+.archive-menu-bttn-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.archive-menu-bttn-container h1 {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 10px 50px;
+}
+
+.archive-menu-bttn-container h1:hover {
+  cursor: pointer;
+}
+.archive-menu-container {
+  position: relative;
+}
+
+.archive-menu-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.archive-menu-bttn {
+  width: 50%;
+}
+
+.archive-menu-card {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  padding: 10px 0px; 
+  width: 100%;
+}
+
+.archive-menu-card h1{
+  color: var(--main-black);
+}
+
+.archive-menu-card a {
+  text-decoration: none;
+}
+
+.archive-menu-card h2 {
+  border-bottom: 2px solid var(--white);
+  color: var(--main-black);
+  margin: 2px 0px 0px 0px;
+  margin: 0px 50px; 
+}
+
+.archive-menu-card h2:hover {
+  color: var(--light-brown);
+  border-bottom: 2px solid var(--light-brown);
+}
+
+.archive-menu-link-container {
+  position: relative;
+  width: 50%;
+}
+
+.archive-menu-toggle {
+  display: flex;
+  justify-content: center;
+}
+
+#archive-menu-triangle {
+  height: 20px;
+  margin-bottom: 10px;
+  width: 20px;
+  transform: rotate(180deg);
+  transition: transform 200ms ease-out;
+} 
+
+#archive-menu-triangle:hover {
+  cursor: pointer;
+  transform: rotate(0deg);
+  transition: transform 200ms ease-out;
+}
+
+#works-menu {
+  align-items: flex-end;
 }

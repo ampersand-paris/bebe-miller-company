@@ -1,15 +1,26 @@
 // React Dependendecies
 import React from "react";
 import { useState } from "react";
-import { Link, Routes, Route } from "react-router-dom";
+import { Link, BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Components
 import useFetch from "../useFetch";
+import ArchiveMenu from "../pages/ArchiveMenu/ArchiveMenu";
 
 const Navigation = () => {
 
     const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}api/main-navigations`)
     
+    const [subMenuHeight, setSubMenuHeight] = useState('0fr');
+
+    function archiveHandler() {
+        setSubMenuHeight('1fr');
+    }
+
+    function callBack(arg) {
+        setSubMenuHeight(arg)
+    }
+
     let navLinks = []
     let logo;
 
@@ -62,19 +73,27 @@ const Navigation = () => {
         navLinks = data.data
 
         return (
-            <div className="header-container"> 
-               {logo}
-               <div></div> 
-               {/* This helps to solve the justify-content problem brought in by switching the logo in and out  */}
-                <div className="navigation-link-container">
-                    {navLinks.map((navLink) => 
-                        <a href={navLink.attributes.Link}>
-                            <h2>{navLink.attributes.Page_Title}</h2>
+            <>                
+                <div className="header-container"> 
+                    {logo}
+                    <div></div> 
+                {/* This helps to solve the justify-content problem brought in by switching the logo in and out  */}
+                    <div className="navigation-link-container">
+                        <a href="/about">
+                            <h2>About</h2>
                         </a>
-                    )}
+                        <a href="/calendar">
+                            <h2>Calendar</h2>
+                        </a>
+                        <h2 onClick={() => archiveHandler()}>Archive</h2>
+                        <a href="/forum">
+                            <h2>Forum</h2>
+                        </a>
+                    </div>
                 </div>
-                
-            </div>
+                <ArchiveMenu height={subMenuHeight} handleCallBack={callBack}/>
+            </>
+
         )
     }
     
