@@ -15,8 +15,6 @@ const ArchiveMenu = (props) => {
     const [workBg, setWorkBg] = useState('var(--white');
     const [workDisplay, setWorkDisplay] = useState('flex');
     const [subMenuHeight, setSubMenuHeight] = useState('flex');
-    console.log(props)
-
 
     function projMenuHandler() {
         if (projBg === 'var(--white') {
