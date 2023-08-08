@@ -16,11 +16,6 @@ const WorkMenu = (props) => {
 
         workMenu = data.data
 
-        
-        console.log('workMenu')
-
-        // console.log('projects', projects)
-        // console.log('works', works)
         return (
                 <div className="archive-menu-card"  id="works-menu" style={{display: props.display}}> 
                     <div className="archive-menu-link-container">

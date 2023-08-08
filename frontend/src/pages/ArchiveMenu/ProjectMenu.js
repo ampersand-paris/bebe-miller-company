@@ -15,11 +15,7 @@ const ProjectMenu = (props) => {
     if (data) {
 
         projectMenu = data.data
-
-        console.log(projectMenu)
-
-        // console.log('projects', projects)
-        // console.log('works', works)
+        
         return (
                 <div className="archive-menu-card" style={{display: props.display}}>         
                     <div className="archive-menu-link-container">

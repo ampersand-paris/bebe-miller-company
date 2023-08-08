@@ -14,14 +14,6 @@ const Navigation = () => {
     const [subMenuHeight, setSubMenuHeight] = useState('0fr');
 
     function archiveHandler() {
-        // if(subMenuHeight === '100%') {
-        //     setSubMenuHeight('0px');
-
-        // } else {
-        //     setSubMenuHeight('100%');
-
-        // }
-        // console.log(subMenuHeight)
         setSubMenuHeight('1fr');
     }
 

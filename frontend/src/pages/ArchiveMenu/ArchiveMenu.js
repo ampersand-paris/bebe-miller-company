@@ -10,11 +10,10 @@ import WorkMenu from "./WorkMenu";
 
 const ArchiveMenu = (props) => {
 
-    let initial = props.height;
     const [projBg, setProjBg] = useState('var(--lightest-grey');
-    const [projWidth, setProjWidth] = useState('0px');
+    const [projDisplay, setProjDisplay] = useState('none');
     const [workBg, setWorkBg] = useState('var(--white');
-    const [workWidth, setWorkWidth] = useState('none');
+    const [workDisplay, setWorkDisplay] = useState('flex');
     const [subMenuHeight, setSubMenuHeight] = useState('flex');
     console.log(props)
 
@@ -24,9 +23,9 @@ const ArchiveMenu = (props) => {
             return
         } else {
             setProjBg('var(--white)')
-            setProjWidth('flex')
+            setProjDisplay('flex')
             setWorkBg('var(--lightest-grey')
-            setWorkWidth('none')
+            setWorkDisplay('none')
         }
     }
 
@@ -35,9 +34,9 @@ const ArchiveMenu = (props) => {
             return
         } else {
             setWorkBg('var(--white)')
-            setWorkWidth('flex')
+            setWorkDisplay('flex')
             setProjBg('var(--lightest-grey')
-            setProjWidth('none')
+            setProjDisplay('none')
         }
     }
 
@@ -49,8 +48,8 @@ const ArchiveMenu = (props) => {
                         <h1 className="archive-menu-bttn" style={{backgroundColor: workBg}} onMouseEnter={()=> workMenuHandler()}>Works</h1>
                     </div>
                     <div className="archive-menu-container">
-                        <ProjectMenu display={projWidth}/>
-                        <WorkMenu display={workWidth}/>
+                        <ProjectMenu display={projDisplay}/>
+                        <WorkMenu display={workDisplay}/>
                     </div>
                     <div className="archive-menu-toggle" onClick={() => props.handleCallBack('0fr')}>
                         <svg id="archive-menu-triangle" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.02 29.39" fill="var(--main-green">
