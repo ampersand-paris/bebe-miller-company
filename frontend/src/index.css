@@ -295,6 +295,7 @@ label {
 .calendar-container {
   display: flex;
   height: 80%;
+  justify-content: center;
   overflow: scroll;
   position: relative;
   width: 80%;
@@ -368,8 +369,10 @@ label {
   display: grid;
   flex-direction: column;
   overflow: hidden;
+  position: relative;
   grid-template-rows: 0fr;
   transition: grid-template-rows 200ms ease-out;
+  z-index: 10;
 }
 
 .inner{
@@ -492,6 +495,16 @@ label {
 }
 
 .project-people li {
+  list-style: none;
+  margin: 0px 50px 10px 50px;
+  padding: 0;
+}
+
+.project-description ul {
+  padding: 50px 0 0 0;
+}
+
+.project-description li {
   list-style: none;
   margin: 0px 50px 10px 50px;
   padding: 0;
@@ -642,4 +655,138 @@ label {
 
 #gallery-toggle-right{
   right: 0;
+}
+
+/* === About === */
+
+.about-header {
+  display: flex;
+  height: 60vH;
+}
+
+.header-text {
+  align-items: center;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--light-brown);
+  width: 50%;
+}
+
+.header-text > h1 {
+  margin: 0px;
+}
+
+.header-text > h2 {
+  font-weight: 300;
+  margin: 0px;
+}
+
+.header-image {
+  background-size: cover;
+  background-position: center;
+  width: 50%;
+}
+
+.header-image img {
+  object-fit: contain;
+  width: 100%;
+}
+
+.about-header-image {
+  width: 100vW;
+}
+
+.quote-container {
+  display: flex;
+  height: 60vH;
+}
+
+.quote-text {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  font-style: italic;
+  justify-content: center;
+  width: 50%;
+}
+
+.quote-text > p {
+  padding: 50px 50px 0px 50px;
+}
+
+.quote-text > h3 {
+  padding: 0px 50px 50px 50px;
+}
+
+.quote-image {
+  background-size: cover;
+  background-position: center;
+  width: 50%;
+}
+
+.body-container{
+  display: flex;
+}
+
+.body-text {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  width: 50%;
+}
+
+.body-text > p {
+  padding: 10px 50px;
+}
+
+.body-images {
+  width: 50%;
+}
+
+.single-image {
+  max-height: 500px;
+
+}
+
+.full-image-container {
+  display: flex;
+  justify-content: center;
+  width: 100vW;
+}
+
+.full-image {
+  padding: 50px;
+  width: auto;
+}
+
+.color-block{
+  height: 40px;
+  display: flex;
+  width: 100vW;
+}
+
+.quote-color-block-white {
+  background-color: var(--white);
+  width: 40%;
+}
+
+.quote-color-block-black {
+  background-color: var(--main-black);
+  width: 60%;
+}
+
+.header-color-block-white {
+  background-color: var(--white);
+  width: 60%;
+}
+
+.header-color-block-black {
+  background-color: var(--main-black);
+  width: 40%;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
 }

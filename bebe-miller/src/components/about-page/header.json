@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_about_page_headers",
+  "info": {
+    "displayName": "Header"
+  },
+  "options": {},
+  "attributes": {
+    "Header_Text": {
+      "type": "richtext"
+    },
+    "Header_Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_about_page_quotes",
+  "info": {
+    "displayName": "Quote"
+  },
+  "options": {},
+  "attributes": {
+    "Quote": {
+      "type": "richtext"
+    },
+    "Quote_Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

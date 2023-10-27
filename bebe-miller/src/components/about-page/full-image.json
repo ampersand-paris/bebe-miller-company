@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_about_page_full_images",
+  "info": {
+    "displayName": "Full_Image"
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
