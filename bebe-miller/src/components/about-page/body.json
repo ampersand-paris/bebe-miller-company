@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_about_page_bodies",
+  "info": {
+    "displayName": "Body"
+  },
+  "options": {},
+  "attributes": {
+    "Biography": {
+      "type": "richtext"
+    },
+    "Single_Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Image_Gallery": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "Quote": {
+      "type": "string"
+    }
+  }
+}

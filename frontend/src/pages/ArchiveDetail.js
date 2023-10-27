@@ -1,6 +1,7 @@
 // React Dependendecies
 import React from "react";
 import { useState } from "react";
+import { useParams } from "react-router-dom"
 import { Link, Routes, Route } from "react-router-dom";
 import ReachMarkdown from 'react-markdown';
 // Components
@@ -8,9 +9,8 @@ import useFetch from "../useFetch";
 import CalendarLogic from "./CalendarLogic";
 
 const ArchiveDetail = (props) => {
-
-    // const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}api/calendars?sort=Start_Date:desc`)
-    const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}api/archives/1?populate=*`)
+    const { id } = useParams()
+    const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/archives/${id}?populate=*`)
     
     const [galleryInt, setGalleryInt] = useState(0)
 

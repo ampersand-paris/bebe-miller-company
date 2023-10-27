@@ -11,12 +11,14 @@ import appHeight from "./appHeight";
 import ArchiveDetail from "./pages/ArchiveDetail";
 import ArchiveMenu from "./pages/ArchiveMenu/ProjectMenu";
 import CalendarLogic from "./pages/CalendarLogic";
+import About from "./pages/About";
 
 function App() {
   return (
     <Router>
       <Navigation />
         <Routes>
+          <Route element={<About />} path="/about"></Route>
           <Route element={<ArchiveMenu />} path="/archives"></Route>
           <Route element={<ArchiveDetail />} path="/archives/:id"></Route>
           <Route element={<CalendarLogic />} path="/calendar"></Route>

@@ -8,7 +8,7 @@ import useFetch from "../../useFetch";
 
 const WorkMenu = (props) => {
 
-    const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}api/archives?filters[Category][$eq]=Work`)
+    const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/archives?filters[Category][$eq]=Work`)
 
     let workMenu = [];
     

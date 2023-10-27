@@ -10,7 +10,9 @@ import CalendarLogic from "./CalendarLogic";
 const Calendar = (props) => {
 
     // const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}api/calendars?sort=Start_Date:desc`)
-    const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}api/years?filters[Year][$eq]=${props.year}&populate=*`)
+    const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/years?filters[Year][$eq]=${props.year}&populate=*`)
+
+    console.log(data)
 
     let events = [];
     let year = [];
@@ -58,7 +60,8 @@ const Calendar = (props) => {
                 {events.map((event) => 
                     <div className="event-container">
                         <div className="time-location-container">
-                            <h3>{new Date(event.attributes.Start_Date).toLocaleString("en-US", options)} – {new Date(event.attributes.End_Date).toLocaleString("en-US", options)} <span className="thin-roman">| {new Date(toDateWithOutTimeZone(event.attributes.Time)).toLocaleString("en-US", timeOption)}</span></h3>
+                            <h3>{new Date(event.attributes.Start_Date).toLocaleString("en-US", options)} – {new Date(event.attributes.End_Date).toLocaleString("en-US", options)} <span className="thin-roman">| { event.attributes.Time }</span></h3>
+                            {/* <h3>{new Date(event.attributes.Start_Date).toLocaleString("en-US", options)} – {new Date(event.attributes.End_Date).toLocaleString("en-US", options)} <span className="thin-roman">| {new Date(toDateWithOutTimeZone(event.attributes.Time)).toLocaleString("en-US", timeOption)}</span></h3> */}
                             <h5>{event.attributes.Location}</h5>
                         </div>
                         <div className="description-link-container">

@@ -9,7 +9,7 @@ import ArchiveMenu from "../pages/ArchiveMenu/ArchiveMenu";
 
 const Navigation = () => {
 
-    const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}api/main-navigations`)
+    const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/main-navigations`)
     
     const [subMenuHeight, setSubMenuHeight] = useState('0fr');
 
