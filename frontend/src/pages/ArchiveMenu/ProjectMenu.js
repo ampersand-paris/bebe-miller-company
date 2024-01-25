@@ -10,6 +10,7 @@ const ProjectMenu = (props) => {
 
     const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/archives?filters[Category][$eq]=Project`)
 
+    console.log(process.env.REACT_APP_BACKEND)
     let projectMenu = [];
     
     if (data) {
@@ -17,6 +18,7 @@ const ProjectMenu = (props) => {
         projectMenu = data.data
         
         return (
+            
                 <div className="archive-menu-card" style={{display: props.display}}>         
                     <div className="archive-menu-link-container">
                         {projectMenu.map((project) => 
