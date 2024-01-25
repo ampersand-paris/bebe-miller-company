@@ -45,7 +45,7 @@ const About = (props) => {
 
         return (
             <div className="page-container">
-                <img className="about-header-image" src={`${process.env.REACT_APP_BACKEND}${about.attributes.Header_Image.data.attributes.url}`} />
+                <img className="about-header-image" src={`${about.attributes.Header_Image.data.attributes.url}`} />
                 {display.map((section, index) => 
                     <div key={ index }>
                         { section }
