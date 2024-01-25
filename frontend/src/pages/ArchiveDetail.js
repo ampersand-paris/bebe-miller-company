@@ -23,6 +23,7 @@ const ArchiveDetail = (props) => {
         project = data.data.attributes
         galleryImages = project.Gallery.data
 
+        console.log(project)
         function galleryLeft() {
             console.log('left')
             console.log(galleryInt)
@@ -50,7 +51,7 @@ const ArchiveDetail = (props) => {
                 </div>
                 <div className="header-image-people-container">
                     <div className="project-header-image">
-                        <img src={`http://localhost:1337${project.Header_Image.data.attributes.url}`} />
+                        <img src={`${project.Header_Image.data.attributes.url}`} />
                         <div className="caption">
                             <p>{project.Header_Image.data.attributes.caption}</p>
                         </div>

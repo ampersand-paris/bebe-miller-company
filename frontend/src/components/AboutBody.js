@@ -17,7 +17,7 @@ const AboutBody = (props) => {
                     <ReactMarkdown>{ body.Biography }</ReactMarkdown>
                 </div>
                 <div className="body-images">
-                    <img className="single-image" src={`${process.env.REACT_APP_BACKEND}${ single_image }`} />
+                    <img className="single-image" src={`${ single_image }`} />
                     <h4>{ body.Quote }</h4>
                 </div>
                 <div>

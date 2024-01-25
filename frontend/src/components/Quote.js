@@ -16,7 +16,7 @@ const Quote = (props) => {
                 <div className="quote-color-block-black"></div>
             </div>
             <div className="quote-container"> 
-                <div className="quote-image" style={{backgroundImage: `url(${process.env.REACT_APP_BACKEND}${ quote_image })`}}>
+                <div className="quote-image" style={{backgroundImage: `url(${ quote_image })`}}>
                 </div>
                 <div className="quote-text">              
                     <ReactMarkdown>{ quote.Quote }</ReactMarkdown>

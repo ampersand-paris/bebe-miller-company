@@ -18,7 +18,7 @@ const AboutHeader = (props) => {
                 <div className="header-text">
                     <ReactMarkdown>{ header.Header_Text }</ReactMarkdown>
                 </div> 
-                <div className="header-image" style={{backgroundImage: `url(${process.env.REACT_APP_BACKEND}${header_image})`}}>
+                <div className="header-image" style={{backgroundImage: `url(${header_image})`}}>
                 </div>
             </div>      
         </>

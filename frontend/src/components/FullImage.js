@@ -9,7 +9,7 @@ const FullImage = (props) => {
 
     return (
         <div className="full-image-container">        
-            <img className="full-image" src={`${process.env.REACT_APP_BACKEND}${ single_image }`} />
+            <img className="full-image" src={`${ single_image }`} />
         </div>          
     )
     
