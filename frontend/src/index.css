@@ -310,6 +310,7 @@ label {
   height: 100%;
   padding-top: calc(var(--app-height) / 3);
   margin-bottom: calc(var(--app-height) / 3);
+  width: 100%;
 }
 
 .event-container {

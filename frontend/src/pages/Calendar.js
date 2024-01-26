@@ -60,15 +60,22 @@ const Calendar = (props) => {
                 {events.map((event) => 
                     <div className="event-container">
                         <div className="time-location-container">
-                            <h3>{new Date(event.attributes.Start_Date).toLocaleString("en-US", options)} – {new Date(event.attributes.End_Date).toLocaleString("en-US", options)} <span className="thin-roman">| { event.attributes.Time }</span></h3>
+                            <h3>{new Date(event.attributes.Start_Date).toLocaleString("en-US", options)} – {new Date(event.attributes.End_Date).toLocaleString("en-US", options)} 
+                                { event.attributes.Time ? (
+                                    <span className="thin-roman"> | { event.attributes.Time }</span>) : (null)
+                                }
+                            </h3>
                             {/* <h3>{new Date(event.attributes.Start_Date).toLocaleString("en-US", options)} – {new Date(event.attributes.End_Date).toLocaleString("en-US", options)} <span className="thin-roman">| {new Date(toDateWithOutTimeZone(event.attributes.Time)).toLocaleString("en-US", timeOption)}</span></h3> */}
                             <h5>{event.attributes.Location}</h5>
                         </div>
                         <div className="description-link-container">
                             <p>{event.attributes.Short_Description}</p>
-                                <a href={event.attributes.Ticket_URL}>
-                                    <h5>RSVP</h5>
-                                </a>
+                                { event.attributes.Ticket_URL ? ( 
+                                    <a href={event.attributes.Ticket_URL}>
+                                        <h5>RSVP</h5>
+                                    </a>
+                                    ) : (null)
+                                }
                         </div>          
                     </div>
                 )}
