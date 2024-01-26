@@ -9,7 +9,7 @@ import Calendar from "./Calendar";
 const CalendarLogic = () => {
 
     const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/years`)
-    const [year, setYear] = useState('2023')
+    const [year, setYear] = useState(new Date().getFullYear())
     
     let years = [];
 
