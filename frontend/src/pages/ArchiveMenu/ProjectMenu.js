@@ -10,7 +10,6 @@ const ProjectMenu = (props) => {
 
     const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/archives?filters[Category][$eq]=Project`)
 
-    console.log(process.env.REACT_APP_BACKEND)
     let projectMenu = [];
     
     if (data) {

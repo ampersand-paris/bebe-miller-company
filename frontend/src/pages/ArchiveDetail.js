@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom"
 import { Link, Routes, Route } from "react-router-dom";
-import ReachMarkdown from 'react-markdown';
+import ReactMarkdown from 'react-markdown';
 // Components
 import useFetch from "../useFetch";
 import CalendarLogic from "./CalendarLogic";
@@ -57,24 +57,24 @@ const ArchiveDetail = (props) => {
                         </div>
                     </div>
                     <div className="project-people">
-                        <ReachMarkdown>{project.People}</ReachMarkdown>
+                        <ReactMarkdown>{project.People}</ReactMarkdown>
                     </div>
                 </div>
                 <div className="description-performances-container">
                     <div className="project-description">
                         <p>{project.Description}</p>
-                        <ReachMarkdown className="press-quote">{project.Press_Quote}</ReachMarkdown>
+                        <ReactMarkdown className="press-quote">{project.Press_Quote}</ReactMarkdown>
                     </div>
                     <div className="performances">
                         <div className="premiere">
                             <p><b>{project.Premiere_Date}</b> (Premiere)</p>
                             <p>{project.Premiere_Location}</p>
                         </div>
-                        <ReachMarkdown>{project.Performance_Dates}</ReachMarkdown>
+                        <ReactMarkdown>{project.Performance_Dates}</ReactMarkdown>
                     </div>
                 </div>
                 <div className="header-image-people-container">
-                    <div className="gallery" style={{backgroundImage: `url(http://localhost:1337${galleryImages[galleryInt].attributes.url})`}}>
+                    <div className="gallery" style={{backgroundImage: `url(${galleryImages[galleryInt].attributes.url})`}}>
                         <div className="caption">
                             <p>{project.Gallery.data[galleryInt].attributes.caption}</p>
                         </div>
@@ -91,7 +91,7 @@ const ArchiveDetail = (props) => {
                 </div>
                 <div className="description-performances-container">
                     <div className="project-description">
-                        <ReachMarkdown>{project.Funders}</ReachMarkdown>
+                        <ReactMarkdown>{project.Funders}</ReactMarkdown>
                     </div>
                     <div className="performances">
                    

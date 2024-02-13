@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "forums",
+  "info": {
+    "singularName": "forum",
+    "pluralName": "forums",
+    "displayName": "Forum",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Forum_Title": {
+      "type": "string"
+    },
+    "Forum_Category": {
+      "type": "string"
+    },
+    "Date_Published": {
+      "type": "date"
+    },
+    "Forum_Body": {
+      "type": "dynamiczone",
+      "components": [
+        "forum.forum-text",
+        "forum.multiple-image-field",
+        "forum.video"
+      ]
+    },
+    "Header_Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Forum_Description": {
+      "type": "text"
+    },
+    "featured": {
+      "type": "boolean",
+      "required": true
+    }
+  }
+}

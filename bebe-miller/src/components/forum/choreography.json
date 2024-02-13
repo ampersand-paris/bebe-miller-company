@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_forum_choreographies",
+  "info": {
+    "displayName": "Choreography",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Choreography_Body": {
+      "type": "richtext"
+    }
+  }
+}

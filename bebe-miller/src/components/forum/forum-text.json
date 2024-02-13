@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_forum_forum_texts",
+  "info": {
+    "displayName": "Forum_Text",
+    "icon": "code"
+  },
+  "options": {},
+  "attributes": {
+    "Text_Body": {
+      "type": "richtext"
+    }
+  }
+}

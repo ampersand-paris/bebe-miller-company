@@ -11,9 +11,7 @@ const Calendar = (props) => {
 
     // const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}api/calendars?sort=Start_Date:desc`)
     const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/years?filters[Year][$eq]=${props.year}&populate=*`)
-
-    console.log(data)
-
+    
     let events = [];
     let year = [];
     let arr = [];

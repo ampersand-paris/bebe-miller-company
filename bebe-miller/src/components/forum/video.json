@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_forum_videos",
+  "info": {
+    "displayName": "Video",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "video_URL": {
+      "type": "string"
+    }
+  }
+}
