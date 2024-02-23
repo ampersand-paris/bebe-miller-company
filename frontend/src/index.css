@@ -23,6 +23,7 @@ code {
   --sand: #E3DDDA;
   --white: #FFF;
   --app-height: 100%;
+  --app-width: calc(100vw - 100px);
 }
 
 .green-bar {
@@ -150,6 +151,7 @@ li {
   fill: var(--white);
   height: 200px;
   width: auto;
+  z-index: 10;
 }
 
 .wordmark {
@@ -750,18 +752,18 @@ label {
 
 .single-image {
   max-height: 500px;
-
+  width: 100%;
 }
 
 .full-image-container {
   display: flex;
   justify-content: center;
-  width: 100vW;
+  padding: 50px;
+  width: var(--app-width);
 }
 
 .full-image {
-  padding: 50px;
-  width: auto;
+  width: 100%;
 }
 
 .color-block{
@@ -973,7 +975,7 @@ label {
   background-color: var(--main-black);
   aspect-ratio: 1;
   width: 100%;
-
+  z-index: 100;
 }
 
 #bmc-logo-teachings {
