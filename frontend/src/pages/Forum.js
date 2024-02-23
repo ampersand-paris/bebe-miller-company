@@ -1,23 +1,17 @@
 // React Dependendecies
 import React from "react";
-import { useState } from "react";
-import { Link, Routes, Route } from "react-router-dom";
-import ReachMarkdown from 'react-markdown';
+
 // Components
 import useFetch from "../useFetch";
-import FullImage from "../components/FullImage";
-import Quote from "../components/Quote";
-import AboutBody from "../components/AboutBody";
-import AboutHeader from "../components/AboutHeader";
 import ForumGrid from "../components/ForumGrid";
 
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const Forum = (props) => {
 
     const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/forum-page?populate[Forum_Page][populate]=*&populate[featuredForums][populate]=*`)
 
     let forums = [];
+
     let i = 0;
 
     const options = {
@@ -29,7 +23,7 @@ const Forum = (props) => {
     if (data) {
 
         forums = data.data.attributes.featuredForums.data
-
+     
         return (
             <div className="page-container">
                 <div className="forum-recent-container">

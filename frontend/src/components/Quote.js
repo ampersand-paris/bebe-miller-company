@@ -21,8 +21,7 @@ const Quote = (props) => {
                 <div className="quote-text">              
                     <ReactMarkdown>{ quote.Quote }</ReactMarkdown>
                 </div> 
-            
-        </div>   
+            </div>   
         </>
                     
     )

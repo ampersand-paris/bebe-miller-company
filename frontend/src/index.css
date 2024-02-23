@@ -20,6 +20,7 @@ code {
   --light-brown: #a9937b;
   --light-grey: #6d6d6d;
   --lightest-grey: #b1b1b1;
+  --sand: #E3DDDA;
   --white: #FFF;
   --app-height: 100%;
 }
@@ -892,7 +893,6 @@ label {
   border: 2px solid var(--main-green);
   display: flex;
   flex-direction: column;
-
 }
 
 .forum-recent-card img {
@@ -979,5 +979,59 @@ label {
 #bmc-logo-teachings {
   fill: white;
   padding: 10px;
+}
+
+.forum-detail-container {
+  display: flex;
+  flex-direction: row;
+  height: 75vH;
+}
+
+.grey-block {
+  background-color: var(--main-black);
+  width: 2%;
+}
+
+.forum-title-container {
+  background-color: var(--sand);
+  flex-direction: column;
+  width: calc(33% - 40px);
+  padding: 20px;
+}
+
+.date-and-category {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.date-and-category p {
+  margin: 0;
+}
+
+.forum-header-image {
+  width: 65%;
+}
+
+.forum-header-image img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+.side-bar {
+  background-color: var(--light-brown);
+  width: 35%;
+}
+
+.text-component-card {
+  display: flex;
 
 }
+
+.text-component-body {
+  padding: 20px;
+  width: calc(65% - 40px);
+}
+

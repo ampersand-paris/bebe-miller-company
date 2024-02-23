@@ -62,7 +62,7 @@ const ForumGrid = (props) => {
      
             <>
                 <div className="forum-container">
-                    <div className="forum-card" style={{backgroundImage: `url(${process.env.REACT_APP_BACKEND}${forums[index].attributes.Header_Image.data.attributes.url})`}}>
+                    <div className="forum-card" style={{backgroundImage: `url(${forums[index].attributes.Header_Image.data.attributes.url})`}}>
                         <div className="forum-title">
                             <h1>{forums[index].attributes.Forum_Title}</h1>
                             <a href={`/forum/${forums[index].id}`}><h5>Read more</h5></a>
@@ -82,7 +82,7 @@ const ForumGrid = (props) => {
                         )}
                     </div>
                     { forums[index+1] ? (
-                        <div className="forum-card" style={{backgroundImage: `url(${process.env.REACT_APP_BACKEND}${forums[index+1].attributes.Header_Image.data.attributes.url})`}}>
+                        <div className="forum-card" style={{backgroundImage: `url(${forums[index+1].attributes.Header_Image.data.attributes.url})`}}>
                             <div className="forum-title">
                                 <h1>{forums[index+1].attributes.Forum_Title}</h1>
                                 <h5>Read more</h5>
@@ -90,7 +90,7 @@ const ForumGrid = (props) => {
                         </div>
                     ) : (null) }
                     { forums[index+2] ? (
-                    <div className="forum-card" style={{backgroundImage: `url(${process.env.REACT_APP_BACKEND}${forums[index+2].attributes.Header_Image.data.attributes.url})`}}>
+                    <div className="forum-card" style={{backgroundImage: `url(${forums[index+2].attributes.Header_Image.data.attributes.url})`}}>
                         <div className="forum-title">
                             <h1>{forums[index+2].attributes.Forum_Title}</h1>
                             <h5>Read more</h5>
@@ -102,7 +102,7 @@ const ForumGrid = (props) => {
                     </div>
                     ): (null) }
                     { forums[index+3] ? (
-                    <div className="forum-card" style={{backgroundImage: `url(${process.env.REACT_APP_BACKEND}${forums[index+3].attributes.Header_Image.data.attributes.url})`}}>
+                    <div className="forum-card" style={{backgroundImage: `url(${forums[index+3].attributes.Header_Image.data.attributes.url})`}}>
                         <div className="forum-title">
                             <h1>{forums[index+3].attributes.Forum_Title}</h1>
                             <h5>Read more</h5>
@@ -110,7 +110,7 @@ const ForumGrid = (props) => {
                     </div>
                     ): (null) }
                     { forums[index+4] ? (
-                    <div className="forum-card" style={{backgroundImage: `url(${process.env.REACT_APP_BACKEND}${forums[index+4].attributes.Header_Image.data.attributes.url})`}}>
+                    <div className="forum-card" style={{backgroundImage: `url(${forums[index+4].attributes.Header_Image.data.attributes.url})`}}>
                         <div className="forum-title">
                             <h1>{forums[index+4].attributes.Forum_Title}</h1>
                             <h5>Read more</h5>
@@ -118,7 +118,7 @@ const ForumGrid = (props) => {
                     </div>
                     ): (null) }
                     { forums[index+5] ? (
-                    <div className="forum-card" style={{backgroundImage: `url(${process.env.REACT_APP_BACKEND}${forums[index+5].attributes.Header_Image.data.attributes.url})`}}>
+                    <div className="forum-card" style={{backgroundImage: `url(${forums[index+5].attributes.Header_Image.data.attributes.url})`}}>
                         <div className="forum-title">
                             <h1>{forums[index+5].attributes.Forum_Title}</h1>
                             <h5>Read more</h5>
