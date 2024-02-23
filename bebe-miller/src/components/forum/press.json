@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_forum_presses",
+  "info": {
+    "displayName": "Press",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Press_Body": {
+      "type": "richtext"
+    }
+  }
+}

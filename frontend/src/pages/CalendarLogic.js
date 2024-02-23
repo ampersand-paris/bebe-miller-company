@@ -25,8 +25,8 @@ const CalendarLogic = () => {
         return (
             <div className="calendar-page"> 
                 <div className="calendar-logic-container"> 
-                {years.map((year) => 
-                    <h1 onClick={()=> calendarHandle(year.attributes.Year)}>{year.attributes.Year}</h1>
+                {years.map((year, index) => 
+                    <h1 id={ index } onClick={()=> calendarHandle(year.attributes.Year)}>{year.attributes.Year}</h1>
                 )}
                 </div>
                 <div className="calendar-line"></div>

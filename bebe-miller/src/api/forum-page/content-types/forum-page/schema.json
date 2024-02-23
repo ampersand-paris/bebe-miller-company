@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "forum_pages",
+  "info": {
+    "singularName": "forum-page",
+    "pluralName": "forum-pages",
+    "displayName": "Forum_Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "forums": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::forum.forum"
+    },
+    "Work_History": {
+      "type": "dynamiczone",
+      "components": [
+        "forum.press",
+        "forum.teachings",
+        "forum.choreography"
+      ]
+    },
+    "Title": {
+      "type": "string"
+    },
+    "featuredForums": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::forum.forum"
+    }
+  }
+}

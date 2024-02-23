@@ -5,7 +5,6 @@ import { Link, Routes, Route } from "react-router-dom";
 import ReachMarkdown from 'react-markdown';
 // Components
 import useFetch from "../useFetch";
-import CalendarLogic from "./CalendarLogic";
 import FullImage from "../components/FullImage";
 import Quote from "../components/Quote";
 import AboutBody from "../components/AboutBody";
@@ -15,7 +14,6 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const About = (props) => {
 
-    // const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}api/calendars?sort=Start_Date:desc`)
     const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/about-page?populate[About_Page][populate]=*&populate[Header_Image][populate]=*`)
     
     let about = null;

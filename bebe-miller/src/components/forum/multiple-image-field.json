@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_forum_multiple_image_fields",
+  "info": {
+    "displayName": "Multiple_Image_Field",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Image_Gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

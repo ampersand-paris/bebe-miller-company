@@ -20,6 +20,7 @@ code {
   --light-brown: #a9937b;
   --light-grey: #6d6d6d;
   --lightest-grey: #b1b1b1;
+  --sand: #E3DDDA;
   --white: #FFF;
   --app-height: 100%;
 }
@@ -142,6 +143,8 @@ li {
   position: absolute;
   top: 0px;
 }
+
+
 
 #bmc-logo-large {
   fill: var(--white);
@@ -791,3 +794,244 @@ label {
   display: flex;
   flex-direction: column;
 }
+
+/* ==== Forum === */
+
+.forum-container {
+  display: grid;
+  grid-template-columns: [first] 33% [line2] 33% [line3] 33% [end];
+  grid-template-rows: [first] 1fr [line2] 1fr [line3] 1fr [end];
+  padding: 0px 50px;
+}
+
+.forum-recent-container {
+  display: grid;
+  grid-template-columns: [first] 1fr [line2] 1fr [end];
+  padding: 50px 50px 0px 50px;
+}
+
+.forum-card {
+  aspect-ratio: 1;
+  border: 2px solid var(--main-green);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-wrap: wrap;
+}
+
+.forum-container-last-row{
+  display: grid;
+  grid-template-columns: [first] 33% [line2] 33% [line3] 33% [end];
+  padding: 0px 50px;
+}
+
+.forum-card-last-row {
+  border: 2px solid var(--main-green);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  text-wrap: wrap;
+}
+
+.forum-card-last-row > h1 {
+  padding: 10px 20px;
+  margin-top: 0px;
+}
+
+.forum-card-last-row > h3 {
+  margin: 0px;
+  padding: 10px 20px;
+}
+
+.forum-card-last-row > p {
+  padding: 0px 20px;
+}
+
+.forum-card-last-row > h4 {
+  margin-top: 0px;
+  padding: 10px 20px;
+}
+
+.press > ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.press {
+  height: 100%;
+}
+
+.choreography > ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.choreography > h4 {
+  margin: 0px;
+}
+
+.choreography > ul > li > em {
+  color: var(--main-green);
+}
+
+.teachings {
+  justify-content: space-between;
+}
+
+.teachings > ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 40px;
+}
+
+.forum-recent-card {
+  border: 2px solid var(--main-green);
+  display: flex;
+  flex-direction: column;
+}
+
+.forum-recent-card img {
+  width: 100%;
+  object-fit: cover;
+  height: 60%;
+}
+
+.forum-title {
+  background-color: rgba(255, 255, 255, .8);
+  padding: 0px 20px;
+  transition-duration: 300ms;
+}
+
+.forum-recent-title {
+  background-color: var(--white);
+  padding: 0px 20px;
+  transition-duration: 300ms;
+}
+
+.forum-recent-title h5 {
+  border-bottom: 1px solid var(--light-grey);
+  color: var(--light-grey);
+  margin-top: 5px;
+  width: 50%;
+  transition-duration: 300ms;
+}
+
+.forum-recent-title h5:hover {
+  border-bottom: 1px solid var(--main-green);
+  color: var(--main-green);
+  transition-duration: 300ms;
+}
+
+.forum-recent-title a {
+  text-decoration: none;
+}
+
+.forum-title:hover {
+  background-color: white;
+  transition-duration: 300ms;
+}
+
+.forum-title h5 {
+  border-bottom: 1px solid var(--light-grey);
+  color: var(--light-grey);
+  margin-top: 5px;
+  width: 50%;
+  transition-duration: 300ms;
+}
+
+.forum-title h5:hover {
+  border-bottom: 1px solid var(--main-green);
+  color: var(--main-green);
+  transition-duration: 300ms;
+}
+
+.forum-recent-title a {
+  text-decoration: none;
+}
+
+.publication-info {
+  background-color: var(--main-green);
+  color: var(--white);
+  padding: 0px 20px;
+  text-align: right;
+}
+
+.pagination {
+  align-items: center;
+  column-gap: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.bebe-miller-logo-container-teachings {
+  background-color: var(--main-black);
+  aspect-ratio: 1;
+  width: 100%;
+
+}
+
+#bmc-logo-teachings {
+  fill: white;
+  padding: 10px;
+}
+
+.forum-detail-container {
+  display: flex;
+  flex-direction: row;
+  height: 75vH;
+}
+
+.grey-block {
+  background-color: var(--main-black);
+  width: 2%;
+}
+
+.forum-title-container {
+  background-color: var(--sand);
+  flex-direction: column;
+  width: calc(33% - 40px);
+  padding: 20px;
+}
+
+.date-and-category {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.date-and-category p {
+  margin: 0;
+}
+
+.forum-header-image {
+  width: 65%;
+}
+
+.forum-header-image img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+.side-bar {
+  background-color: var(--light-brown);
+  width: 35%;
+}
+
+.text-component-card {
+  display: flex;
+
+}
+
+.text-component-body {
+  padding: 20px;
+  width: calc(65% - 40px);
+}
+
