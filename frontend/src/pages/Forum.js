@@ -23,12 +23,14 @@ const Forum = (props) => {
     if (data) {
 
         forums = data.data.attributes.featuredForums.data
-     
+        console.log(`forum`, forums[1])
+        console.log(data)
+        
         return (
             <div className="page-container">
                 <div className="forum-recent-container">
                     <div className="forum-recent-card">
-                        <img src={`${process.env.REACT_APP_BACKEND}${forums[0].attributes.Header_Image.data.attributes.url}`}/>
+                        <img src={`${forums[0].attributes.Header_Image.data.attributes.url}`}/>
                         <div className="publication-info">
                             <p>Published {new Date(forums[0].attributes.publishedAt).toLocaleString("en-US", options)}</p>
                         </div>
@@ -39,7 +41,7 @@ const Forum = (props) => {
                         </div>             
                     </div>
                     <div className="forum-recent-card">
-                        <img src={`${process.env.REACT_APP_BACKEND}${forums[1].attributes.Header_Image.data.attributes.url}`}/>
+                        <img src={`${forums[1].attributes.Header_Image.data.attributes.url}`}/>
                         <div className="publication-info">
                             <p>Published {new Date(forums[1].attributes.publishedAt).toLocaleString("en-US", options)}</p>
                         </div>
