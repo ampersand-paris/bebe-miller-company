@@ -73,7 +73,7 @@ const Navigation = () => {
         navLinks = data.data
 
         return (
-            <>                
+            <div className="nav-wrapper">                
                 <div className="header-container"> 
                     {logo}
                     <div></div> 
@@ -87,12 +87,12 @@ const Navigation = () => {
                         </a>
                         <h2 onClick={() => archiveHandler()}>Archive</h2>
                         <a href="/forum">
-                            <h2>Forum</h2>
+                            <h2>Chronicle</h2>
                         </a>
                     </div>
                 </div>
                 <ArchiveMenu height={subMenuHeight} handleCallBack={callBack}/>
-            </>
+            </div>
 
         )
     }

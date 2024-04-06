@@ -8,6 +8,7 @@ import useFetch from "../useFetch";
 
 const Footer = () => {
 
+    let year = new Date().getFullYear()
 
     return (
         <>
@@ -31,7 +32,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="IP-container">
-                    <p><em>© Bebe Miller Company 2022</em></p>
+                    <p><em>© Bebe Miller Company {year}</em></p>
                     <p><em>Designed and developed by <a href="www.failspacenyc.com/design-services">FAILSPACE Design Services</a></em></p>
                 </div>
             </div>

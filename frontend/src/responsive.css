@@ -1,0 +1,139 @@
+@media only screen and (max-width: 600px) {
+    
+    /* === FONTS === */
+
+    h1 {
+        font-size: 24px;
+    }
+
+    /* === ABOUT === */
+    .about-header {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+    }
+
+    .header-text {
+        padding: 20px 0px 20px 0px;
+        width: 100%;
+    }
+
+    .header-color-block-white {
+        background-color: var(--white);
+        width: 0%;
+    }
+      
+    .color-block {
+        height: 10px;
+    }
+
+    .header-color-block-black {
+        background-color: var(--main-black);
+        width: 100%;
+    }
+
+    .header-image {
+        aspect-ratio: 1;
+        width: 100vW;
+    }
+
+    /* === PROJECT/PIECES === */
+
+    .project-header {
+        padding: 10px; 
+    }
+
+    .project-header h1 {
+        font-size: 24px;
+    }
+
+    .header-image-people-container {
+        flex-direction: column;
+    }
+
+    .project-header-image {
+        width: 100%;
+    }
+
+    .project-people {
+        width: 100%;
+    }
+
+    .project-people ul {
+        padding: 10px 0px 0px 0px;
+    }
+
+    .project-people li {
+        margin: 0px 20px 20px 20px; 
+    }
+
+    .description-performances-container {
+        flex-direction: column-reverse;
+    }
+
+   .gallery {
+    height: 30.7vH;
+    width: 100%;
+   }
+
+   .credits-header {
+    width: 100%;
+   }
+
+    .project-description {
+        width: calc(100% - 40px);
+        padding: 20px;
+    }
+
+    .project-description li{
+        margin: 20px;
+    }
+
+    .press-quote p {
+        margin: 0px 20px;
+    }
+
+    .performances {
+        width: calc(100% - 40px);
+        padding: 20px;
+    }
+
+    /* === COMPONENTS === */
+
+    /* === QUOTE === */
+    .quote-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .quote-color-block-white {
+        background-color: var(--white);
+        width: 0%;
+    }
+      
+    .quote-color-block-black {
+        background-color: var(--main-black);
+        width: 100%;
+    }
+
+    .quote-text {
+        width: 100vW;
+    }
+
+    .body-container {
+        flex-direction: column-reverse;
+    }
+
+    .body-text {
+        width: 100%;
+    }
+
+    .body-images {
+        width: 100%;
+    }
+
+    /* === FULL IMAGE === */
+    .full-image-container {
+        padding: 0;
+    }
+  }
