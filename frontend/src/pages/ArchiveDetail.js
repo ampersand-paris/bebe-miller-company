@@ -10,7 +10,10 @@ import CalendarLogic from "./CalendarLogic";
 
 const ArchiveDetail = (props) => {
     const { id } = useParams()
-    const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/archives/${id}?populate=*`)
+    console.log(id)
+    console.log(`${process.env.REACT_APP_BACKEND}/api/archives?filters[slug][$eq]=${id}`)
+    const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/archives?filters[slug][$eq]=${id}&[populate]=*`)    
+    // GET /api/blogs?=create-a-slug-system-with-strapi-v4
     
     const [galleryInt, setGalleryInt] = useState(0)
 
@@ -20,7 +23,8 @@ const ArchiveDetail = (props) => {
 
     if (data) {
 
-        project = data.data.attributes
+        project = data.data[0].attributes
+        console.log(project)
         galleryImages = project.Gallery.data
 
         console.log(project)
@@ -47,7 +51,7 @@ const ArchiveDetail = (props) => {
         return (
             <div className="page-container">
                 <div className="project-header">
-                    <h1>{project.Title} ({project.Year})</h1>
+                    <h1>{project.Title}</h1>
                 </div>
                 <div className="header-image-people-container">
                     <div className="project-header-image">
@@ -74,6 +78,7 @@ const ArchiveDetail = (props) => {
                     </div>
                 </div>
                 <div className="header-image-people-container">
+                    { project.Gallery.data ? (
                     <div className="gallery" style={{backgroundImage: `url(${galleryImages[galleryInt].attributes.url})`}}>
                         <div className="caption">
                             <p>{project.Gallery.data[galleryInt].attributes.caption}</p>
@@ -85,6 +90,8 @@ const ArchiveDetail = (props) => {
                             <h1> &#x3e; </h1>
                         </div>
                     </div>
+                    ) : ( <div className="gallery"></div> )
+                    }
                     <div className="credits-header">
                         <h3>Funders</h3>
                     </div>

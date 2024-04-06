@@ -21,8 +21,8 @@ const ProjectMenu = (props) => {
                 <div className="archive-menu-card" style={{display: props.display}}>         
                     <div className="archive-menu-link-container">
                         {projectMenu.map((project) => 
-                            <a href={`/archives/${project.id}`}>
-                                <h2>{project.attributes.Title}</h2>
+                            <a href={`/archives/${project.attributes.slug}`}>
+                                <h2>{project.attributes.Title} ({project.attributes.Year})</h2>
                             </a>
                         )}
                     </div>

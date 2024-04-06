@@ -20,8 +20,8 @@ const WorkMenu = (props) => {
                 <div className="archive-menu-card"  id="works-menu" style={{display: props.display}}> 
                     <div className="archive-menu-link-container">
                         {workMenu.map((work) => 
-                            <a href={`/archives/${work.id}`}>
-                                <h2>{work.attributes.Title}</h2>
+                            <a href={`/archives/${work.attributes.slug}`}>
+                                <h2>{work.attributes.Title} ({work.attributes.Year})</h2>
                             </a>
                         )}
                     </div>      

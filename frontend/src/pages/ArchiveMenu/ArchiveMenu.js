@@ -43,7 +43,7 @@ const ArchiveMenu = (props) => {
                 <div className="inner">
                     <div className="archive-menu-bttn-container">
                         <h1 className="archive-menu-bttn" style={{backgroundColor: projBg}} onMouseEnter={()=> projMenuHandler()}>Projects</h1>
-                        <h1 className="archive-menu-bttn" style={{backgroundColor: workBg}} onMouseEnter={()=> workMenuHandler()}>Works</h1>
+                        <h1 className="archive-menu-bttn" style={{backgroundColor: workBg}} onMouseEnter={()=> workMenuHandler()}>Pieces</h1>
                     </div>
                     <div className="archive-menu-container">
                         <ProjectMenu display={projDisplay}/>

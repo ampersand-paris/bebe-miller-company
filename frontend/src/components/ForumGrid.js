@@ -126,11 +126,6 @@ const ForumGrid = (props) => {
                     </div>
                     ): (null) }
                 </div>    
-                <div className="forum-container-last-row">
-                    <Choreography />
-                    <Teachings />
-                    <Press />
-                </div>
             </>       
         )
     }

@@ -9,6 +9,9 @@ import FullImage from "../components/FullImage";
 import Quote from "../components/Quote";
 import AboutBody from "../components/AboutBody";
 import AboutHeader from "../components/AboutHeader";
+import Choreography from "../components/Choreography";
+import Teachings from "../components/Teachings";
+import Press from "../components/Press";
 
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
@@ -49,6 +52,11 @@ const About = (props) => {
                         { section }
                     </div>
                 )}
+                <div className="forum-container-last-row">
+                    <Choreography />
+                    <Teachings />
+                    <Press />
+                </div>
             </div>                  
         )
     }
