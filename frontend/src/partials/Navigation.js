@@ -24,7 +24,11 @@ const Navigation = () => {
     let navLinks = []
     let logo;
 
-    if (window.location.href.indexOf("/about") > -1) {
+    if (window.location.href.indexOf("/calendar") > -1 || window.location.href.indexOf("/forum") > -1 || window.location.href.indexOf("/archives") > -1) {
+        logo = <a className="wordmark" href="/"><h1>BEBE MILLER COMPANY</h1></a>
+
+        
+    } else {
         logo =  <div className="bebe-miller-logo-container">
                     <svg id="bmc-logo-large" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 295.3 284">
                         <defs>
@@ -63,9 +67,7 @@ const Navigation = () => {
                             </g>
                         </g>
                     </svg>
-                </div>    
-    } else {
-        logo = <h1 className="wordmark">BEBE MILLER COMPANY</h1>
+                </div>        
     }
 
     if (data) {
@@ -79,7 +81,7 @@ const Navigation = () => {
                     <div></div> 
                 {/* This helps to solve the justify-content problem brought in by switching the logo in and out  */}
                     <div className="navigation-link-container">
-                        <a href="/about">
+                        <a href="/">
                             <h2>About</h2>
                         </a>
                         <a href="/calendar">

@@ -20,7 +20,7 @@ function App() {
     <Router>
       <Navigation />
         <Routes>
-          <Route element={<About />} path="/about"></Route>
+          <Route element={<About />} path="/"></Route>
           <Route element={<ArchiveMenu />} path="/archives"></Route>
           <Route element={<ArchiveDetail />} path="/archives/:id"></Route>
           <Route element={<CalendarLogic />} path="/calendar"></Route>

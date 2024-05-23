@@ -156,6 +156,7 @@ li {
 
 .wordmark {
   color: var(--white);
+  text-decoration: none;
 }
 
 .nav-wrapper {
