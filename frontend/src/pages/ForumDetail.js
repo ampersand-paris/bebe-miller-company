@@ -58,7 +58,7 @@ const ForumDetail = () => {
                         <p>{forum.Forum_Description}</p>
                     </div>
                     <div className="forum-header-image">
-                        <img src={`${process.env.REACT_APP_BACKEND}${forum.Header_Image.data.attributes.url}`}/>
+                        <img src={`${forum.Header_Image.data.attributes.url}`}/>
                     </div>
                 </div>
                 {display.map((section, index) => 

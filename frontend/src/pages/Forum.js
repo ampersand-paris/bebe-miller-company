@@ -23,7 +23,7 @@ const Forum = (props) => {
     if (data) {
 
         forums = data.data.attributes.featuredForums.data
-        console.log(`forum`, forums[1])
+        console.log(`forum`, forums)
         console.log(data)
         
         return (
