@@ -4,7 +4,8 @@
   "info": {
     "singularName": "about-page",
     "pluralName": "about-pages",
-    "displayName": "About_Page"
+    "displayName": "About_Page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,14 +13,15 @@
   "pluginOptions": {},
   "attributes": {
     "Header_Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "About_Page": {
       "type": "dynamiczone",
@@ -28,6 +30,14 @@
         "about-page.full-image",
         "about-page.header",
         "about-page.quote"
+      ]
+    },
+    "Work_History": {
+      "type": "dynamiczone",
+      "components": [
+        "forum.choreography",
+        "forum.press",
+        "forum.teachings"
       ]
     }
   }
