@@ -2,59 +2,69 @@
 import React from "react";
 import { useState } from "react";
 import { Link, Routes, Route } from "react-router-dom";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 // Components
 import useFetch from "../useFetch";
 
 const Footer = () => {
 
-    let year = new Date().getFullYear()
+  const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/footer`)
 
+  let year = new Date().getFullYear()
+  let footer = null;
 
-const url = 'https://api.cc.email/v3/contacts/sign_up_form';
-const accessToken = '{access_token}';
+  const url = 'https://api.cc.email/v3/contacts/sign_up_form';
+  const accessToken = '{access_token}';
 
-const data = {
-  email_address: 'dlang@example.com',
-  list_memberships: [
-    'efb072f0-541d-11e3-9c4e-d4ae52754007'
-  ]
-};
+  const formData = {
+    email_address: 'dlang@example.com',
+    list_memberships: [
+      'efb072f0-541d-11e3-9c4e-d4ae52754007'
+    ]
+  };
 
-const options = {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${accessToken}`
-  },
-  body: JSON.stringify(data)
-};
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${accessToken}`
+    },
+    body: JSON.stringify(data)
+  };
 
-fetch(url, options)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
-  })
-  .then(data => {
-    console.log(data);
-  })
-  .catch(error => {
-    console.error('There was a problem with your fetch operation:', error);
-  });
+  fetch(url, options)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+    })
+    .catch(error => {
+      console.error('There was a problem with your fetch operation:', error);
+    });
+
+  if (data) {
+    console.log(data)
+    footer = data.data.attributes;
 
     return (
         <>
             <div className="green-bar"></div>
             <div className="footer-container"> 
                 <div className="socials-container">
-                    <a href="https://www.instagram.com/bebemillerco/">
+                    <a href={footer.Donate_Link}>
+                        <h3>Donate</h3>
+                    </a>
+                    <a href={footer.Instagram_Link}>
                         <h3>Instagram</h3>
                     </a>
-                    <a href="https://www.facebook.com/bebemillercompany/">
+                    <a href={footer.Facebook_Link}>
                         <h3>Facebook</h3>
-                    </a>
+                    </a> 
                 </div>
                 <div className="mailing-list-container">
                 {/* <!-- Begin Constant Contact Inline Form Code --> */}
@@ -71,6 +81,7 @@ fetch(url, options)
                     </div>
                 </div>
                 <div className="IP-container">
+                    <ReactMarkdown>{footer.Contact_Info}</ReactMarkdown>
                     <p><em>© Bebe Miller Company {year}</em></p>
                     <p><em>Designed and developed by <a href="www.failspacenyc.com/design-services">FAILSPACE Design Services</a></em></p>
                 </div>
@@ -78,6 +89,7 @@ fetch(url, options)
         </>
 
     )    
+  }
 }   
 
 export default Footer;

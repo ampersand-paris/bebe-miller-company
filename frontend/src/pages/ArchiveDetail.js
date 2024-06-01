@@ -10,8 +10,6 @@ import CalendarLogic from "./CalendarLogic";
 
 const ArchiveDetail = (props) => {
     const { id } = useParams()
-    console.log(id)
-    console.log(`${process.env.REACT_APP_BACKEND}/api/archives?filters[slug][$eq]=${id}`)
     const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/archives?filters[slug][$eq]=${id}&[populate]=*`)    
     // GET /api/blogs?=create-a-slug-system-with-strapi-v4
     
@@ -24,13 +22,9 @@ const ArchiveDetail = (props) => {
     if (data) {
 
         project = data.data[0].attributes
-        console.log(project)
         galleryImages = project.Gallery.data
 
-        console.log(project)
         function galleryLeft() {
-            console.log('left')
-            console.log(galleryInt)
             if (galleryInt === 0) {
                 setGalleryInt(project.Gallery.data.length - 1);
             } else {
@@ -39,8 +33,6 @@ const ArchiveDetail = (props) => {
         }
 
         function galleryRight() {
-            console.log('left')
-            console.log(galleryInt)
             if (galleryInt === project.Gallery.data.length - 1) {
                 setGalleryInt(0);
             } else {

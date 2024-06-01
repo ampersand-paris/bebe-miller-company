@@ -169,7 +169,7 @@ li {
   align-items: center;
   background-color: var(--main-black);
   display: flex;
-  height: 60px;
+  height: auto;
   justify-content: space-between;
   padding: 30px 50px;
   width: auto;
@@ -188,6 +188,13 @@ li {
 .socials-container h3 {
   color: var(--white);
   margin: 0;
+  transition-duration: 300ms;
+  border-bottom: 1px solid var(--main-black);
+}
+
+.socials-container h3:hover {
+  border-bottom: 1px solid var(--main-green);
+  color: var(--main-green);
 }
 
 .mailing-list-container {
@@ -441,6 +448,7 @@ label {
   color: var(--main-black);
   margin: 2px 0px 0px 0px;
   margin: 0px 50px; 
+  transition-duration: 300ms;
 }
 
 .archive-menu-card h2:hover {

@@ -35,7 +35,6 @@ const ForumGrid = (props) => {
     if (data) {
 
         forums = data.data
-        console.log(`grid`, forums)
 
         function findStartAndEnd() {
             let length = forums.length;
