@@ -24,8 +24,8 @@ function App() {
           <Route element={<ArchiveMenu />} path="/archives"></Route>
           <Route element={<ArchiveDetail />} path="/archives/:id"></Route>
           <Route element={<CalendarLogic />} path="/calendar"></Route>
-          <Route element={<Forum />} path="/forum"></Route>
-          <Route element={<ForumDetail />} path="/forum/:id"></Route>
+          <Route element={<Forum />} path="/chronicle"></Route>
+          <Route element={<ForumDetail />} path="/chronicle/:id"></Route>
         </Routes>
       <Footer />
     </Router>

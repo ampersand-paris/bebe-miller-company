@@ -33,22 +33,22 @@ const Footer = () => {
     body: JSON.stringify(data)
   };
 
-  fetch(url, options)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then(data => {
-      console.log(data);
-    })
-    .catch(error => {
-      console.error('There was a problem with your fetch operation:', error);
-    });
+  // fetch(url, options)
+  //   .then(response => {
+  //     if (!response.ok) {
+  //       throw new Error('Network response was not ok');
+  //     }
+  //     return response.json();
+  //   })
+  //   .then(data => {
+  //     console.log(data);
+  //   })
+  //   .catch(error => {
+  //     console.error('There was a problem with your fetch operation:', error);
+  //   });
 
   if (data) {
-    console.log(data)
+
     footer = data.data.attributes;
 
     return (

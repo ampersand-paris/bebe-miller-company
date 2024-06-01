@@ -815,9 +815,10 @@ label {
 
 .forum-container {
   display: grid;
-  grid-template-columns: [first] 33% [line2] 33% [line3] 33% [end];
+  grid-template-columns: [first] 1fr [line2] 1fr [line3] 1fr [end];
   grid-template-rows: [first] 1fr [line2] 1fr [line3] 1fr [end];
   padding: 0px 50px;
+  margin-bottom: 50px;
 }
 
 .forum-recent-container {
