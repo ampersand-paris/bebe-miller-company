@@ -74,6 +74,9 @@
     },
     "Press_Quote": {
       "type": "richtext"
+    },
+    "Description_Rich_Text": {
+      "type": "richtext"
     }
   }
 }

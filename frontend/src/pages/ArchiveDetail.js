@@ -63,7 +63,7 @@ const ArchiveDetail = (props) => {
                     </div>
                     <div className="performances">
                         <div className="premiere">
-                            <p><b>{project.Premiere_Date}</b> (Premiere)</p>
+                            <p><b>{project.Premiere_Date}</b></p>
                             <p>{project.Premiere_Location}</p>
                         </div>
                         <ReactMarkdown>{project.Performance_Dates}</ReactMarkdown>
