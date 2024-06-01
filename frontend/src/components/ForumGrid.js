@@ -40,9 +40,7 @@ const ForumGrid = (props) => {
             let length = forums.length;
             if (forums.length > 6) {
                 end = Math.ceil(length / 6);
-                console.log(end)
             } else {
-                console.log(forums.length)
                 return
             }       
         }
@@ -61,16 +59,18 @@ const ForumGrid = (props) => {
      
             <>
                 <div className="forum-container">
-                    <div className="forum-card" style={{backgroundImage: `url(${forums[index].attributes.Header_Image.data.attributes.url})`}}>
-                        <div className="forum-title">
-                            <h1>{forums[index].attributes.Forum_Title}</h1>
-                            <a href={`/forum/${forums[index].id}`}><h5>Read more</h5></a>
+                    { forums[index] ? (
+                        <div className="forum-card" style={{backgroundImage: `url(${forums[index].attributes.Header_Image.data.attributes.url})`}}>
+                            <div className="forum-title">
+                                <h1>{forums[index].attributes.Forum_Title}</h1>
+                                <a href={`/forum/${forums[index].id}`}><h5>Read more</h5></a>
+                            </div>
                         </div>
-                    </div>
+                    ) : <div className="forum-card"></div> }
                     <div className="forum-card">
                     </div>
                     <div className="forum-card pagination">
-                        { index + 6 < 7 ? ( null ) : ( 
+                        {/* { index + 6 < 7 ? ( null ) : ( 
                             <h3 onClick={() => decreasePagination()}>&#60; ...</h3>
                         )}
                         <h3>{ start } ...</h3>
@@ -78,7 +78,7 @@ const ForumGrid = (props) => {
                         <h3>{ end }</h3>
                         { index + 6 > forums.length ? ( null ) : ( 
                             <h3 onClick={() => increasePagination()}>&#62;</h3>
-                        )}
+                        )} */}
                     </div>
                     { forums[index+1] ? (
                         <div className="forum-card" style={{backgroundImage: `url(${forums[index+1].attributes.Header_Image.data.attributes.url})`}}>

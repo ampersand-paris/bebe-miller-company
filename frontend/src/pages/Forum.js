@@ -35,7 +35,7 @@ const Forum = (props) => {
                         <div className="forum-recent-title">
                             <h1>{forums[0].attributes.Forum_Title}</h1>
                             <p>{forums[0].attributes.Forum_Description}</p>
-                            <a href={`/forum/${forums[0].id}`}><h5>Read more</h5></a>      
+                            <a href={`/chronicle/${forums[0].id}`}><h5>Read more</h5></a>      
                         </div>             
                     </div>
                     <div className="forum-recent-card">
@@ -46,7 +46,7 @@ const Forum = (props) => {
                         <div className="forum-recent-title">
                             <h1>{forums[1].attributes.Forum_Title}</h1>
                             <p>{forums[1].attributes.Forum_Description}</p>
-                            <a href={`/forum/${forums[1].id}`}><h5>Read more</h5></a>      
+                            <a href={`/chronicle/${forums[1].id}`}><h5>Read more</h5></a>      
                         </div>             
                     </div>
                 </div>

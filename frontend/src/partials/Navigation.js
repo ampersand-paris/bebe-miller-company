@@ -24,7 +24,7 @@ const Navigation = () => {
     let navLinks = []
     let logo;
 
-    if (window.location.href.indexOf("/calendar") > -1 || window.location.href.indexOf("/forum") > -1 || window.location.href.indexOf("/archives") > -1) {
+    if (window.location.href.indexOf("/calendar") > -1 || window.location.href.indexOf("/chronicle") > -1 || window.location.href.indexOf("/archives") > -1) {
         logo = <a className="wordmark" href="/"><h1>BEBE MILLER COMPANY</h1></a>
 
         
@@ -88,7 +88,7 @@ const Navigation = () => {
                             <h2>Calendar</h2>
                         </a>
                         <h2 onClick={() => archiveHandler()}>Archive</h2>
-                        <a href="/forum">
+                        <a href="/chronicle">
                             <h2>Chronicle</h2>
                         </a>
                     </div>
