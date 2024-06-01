@@ -46,6 +46,10 @@
     "featured": {
       "type": "boolean",
       "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Forum_Title"
     }
   }
 }
