@@ -17,14 +17,6 @@
       "relation": "oneToMany",
       "target": "api::forum.forum"
     },
-    "Work_History": {
-      "type": "dynamiczone",
-      "components": [
-        "forum.press",
-        "forum.teachings",
-        "forum.choreography"
-      ]
-    },
     "Title": {
       "type": "string"
     },

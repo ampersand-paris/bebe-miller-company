@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom"
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const Choreography = () => {
-    const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/forum-page?populate[Forum_Page][populate]=*&populate[Work_History][populate]=*`)
+    const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/about-page?populate[Work_History][populate]=*`)
     
     const [open, setOpen] = useState(false)
     const [height, setHeight] = useState('0px')
