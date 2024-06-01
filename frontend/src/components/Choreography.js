@@ -32,7 +32,6 @@ const Choreography = () => {
     if (data) {
         
         components = data.data.attributes.Work_History;
-        console.log(components)
 
         for (let i=0; i < components.length; i++) {
             if (components[i].__component === "forum.choreography") {

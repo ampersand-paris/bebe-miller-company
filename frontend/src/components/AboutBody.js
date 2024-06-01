@@ -9,7 +9,6 @@ const AboutBody = (props) => {
     let single_image = props.data.Single_Image.data.attributes.url
     let multiple_images = props.data.Image_Gallery.data
     
-    console.log(body)
     return (
         <>        
             <div className="body-container">  

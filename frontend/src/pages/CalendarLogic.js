@@ -15,7 +15,6 @@ const CalendarLogic = () => {
 
     function calendarHandle(arg) {
         setYear(arg)
-        console.log(year)
     }
 
     if (data) {

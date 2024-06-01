@@ -31,7 +31,6 @@ const Press = () => {
     if (data) {
         
         components = data.data.attributes.Work_History;
-        console.log(data.data.attributes)
 
         for (let i=0; i < components.length; i++) {
             if (components[i].__component === "forum.press") {
