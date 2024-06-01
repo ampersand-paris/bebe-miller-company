@@ -23,7 +23,7 @@ const Forum = (props) => {
     if (data) {
 
         forums = data.data.attributes.featuredForums.data
-        
+        console.log(forums)
         return (
             <div className="page-container">
                 <div className="forum-recent-container">
@@ -35,7 +35,8 @@ const Forum = (props) => {
                         <div className="forum-recent-title">
                             <h1>{forums[0].attributes.Forum_Title}</h1>
                             <p>{forums[0].attributes.Forum_Description}</p>
-                            <a href={`/chronicle/${forums[0].id}`}><h5>Read more</h5></a>      
+                            {console.log(forums[0].attributes.slug)}
+                            <a href={`/chronicle/${forums[0].attributes.slug}`}><h5>Read more</h5></a>      
                         </div>             
                     </div>
                     <div className="forum-recent-card">
@@ -46,7 +47,7 @@ const Forum = (props) => {
                         <div className="forum-recent-title">
                             <h1>{forums[1].attributes.Forum_Title}</h1>
                             <p>{forums[1].attributes.Forum_Description}</p>
-                            <a href={`/chronicle/${forums[1].id}`}><h5>Read more</h5></a>      
+                            <a href={`/chronicle/${forums[1].attributes.slug}`}><h5>Read more</h5></a>      
                         </div>             
                     </div>
                 </div>

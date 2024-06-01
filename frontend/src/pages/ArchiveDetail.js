@@ -58,12 +58,12 @@ const ArchiveDetail = (props) => {
                 </div>
                 <div className="description-performances-container">
                     <div className="project-description">
-                        <p>{project.Description}</p>
+                        <ReactMarkdown>{project.Description_Rich_Text}</ReactMarkdown>
                         <ReactMarkdown className="press-quote">{project.Press_Quote}</ReactMarkdown>
                     </div>
                     <div className="performances">
                         <div className="premiere">
-                            <p><b>{project.Premiere_Date}</b> (Premiere)</p>
+                            <p><b>{project.Premiere_Date}</b></p>
                             <p>{project.Premiere_Location}</p>
                         </div>
                         <ReactMarkdown>{project.Performance_Dates}</ReactMarkdown>
@@ -86,11 +86,12 @@ const ArchiveDetail = (props) => {
                     }
                     <div className="credits-header">
                         <h3>Funders</h3>
+                        <ReactMarkdown>{project.Funders}</ReactMarkdown>
                     </div>
                 </div>
                 <div className="description-performances-container">
                     <div className="project-description">
-                        <ReactMarkdown>{project.Funders}</ReactMarkdown>
+                        <ReactMarkdown>{project.Bebe_Writing}</ReactMarkdown>
                     </div>
                     <div className="performances">
                    

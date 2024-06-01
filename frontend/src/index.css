@@ -64,7 +64,7 @@ h5 {
 }
 
 h6 {
-
+  font-size: 12px;
 }
 
 p {
@@ -614,25 +614,17 @@ label {
   margin: 50px 0px;
 }
 
-.press-quote p {
-  font-size: 16px;
-  font-style: italic;
-  margin: 0px 50px;
-}
-
-.press-quote h6 {
-  font-size: 12px;
-  margin: 0 50px;
-  padding: 0;
-}
-
 .credits-header {
-  align-items: flex-end;
   background-color: var(--main-green);
   color: var(--white);
   display: flex;
-  justify-content: center;
-  width: calc(40%);
+  flex-direction: column;
+  padding: 0px 50px 10px 50px;
+  width: calc(40% - 100px);
+}
+
+.credits-header > p {
+  font-size: 14px;
 }
 
 .gallery {

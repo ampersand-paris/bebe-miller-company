@@ -15,8 +15,9 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const ForumDetail = () => {
     const { id } = useParams()
-    const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/forums/${id}?populate=*`)
-
+    const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/forums?filters[slug][$eq]=${id}&populate[Forum_Body][populate]=*&populate[Header_Image][populate]=*`)
+    console.log(`${process.env.REACT_APP_BACKEND}/api/forums?filters[slug][$eq]=${id}`)
+    
     let forum = [];
     let sections = [];
     let display = [];
@@ -31,10 +32,10 @@ const ForumDetail = () => {
 
     if (data) {
 
-        forum = data.data.attributes
+        forum = data.data[0].attributes
         sections = forum.Forum_Body
 
-
+        console.log(data)
         for (let i = 0; i < sections.length; i ++) {
             if (sections[i].__component === "forum.forum-text") {
                 display.push(<Text data={sections[i]} />)
