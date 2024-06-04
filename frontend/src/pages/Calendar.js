@@ -69,6 +69,7 @@ const Calendar = (props) => {
                             <h5>{event.attributes.Location}</h5>
                         </div>
                         <div className="description-link-container">
+                            <h3>{ event.attributes.Event_Title }</h3>
                             <BlocksRenderer content={event.attributes.Description}/>
                                 { event.attributes.Ticket_URL ? ( 
                                     <a target="_blank" href={event.attributes.Ticket_URL}>

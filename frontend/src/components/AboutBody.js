@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom"
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const AboutBody = (props) => {
-    
+
     let body = props.data
     let single_image = props.data.Single_Image.data.attributes.url
     let multiple_images = props.data.Image_Gallery.data
