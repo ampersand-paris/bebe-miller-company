@@ -793,6 +793,7 @@ export interface ApiCalendarCalendar extends Schema.CollectionType {
     Event_Title: Attribute.String;
     Time: Attribute.String;
     Additional_Date_Information: Attribute.String;
+    Description: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

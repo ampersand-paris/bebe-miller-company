@@ -2,6 +2,7 @@
 import React from "react";
 import { useState } from "react";
 import { Link, Routes, Route } from "react-router-dom";
+import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 
 // Components
 import useFetch from "../useFetch";
@@ -58,7 +59,8 @@ const Calendar = (props) => {
                 {events.map((event) => 
                     <div className="event-container">
                         <div className="time-location-container">
-                            <h3>{new Date(event.attributes.Start_Date).toLocaleString("en-US", options)} – {new Date(event.attributes.End_Date).toLocaleString("en-US", options)} 
+                            <h3>{new Date(event.attributes.Start_Date).toLocaleString("en-US", options)} 
+                                { event.attributes.End_Date ? ( <span>– {new Date(event.attributes.End_Date).toLocaleString("en-US", options)}</span> ) : null } 
                                 { event.attributes.Time ? (
                                     <span className="thin-roman"> | { event.attributes.Time }</span>) : (null)
                                 }
@@ -69,7 +71,7 @@ const Calendar = (props) => {
                         <div className="description-link-container">
                             <p>{event.attributes.Short_Description}</p>
                                 { event.attributes.Ticket_URL ? ( 
-                                    <a href={event.attributes.Ticket_URL}>
+                                    <a target="_blank" href={event.attributes.Ticket_URL}>
                                         <h5>RSVP</h5>
                                     </a>
                                     ) : (null)

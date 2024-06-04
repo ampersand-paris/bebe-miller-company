@@ -42,6 +42,9 @@
     },
     "Additional_Date_Information": {
       "type": "string"
+    },
+    "Description": {
+      "type": "blocks"
     }
   }
 }
