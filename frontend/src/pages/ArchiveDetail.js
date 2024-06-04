@@ -39,7 +39,7 @@ const ArchiveDetail = (props) => {
                 setGalleryInt(galleryInt + 1);
             }
         }
-yarn 
+
         return (
             <div className="page-container">
                 <div className="project-header">
