@@ -780,10 +780,6 @@ export interface ApiCalendarCalendar extends Schema.CollectionType {
     Start_Date: Attribute.DateTime;
     End_Date: Attribute.DateTime;
     Location: Attribute.String;
-    Short_Description: Attribute.RichText &
-      Attribute.SetMinMaxLength<{
-        maxLength: 250;
-      }>;
     Ticket_URL: Attribute.String;
     year: Attribute.Relation<
       'api::calendar.calendar',
@@ -793,6 +789,7 @@ export interface ApiCalendarCalendar extends Schema.CollectionType {
     Event_Title: Attribute.String;
     Time: Attribute.String;
     Additional_Date_Information: Attribute.String;
+    Description: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

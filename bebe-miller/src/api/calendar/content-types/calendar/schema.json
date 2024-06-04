@@ -21,10 +21,6 @@
     "Location": {
       "type": "string"
     },
-    "Short_Description": {
-      "type": "richtext",
-      "maxLength": 250
-    },
     "Ticket_URL": {
       "type": "string"
     },
@@ -42,6 +38,9 @@
     },
     "Additional_Date_Information": {
       "type": "string"
+    },
+    "Description": {
+      "type": "blocks"
     }
   }
 }

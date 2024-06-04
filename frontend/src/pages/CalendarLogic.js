@@ -1,6 +1,6 @@
 // React Dependendecies
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, Routes, Route } from "react-router-dom";
 
 // Components
@@ -10,12 +10,34 @@ const CalendarLogic = () => {
 
     const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/years`)
     const [year, setYear] = useState(new Date().getFullYear())
-    
-    let years = [];
+    const [selected, setSelectd] = useState('0')
 
-    function calendarHandle(arg) {
+    console.log(selected)
+   
+    let years = [];
+    let selectedYear = null;
+
+    function calendarHandle(arg, id) {
+        document.getElementById('test').firstChild.style.textDecoration = 'none';
         setYear(arg)
+        if (id == selected) {
+            setYear(arg)
+        } else {
+            selectedYear = document.getElementById(id)
+            document.querySelectorAll('.underline-emph').forEach( (element)=> {
+                element.classList.remove('underline-emph')
+            })
+            selectedYear.classList.add('underline-emph')
+            setSelectd(id)
+        }
     }
+
+    // useEffect((data) => {
+    //     console.log(selected)
+    //     selectedYear = document.getElementById(selected)
+    //     console.log(selectedYear)
+    //     selectedYear.classList.add('underline-emph')
+    // });
 
     if (data) {
 
@@ -23,9 +45,9 @@ const CalendarLogic = () => {
 
         return (
             <div className="calendar-page"> 
-                <div className="calendar-logic-container"> 
+                <div id='test' className="calendar-logic-container"> 
                 {years.map((year, index) => 
-                    <h1 id={ index } onClick={()=> calendarHandle(year.attributes.Year)}>{year.attributes.Year}</h1>
+                    <h1 className="calendar-logic-year" id={ index } onClick={()=> calendarHandle(year.attributes.Year, index)}>{year.attributes.Year }</h1>
                 )}
                 </div>
                 <div className="calendar-line"></div>
