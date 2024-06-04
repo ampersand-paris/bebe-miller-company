@@ -17,7 +17,7 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const About = (props) => {
 
-    const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/about-page?populate[About_Page][populate]=*&populate[Header_Image][populate]=*`)
+    const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/about-page?populate[About_Page][on][about-page.header][populate]=*&populate[About_Page][on][about-page.quote][populate]=*&populate[About_Page][on][about-page.full-image][populate]=*&populate[About_Page][on][about-page.body][populate]=*&populate[Header_Image][populate]=*`)
     
     let about = null;
     let sections = [];
@@ -27,7 +27,7 @@ const About = (props) => {
 
         about = data.data
         sections = about.attributes.About_Page
-
+        console.log('About', data)
 
         for (let i = 0; i < sections.length; i ++) {
             if (sections[i].__component === "about-page.header") {
@@ -41,8 +41,8 @@ const About = (props) => {
             }
         }
 
+        console.log('sections', sections)
 
-        console.log(about)
 
         return (
             <div className="page-container">
