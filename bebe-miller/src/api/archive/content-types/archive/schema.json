@@ -77,6 +77,12 @@
     },
     "Description_Rich_Text": {
       "type": "richtext"
+    },
+    "Archive_Dynamic_Zone": {
+      "type": "dynamiczone",
+      "components": [
+        "forum.video"
+      ]
     }
   }
 }

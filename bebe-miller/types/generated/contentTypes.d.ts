@@ -747,6 +747,7 @@ export interface ApiArchiveArchive extends Schema.CollectionType {
     Category: Attribute.String;
     Press_Quote: Attribute.RichText;
     Description_Rich_Text: Attribute.RichText;
+    Archive_Dynamic_Zone: Attribute.DynamicZone<['forum.video']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
