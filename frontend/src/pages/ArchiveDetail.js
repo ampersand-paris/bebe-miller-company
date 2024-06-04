@@ -39,6 +39,8 @@ const ArchiveDetail = (props) => {
                 setGalleryInt(galleryInt + 1);
             }
         }
+        
+        console.log(project.Gallery.data)
 
         return (
             <div className="page-container">

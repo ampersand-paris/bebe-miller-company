@@ -56,13 +56,13 @@ const Footer = () => {
             <div className="green-bar"></div>
             <div className="footer-container"> 
                 <div className="socials-container">
-                    <a href={footer.Donate_Link}>
+                    <a href={footer.Donate_Link} target="_blank">
                         <h3>Donate</h3>
                     </a>
-                    <a href={footer.Instagram_Link}>
+                    <a href={footer.Instagram_Link} target="_blank">
                         <h3>Instagram</h3>
                     </a>
-                    <a href={footer.Facebook_Link}>
+                    <a href={footer.Facebook_Link} target="_blank">
                         <h3>Facebook</h3>
                     </a> 
                 </div>
@@ -83,7 +83,7 @@ const Footer = () => {
                 <div className="IP-container">
                     <ReactMarkdown>{footer.Contact_Info}</ReactMarkdown>
                     <p><em>© Bebe Miller Company {year}</em></p>
-                    <p><em>Designed and developed by <a href="www.failspacenyc.com/design-services">FAILSPACE Design Services</a></em></p>
+                    <p><em>Designed and developed by <a target="_blank" src="www.failspacenyc.com/design-services">FAILSPACE Design Services</a></em></p>
                 </div>
             </div>
         </>
