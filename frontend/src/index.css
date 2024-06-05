@@ -728,6 +728,10 @@ label {
   right: 0;
 }
 
+.video {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
 /* === About === */
 
 .about-header {
