@@ -72,8 +72,8 @@ const Calendar = (props) => {
                             <h3>{ event.attributes.Event_Title }</h3>
                             <BlocksRenderer content={event.attributes.Description}/>
                                 { event.attributes.Ticket_URL ? ( 
-                                    <a target="_blank" href={event.attributes.Ticket_URL}>
-                                        <h5>RSVP</h5>
+                                    <a className="calendar-link" target="_blank" href={event.attributes.Ticket_URL}>
+                                        <h5>Info / RSVP</h5>
                                     </a>
                                     ) : (null)
                                 }

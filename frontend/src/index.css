@@ -350,6 +350,16 @@ label {
 
 .description-link-container a {
   color: var(--main-black);
+  transition-duration: 300ms;
+}
+
+.description-link-container a:hover {
+  color: var(--main-green);
+  transition-duration: 300ms;
+}
+
+
+.calendar-link {
   text-decoration: none;
 }
 

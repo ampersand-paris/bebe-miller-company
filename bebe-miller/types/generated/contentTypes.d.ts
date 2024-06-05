@@ -865,6 +865,7 @@ export interface ApiForumForum extends Schema.CollectionType {
     Forum_Description: Attribute.Text;
     featured: Attribute.Boolean & Attribute.Required;
     slug: Attribute.UID<'api::forum.forum', 'Forum_Title'>;
+    Forum_Description_Rich_Text: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
