@@ -8,6 +8,7 @@ import ReactMarkdown from 'react-markdown';
 // Components
 import useFetch from "../useFetch";
 import CalendarLogic from "./CalendarLogic";
+import Video from "../components/Video";
 
 const ArchiveDetail = (props) => {
     const { id } = useParams()
@@ -19,11 +20,21 @@ const ArchiveDetail = (props) => {
     let project = null;
     let image = null;
     let galleryImages = [];
+    let sections = [];
+    let display = [];
 
     if (data) {
 
         project = data.data[0].attributes
         galleryImages = project.Gallery.data
+        sections = project.Archive_Dynamic_Zone
+        console.log(project)
+        for (let i = 0; i < sections.length; i ++) {
+            if (sections[i].__component === "forum.video") {
+                console.log('video')
+                display.push(<Video data={sections[i]} />)
+            } 
+        }
 
         function galleryLeft() {
             if (galleryInt === 0) {
@@ -60,6 +71,7 @@ const ArchiveDetail = (props) => {
                 <div className="description-performances-container">
                     <div className="project-description">
                         <ReactMarkdown>{project.Description_Rich_Text}</ReactMarkdown>
+                        <ReactMarkdown>{project.Bebe_Writing}</ReactMarkdown>
                         <ReactMarkdown className="press-quote">{project.Press_Quote}</ReactMarkdown>
                     </div>
                     <div className="performances">
@@ -90,13 +102,8 @@ const ArchiveDetail = (props) => {
                         <ReactMarkdown>{project.Funders}</ReactMarkdown>
                     </div>
                 </div>
-                <div className="description-performances-container">
-                    <div className="project-description">
-                        <ReactMarkdown>{project.Bebe_Writing}</ReactMarkdown>
-                    </div>
-                    <div className="performances">
-                   
-                    </div>
+                <div>
+                    { display }
                 </div>
             </div>                  
         )
