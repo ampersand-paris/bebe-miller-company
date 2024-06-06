@@ -1,5 +1,5 @@
 // React Dependendecies
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link, BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -38,6 +38,7 @@ const ArchiveMenu = (props) => {
         }
     }
 
+   
     return (
             <div className="archive-menu-wrapper" style={{gridTemplateRows: props.height}}>
                 <div className="inner">

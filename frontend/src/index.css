@@ -144,7 +144,7 @@ li {
   left: 50px;
   padding: 30px 10px;
   position: absolute;
-  top: 0px;
+  bottom: 0px;
 }
 
 #bmc-logo-large {
@@ -159,6 +159,9 @@ li {
   text-decoration: none;
 }
 
+.relative {
+  position: relative;
+}
 .nav-wrapper {
   position: relative;
 }
@@ -545,6 +548,8 @@ label {
 .archive-menu-toggle {
   display: flex;
   justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
 #archive-menu-triangle {
@@ -553,6 +558,7 @@ label {
   width: 20px;
   transform: rotate(180deg);
   transition: transform 200ms ease-out;
+  
 } 
 
 #archive-menu-triangle:hover {
@@ -565,6 +571,19 @@ label {
   align-items: flex-end;
 }
 
+#mobile-menu-triangle {
+  height: 20px;
+  width: 20px;
+  transform: rotate(180deg);
+  transition: transform 200ms ease-out;
+} 
+
+.cls-1 {
+  /* fill: var(--main-black); */
+  stroke: var(--main-black);
+  stroke-width: 2px;
+  stroke-linejoin: round;
+}
 /* === Project Header === */
 
 .project-container {
@@ -792,6 +811,7 @@ label {
 }
 
 .about-header-image {
+  height: 92vH;
   width: 100vW;
 }
 

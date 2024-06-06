@@ -15,9 +15,6 @@
     "Title": {
       "type": "string"
     },
-    "Description": {
-      "type": "text"
-    },
     "Bebe_Writing": {
       "type": "richtext"
     },
@@ -58,7 +55,7 @@
         "audios"
       ]
     },
-    "Year": {
+    "Year_Order": {
       "type": "string"
     },
     "Photo_Credit": {
@@ -83,6 +80,12 @@
       "components": [
         "forum.video"
       ]
+    },
+    "Year_Written": {
+      "type": "string"
+    },
+    "Archive_Description_Rich_Text": {
+      "type": "blocks"
     }
   }
 }
