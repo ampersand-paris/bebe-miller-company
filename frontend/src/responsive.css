@@ -1,5 +1,10 @@
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
     
+    /* === ROOT === */
+    :root {
+        --app-width: 100vW;
+    }
+
     /* === FONTS === */
 
     h1 {
@@ -35,6 +40,28 @@
     .header-image {
         aspect-ratio: 1;
         width: 100vW;
+    }
+
+    /* === NAVIGATION === */
+
+    .header-container {
+        padding: 0px 10px;
+    }
+
+    .mobile-navigation-link-container {
+        background-color: var(--main-green);
+        display: grid;
+        padding: 10px 10px;
+        border-top: 2px solid var(--main-black);
+        overflow: hidden;
+    }
+
+    .mobile-navigation-link-container a {
+        text-decoration: none;
+    }
+
+    .mobile-navigation-link-container h2 {
+        margin: 5px
     }
 
     /* === PROJECT/PIECES === */

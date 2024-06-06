@@ -144,7 +144,7 @@ li {
   left: 50px;
   padding: 30px 10px;
   position: absolute;
-  top: 0px;
+  bottom: 0px;
 }
 
 #bmc-logo-large {
@@ -159,6 +159,9 @@ li {
   text-decoration: none;
 }
 
+.relative {
+  position: relative;
+}
 .nav-wrapper {
   position: relative;
 }
@@ -545,6 +548,8 @@ label {
 .archive-menu-toggle {
   display: flex;
   justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
 #archive-menu-triangle {
@@ -553,6 +558,7 @@ label {
   width: 20px;
   transform: rotate(180deg);
   transition: transform 200ms ease-out;
+  
 } 
 
 #archive-menu-triangle:hover {
@@ -563,6 +569,20 @@ label {
 
 #works-menu {
   align-items: flex-end;
+}
+
+#mobile-menu-triangle {
+  height: 20px;
+  width: 20px;
+  transform: rotate(180deg);
+  transition: transform 200ms ease-out;
+} 
+
+.cls-1 {
+  /* fill: var(--main-black); */
+  stroke: var(--main-black);
+  stroke-width: 2px;
+  stroke-linejoin: round;
 }
 
 /* === Project Header === */
@@ -599,13 +619,13 @@ label {
   padding: 0;
 }
 
-.project-description ul {
-  padding: 20px 0 20px 0;
+.credits-header ul {
+  padding: 0px 0 0px 0;
 }
 
-.project-description li {
+.credits-header li {
   list-style: none;
-  margin: 0px 50px 10px 50px;
+  margin: 0px 0px 10px 0px;
   padding: 0;
 }
 
@@ -690,11 +710,6 @@ label {
   margin-bottom: 0px;
 }
 
-.press-quote {
-  border-left: 2px solid var(--main-green);
-  margin: 50px 0px;
-}
-
 .credits-header {
   background-color: var(--main-green);
   color: var(--white);
@@ -706,6 +721,17 @@ label {
 
 .credits-header > p {
   font-size: 14px;
+}
+
+.funders {
+  background-color: var(--sand);  
+}
+
+.funders-info {
+  color: white;
+  background-color: var(--light-grey);
+  width: calc(60% - 120px);
+  padding: 20px 60px;
 }
 
 .gallery {
@@ -792,6 +818,7 @@ label {
 }
 
 .about-header-image {
+  height: 92vH;
   width: 100vW;
 }
 

@@ -72,7 +72,6 @@ const ArchiveDetail = (props) => {
                     <div className="project-description">
                         <ReactMarkdown>{project.Description_Rich_Text}</ReactMarkdown>
                         <ReactMarkdown>{project.Bebe_Writing}</ReactMarkdown>
-                        <ReactMarkdown className="press-quote">{project.Press_Quote}</ReactMarkdown>
                     </div>
                     <div className="performances">
                         <div className="premiere">
@@ -97,16 +96,22 @@ const ArchiveDetail = (props) => {
                     </div>
                     ) : ( <div className="gallery"></div> )
                     }
-                        { project.Funders ? (
-                            <div className="credits-header">
-                                <h3>Funders</h3>
-                                <ReactMarkdown>{project.Funders}</ReactMarkdown>
-                            </div>
-                        ) : <div className="credits-header"></div> }
+                    <div className="credits-header">
+                        <h3>Press Quotes</h3>
+                        <ReactMarkdown className="press-quote">{project.Press_Quote}</ReactMarkdown>
+                    </div>
                 </div>
                 <div>
                     { display }
                 </div>
+                { project.Funders ? (
+                    <div className="funders">
+                        <div className="funders-info">
+                            <h3>Funders</h3>
+                            <ReactMarkdown>{project.Funders}</ReactMarkdown>
+                        </div>
+                    </div>
+                ) : <div className="credits-header"></div> }
             </div>                  
         )
     }

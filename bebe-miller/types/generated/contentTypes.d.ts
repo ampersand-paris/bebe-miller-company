@@ -732,7 +732,6 @@ export interface ApiArchiveArchive extends Schema.CollectionType {
   };
   attributes: {
     Title: Attribute.String;
-    Description: Attribute.Text;
     Bebe_Writing: Attribute.RichText;
     People: Attribute.RichText;
     Premiere_Date: Attribute.String;
@@ -741,13 +740,15 @@ export interface ApiArchiveArchive extends Schema.CollectionType {
     Funders: Attribute.RichText;
     Header_Image: Attribute.Media;
     Gallery: Attribute.Media;
-    Year: Attribute.String;
+    Year_Order: Attribute.String;
     Photo_Credit: Attribute.String;
     slug: Attribute.UID<'api::archive.archive', 'Title'> & Attribute.Required;
     Category: Attribute.String;
     Press_Quote: Attribute.RichText;
     Description_Rich_Text: Attribute.RichText;
     Archive_Dynamic_Zone: Attribute.DynamicZone<['forum.video']>;
+    Year_Written: Attribute.String;
+    Archive_Description_Rich_Text: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
