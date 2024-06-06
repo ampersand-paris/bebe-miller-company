@@ -19,7 +19,7 @@ const ProjectMenu = (props) => {
         projectMenu.sort(function(a,b){
             // Turn your strings into dates, and then subtract them
             // to get a value that is either negative, positive, or zero.
-            return Number(b.attributes.Year) - Number(a.attributes.Year);
+            return Number(b.attributes.Year_Order) - Number(a.attributes.Year_Order);
         });
 
         return (
@@ -28,7 +28,7 @@ const ProjectMenu = (props) => {
                     <div className="archive-menu-link-container">
                         {projectMenu.map((project) => 
                             <a href={`/archives/${project.attributes.slug}`}>
-                                <h2>{project.attributes.Title} ({project.attributes.Year})</h2>
+                                <h2>{project.attributes.Title} ({project.attributes.Year_Written})</h2>
                             </a>
                         )}
                     </div>

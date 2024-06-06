@@ -584,6 +584,7 @@ label {
   stroke-width: 2px;
   stroke-linejoin: round;
 }
+
 /* === Project Header === */
 
 .project-container {
@@ -618,13 +619,13 @@ label {
   padding: 0;
 }
 
-.project-description ul {
-  padding: 20px 0 20px 0;
+.credits-header ul {
+  padding: 0px 0 0px 0;
 }
 
-.project-description li {
+.credits-header li {
   list-style: none;
-  margin: 0px 50px 10px 50px;
+  margin: 0px 0px 10px 0px;
   padding: 0;
 }
 
@@ -709,11 +710,6 @@ label {
   margin-bottom: 0px;
 }
 
-.press-quote {
-  border-left: 2px solid var(--main-green);
-  margin: 50px 0px;
-}
-
 .credits-header {
   background-color: var(--main-green);
   color: var(--white);
@@ -725,6 +721,17 @@ label {
 
 .credits-header > p {
   font-size: 14px;
+}
+
+.funders {
+  background-color: var(--sand);  
+}
+
+.funders-info {
+  color: white;
+  background-color: var(--light-grey);
+  width: calc(60% - 120px);
+  padding: 20px 60px;
 }
 
 .gallery {

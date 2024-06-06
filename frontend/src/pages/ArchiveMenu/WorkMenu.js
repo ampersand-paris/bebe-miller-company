@@ -15,18 +15,18 @@ const WorkMenu = (props) => {
     if (data) {
 
         workMenu = data.data
-        
+
         workMenu.sort(function(a,b){
             // Turn your strings into dates, and then subtract them
             // to get a value that is either negative, positive, or zero.
-            return Number(b.attributes.Year) - Number(a.attributes.Year);
+            return Number(b.attributes.Year_Order) - Number(a.attributes.Year_Order);
         });
         return (
                 <div className="archive-menu-card"  id="works-menu" style={{display: props.display}}> 
                     <div className="archive-menu-link-container">
                         {workMenu.map((work) => 
                             <a href={`/archives/${work.attributes.slug}`}>
-                                <h2>{work.attributes.Title} ({work.attributes.Year})</h2>
+                                <h2>{work.attributes.Title} ({work.attributes.Year_Written})</h2>
                             </a>
                         )}
                     </div>      
