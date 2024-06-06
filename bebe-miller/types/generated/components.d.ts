@@ -65,7 +65,6 @@ export interface ForumForumText extends Schema.Component {
     description: '';
   };
   attributes: {
-    Text_Body: Attribute.RichText;
     Text_Body_Rich_Text: Attribute.Blocks;
   };
 }
