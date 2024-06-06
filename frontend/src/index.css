@@ -31,6 +31,32 @@ code {
   height: 20px;
   width: 100%;
 }
+
+.logo-bar {
+  background-color: var(--main-black);
+  font-size: 12px;
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 20px;
+  height: auto;
+  width: 100%;
+}
+
+.logo-bar > p {
+  margin: 0;
+}
+
+.logo-bar a {
+  color: white;
+  transition-duration: 300ms;
+}
+
+.logo-bar a:hover {
+  color: var(--main-green);
+  transition-duration: 300ms;
+}
 /* === HEADINGS === */
 
 h1 {
@@ -149,9 +175,20 @@ li {
 
 #bmc-logo-large {
   fill: var(--white);
-  height: 200px;
+  height: 300px;
   width: auto;
   z-index: 10;
+}
+
+.bebe-miller-logo-container-footer {
+  background-color: var(--main-black);
+  margin-bottom: 20px;
+}
+
+#bmc-logo-large-footer {
+  fill: var(--white);
+  height: 100px;
+  width: auto;
 }
 
 .wordmark {
@@ -162,6 +199,7 @@ li {
 .relative {
   position: relative;
 }
+
 .nav-wrapper {
   position: relative;
 }
@@ -279,11 +317,6 @@ label {
 .IP-container p {
   color: var(--white);
   margin: 0;
-}
-
-.IP-container em {
-  font-size: 12px;
-  text-align: right;
 }
 
 .IP-container > h3 {
@@ -820,11 +853,11 @@ label {
 .about-header-image {
   height: 92vH;
   width: 100vW;
+  object-fit: cover;
 }
 
 .quote-container {
   display: flex;
-  height: 60vH;
 }
 
 .quote-text {
@@ -845,8 +878,10 @@ label {
 }
 
 .quote-image {
-  background-size: cover;
+  background-size: contain;
   background-position: center;
+  height: auto;
+  object-fit: cover;
   width: 50%;
 }
 

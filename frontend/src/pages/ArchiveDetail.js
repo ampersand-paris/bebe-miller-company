@@ -9,6 +9,7 @@ import ReactMarkdown from 'react-markdown';
 import useFetch from "../useFetch";
 import CalendarLogic from "./CalendarLogic";
 import Video from "../components/Video";
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 
 const ArchiveDetail = (props) => {
     const { id } = useParams()
@@ -70,7 +71,7 @@ const ArchiveDetail = (props) => {
                 </div>
                 <div className="description-performances-container">
                     <div className="project-description">
-                        <ReactMarkdown>{project.Description_Rich_Text}</ReactMarkdown>
+                        <BlocksRenderer content={project.Archive_Description_Rich_Text}/>
                         <ReactMarkdown>{project.Bebe_Writing}</ReactMarkdown>
                     </div>
                     <div className="performances">
