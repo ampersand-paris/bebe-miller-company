@@ -40,9 +40,6 @@
         "audios"
       ]
     },
-    "Forum_Description": {
-      "type": "text"
-    },
     "featured": {
       "type": "boolean",
       "required": true

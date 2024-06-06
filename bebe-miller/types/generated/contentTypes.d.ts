@@ -862,7 +862,6 @@ export interface ApiForumForum extends Schema.CollectionType {
       ['forum.forum-text', 'forum.multiple-image-field', 'forum.video']
     >;
     Header_Image: Attribute.Media;
-    Forum_Description: Attribute.Text;
     featured: Attribute.Boolean & Attribute.Required;
     slug: Attribute.UID<'api::forum.forum', 'Forum_Title'>;
     Forum_Description_Rich_Text: Attribute.Blocks;

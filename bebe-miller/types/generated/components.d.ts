@@ -62,9 +62,11 @@ export interface ForumForumText extends Schema.Component {
   info: {
     displayName: 'Forum_Text';
     icon: 'code';
+    description: '';
   };
   attributes: {
     Text_Body: Attribute.RichText;
+    Text_Body_Rich_Text: Attribute.Blocks;
   };
 }
 

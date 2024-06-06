@@ -998,6 +998,10 @@ label {
   transition-duration: 300ms;
 }
 
+.forum-title a {
+  text-decoration: none;
+}
+
 .forum-recent-title {
   background-color: var(--white);
   padding: 0px 20px;
