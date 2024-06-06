@@ -853,11 +853,11 @@ label {
 .about-header-image {
   height: 92vH;
   width: 100vW;
+  object-fit: cover;
 }
 
 .quote-container {
   display: flex;
-  height: 60vH;
 }
 
 .quote-text {
@@ -878,8 +878,10 @@ label {
 }
 
 .quote-image {
-  background-size: cover;
+  background-size: contain;
   background-position: center;
+  height: auto;
+  object-fit: cover;
   width: 50%;
 }
 
