@@ -3,6 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { Link, Routes, Route } from "react-router-dom";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 
 // Components
 import useFetch from "../useFetch";
@@ -81,7 +82,8 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="IP-container">
-                    <ReactMarkdown>{footer.Contact_Info}</ReactMarkdown>
+                    <BlocksRenderer className="contact-info-rich-text" content={footer.Contact_Info_Rich_Text}/>
+                    <br></br>
                     <p><em>© Bebe Miller Company {year}</em></p>
                     <p><em>Designed and developed by <a target="_blank" src="www.failspacenyc.com/design-services">FAILSPACE Design Services</a></em></p>
                 </div>

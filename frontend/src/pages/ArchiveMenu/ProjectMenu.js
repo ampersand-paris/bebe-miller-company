@@ -15,7 +15,13 @@ const ProjectMenu = (props) => {
     if (data) {
 
         projectMenu = data.data
-        
+
+        projectMenu.sort(function(a,b){
+            // Turn your strings into dates, and then subtract them
+            // to get a value that is either negative, positive, or zero.
+            return Number(b.attributes.Year) - Number(a.attributes.Year);
+        });
+
         return (
             
                 <div className="archive-menu-card" style={{display: props.display}}>         

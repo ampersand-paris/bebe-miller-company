@@ -15,7 +15,12 @@ const WorkMenu = (props) => {
     if (data) {
 
         workMenu = data.data
-
+        
+        workMenu.sort(function(a,b){
+            // Turn your strings into dates, and then subtract them
+            // to get a value that is either negative, positive, or zero.
+            return Number(b.attributes.Year) - Number(a.attributes.Year);
+        });
         return (
                 <div className="archive-menu-card"  id="works-menu" style={{display: props.display}}> 
                     <div className="archive-menu-link-container">
