@@ -48,12 +48,13 @@ const Calendar = (props) => {
         year = data.data[0]
         events = year.attributes.calendars.data
 
+        console.log('before', events)
         events.sort(function(a,b){
             // Turn your strings into dates, and then subtract them
             // to get a value that is either negative, positive, or zero.
             return new Date(b.attributes.Start_Date) - new Date(a.attributes.Start_Date);
           });
-
+        console.log('after',events)
         return (
             <div className="event-list">
                 {events.map((event) => 

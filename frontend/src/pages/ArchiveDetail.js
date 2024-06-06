@@ -97,10 +97,12 @@ const ArchiveDetail = (props) => {
                     </div>
                     ) : ( <div className="gallery"></div> )
                     }
-                    <div className="credits-header">
-                        <h3>Funders</h3>
-                        <ReactMarkdown>{project.Funders}</ReactMarkdown>
-                    </div>
+                        { project.Funders ? (
+                            <div className="credits-header">
+                                <h3>Funders</h3>
+                                <ReactMarkdown>{project.Funders}</ReactMarkdown>
+                            </div>
+                        ) : <div className="credits-header"></div> }
                 </div>
                 <div>
                     { display }
