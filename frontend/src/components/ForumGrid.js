@@ -63,7 +63,7 @@ const ForumGrid = (props) => {
                         <div className="forum-card" style={{backgroundImage: `url(${forums[index].attributes.Header_Image.data.attributes.url})`}}>
                             <div className="forum-title">
                                 <h1>{forums[index].attributes.Forum_Title}</h1>
-                                <a href={`/forum/${forums[index].slug}`}><h5>Read more</h5></a>
+                                <a href={`/chronicle/${forums[index].attributes.slug}`}><h5>Read more</h5></a>
                             </div>
                         </div>
                     ) : <div className="forum-card"></div> }
@@ -84,7 +84,7 @@ const ForumGrid = (props) => {
                         <div className="forum-card" style={{backgroundImage: `url(${forums[index+1].attributes.Header_Image.data.attributes.url})`}}>
                             <div className="forum-title">
                                 <h1>{forums[index+1].attributes.Forum_Title}</h1>
-                                <a href={`/forum/${forums[index+1].slug}`}><h5>Read more</h5></a>
+                                <a href={`/chronicle/${forums[index+1].attributes.slug}`}><h5>Read more</h5></a>
                             </div>
                         </div>
                     ) : <div className="forum-card"></div> }
@@ -92,7 +92,7 @@ const ForumGrid = (props) => {
                     <div className="forum-card" style={{backgroundImage: `url(${forums[index+2].attributes.Header_Image.data.attributes.url})`}}>
                         <div className="forum-title">
                             <h1>{forums[index+2].attributes.Forum_Title}</h1>
-                            <a href={`/forum/${forums[index+2].slug}`}><h5>Read more</h5></a>
+                            <a href={`/chronicle/${forums[index+2].attributes.slug}`}><h5>Read more</h5></a>
                         </div>
                     </div>
                     ): <div className="forum-card"></div> }
@@ -104,7 +104,7 @@ const ForumGrid = (props) => {
                     <div className="forum-card" style={{backgroundImage: `url(${forums[index+3].attributes.Header_Image.data.attributes.url})`}}>
                         <div className="forum-title">
                             <h1>{forums[index+3].attributes.Forum_Title}</h1>
-                            <a href={`/forum/${forums[index+3].slug}`}><h5>Read more</h5></a>
+                            <a href={`/chronicle/${forums[index+3].attributes.slug}`}><h5>Read more</h5></a>
                         </div>
                     </div>
                     ): <div className="forum-card"></div> }
@@ -112,7 +112,7 @@ const ForumGrid = (props) => {
                     <div className="forum-card" style={{backgroundImage: `url(${forums[index+4].attributes.Header_Image.data.attributes.url})`}}>
                         <div className="forum-title">
                             <h1>{forums[index+4].attributes.Forum_Title}</h1>
-                            <a href={`/forum/${forums[index+4].slug}`}></a><h5>Read more</h5>
+                            <a href={`/chronicle/${forums[index+4].attributes.slug}`}></a><h5>Read more</h5>
                         </div>
                     </div>
                     ): <div className="forum-card"></div> }
@@ -120,7 +120,7 @@ const ForumGrid = (props) => {
                     <div className="forum-card" style={{backgroundImage: `url(${forums[index+5].attributes.Header_Image.data.attributes.url})`}}>
                         <div className="forum-title">
                             <h1>{forums[index+5].attributes.Forum_Title}</h1>
-                            <a href={`/forum/${forums[index+5].slug}`}></a><h5>Read more</h5>
+                            <a href={`/chronicle/${forums[index+5].attributes.slug}`}></a><h5>Read more</h5>
                         </div>
                     </div>
                     ): <div className="forum-card"></div> }

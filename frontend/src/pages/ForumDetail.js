@@ -10,8 +10,7 @@ import useFetch from "../useFetch";
 import FullImage from "../components/FullImage";
 import Quote from "../components/Quote";
 import Text from "../components/Text";
-
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 
 const ForumDetail = () => {
     const { id } = useParams()
@@ -56,7 +55,7 @@ const ForumDetail = () => {
                             <p>{new Date(forum.Date_Published).toLocaleString("en-US", options)}</p>
                         </div>
                         <h1>{forum.Forum_Title}</h1>
-                        <p>{forum.Forum_Description}</p>
+                        <BlocksRenderer content={forum.Forum_Description_Rich_Text}/>
                     </div>
                     <div className="forum-header-image">
                         <img src={`${forum.Header_Image.data.attributes.url}`}/>

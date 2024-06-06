@@ -2,12 +2,13 @@
   "collectionName": "components_forum_forum_texts",
   "info": {
     "displayName": "Forum_Text",
-    "icon": "code"
+    "icon": "code",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Text_Body": {
-      "type": "richtext"
+    "Text_Body_Rich_Text": {
+      "type": "blocks"
     }
   }
 }

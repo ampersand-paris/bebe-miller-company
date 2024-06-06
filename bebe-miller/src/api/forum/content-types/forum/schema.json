@@ -40,9 +40,6 @@
         "audios"
       ]
     },
-    "Forum_Description": {
-      "type": "text"
-    },
     "featured": {
       "type": "boolean",
       "required": true
@@ -50,6 +47,9 @@
     "slug": {
       "type": "uid",
       "targetField": "Forum_Title"
+    },
+    "Forum_Description_Rich_Text": {
+      "type": "blocks"
     }
   }
 }

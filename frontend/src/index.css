@@ -350,6 +350,16 @@ label {
 
 .description-link-container a {
   color: var(--main-black);
+  transition-duration: 300ms;
+}
+
+.description-link-container a:hover {
+  color: var(--main-green);
+  transition-duration: 300ms;
+}
+
+
+.calendar-link {
   text-decoration: none;
 }
 
@@ -986,6 +996,10 @@ label {
   background-color: rgba(255, 255, 255, .8);
   padding: 0px 20px;
   transition-duration: 300ms;
+}
+
+.forum-title a {
+  text-decoration: none;
 }
 
 .forum-recent-title {
