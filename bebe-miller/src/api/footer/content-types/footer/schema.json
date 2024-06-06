@@ -21,8 +21,8 @@
     "Donate_Link": {
       "type": "string"
     },
-    "Contact_Info": {
-      "type": "richtext"
+    "Contact_Info_Rich_Text": {
+      "type": "blocks"
     }
   }
 }

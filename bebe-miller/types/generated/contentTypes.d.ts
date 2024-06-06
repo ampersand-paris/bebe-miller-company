@@ -824,7 +824,7 @@ export interface ApiFooterFooter extends Schema.SingleType {
     Instagram_Link: Attribute.String;
     Facebook_Link: Attribute.String;
     Donate_Link: Attribute.String;
-    Contact_Info: Attribute.RichText;
+    Contact_Info_Rich_Text: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
