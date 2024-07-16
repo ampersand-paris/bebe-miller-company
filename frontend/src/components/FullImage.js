@@ -5,11 +5,12 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const FullImage = (props) => {
     
-    let single_image = props.data.Image.data.attributes.url
+    let single_image = props.data.Image.data.attributes
 
     return (
         <div className="full-image-container">        
-            <img className="full-image" src={`${ single_image }`} />
+            <img className="full-image" src={`${ single_image.url }`} />
+            <p className="full-image-caption">{single_image.caption}</p>
         </div>          
     )
     

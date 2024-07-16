@@ -197,6 +197,7 @@ li {
 }
 
 .relative {
+  background-color: var(--main-black);
   position: relative;
 }
 
@@ -762,6 +763,7 @@ label {
 
 .funders-info {
   color: white;
+  font-size: 12px;
   background-color: var(--light-grey);
   width: calc(60% - 120px);
   padding: 20px 60px;
@@ -830,6 +832,19 @@ label {
   width: 50%;
 }
 
+.header-text-caption {
+  background-color: var(--light-brown);
+  box-sizing: border-box;
+  color: var(--white);
+  font-style: italic;
+  margin: 0;
+  padding: 5px 50px;
+  position: absolute;
+  text-align: right;
+  bottom: 0px;
+  width: 100%;
+}
+
 .header-text > h1 {
   margin: 0px;
 }
@@ -842,6 +857,7 @@ label {
 .header-image {
   background-size: cover;
   background-position: center;
+  position: relative;
   width: 50%;
 }
 
@@ -850,10 +866,29 @@ label {
   width: 100%;
 }
 
+.about-body-caption {
+  font-style: italic;
+  padding-right: 50px;
+  text-align: right;
+}
+
 .about-header-image {
   height: 92vH;
   width: 100vW;
   object-fit: cover;
+}
+
+.about-header-image-caption {
+  background-color: var(--main-black);
+  color: white;
+  font-style: italic;
+  text-align: right;
+  margin: 0;
+  padding: 5px 50px 8px 50px;
+}
+
+.full-image-caption {
+  font-style: italic;
 }
 
 .quote-container {
@@ -877,12 +912,21 @@ label {
   padding: 0px 50px 50px 50px;
 }
 
+.quote-image-wrapper {
+  width: 50%;
+}
+
+.quote-image-caption {
+  font-style: italic;
+  padding-left: 50px;
+}
+
 .quote-image {
   background-size: contain;
   background-position: center;
   height: auto;
   object-fit: cover;
-  width: 50%;
+  width: 100%;
 }
 
 .body-container{
@@ -909,7 +953,9 @@ label {
 }
 
 .full-image-container {
+  align-items: flex-start;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding: 50px;
   width: var(--app-width);
