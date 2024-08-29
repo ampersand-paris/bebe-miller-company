@@ -1,3 +1,4 @@
+
 // React Dependendecies
 import React from "react";
 import { useState } from "react";
@@ -12,9 +13,9 @@ import Quote from "../components/Quote";
 import Text from "../components/Text";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 
-const ForumDetail = () => {
+const CalendarView = () => {
     const { id } = useParams()
-    const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/forums?filters[slug][$eq]=${id}&populate[Forum_Body][populate]=*&populate[Header_Image][populate]=*`)
+    const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/calendars?filters[slug][$eq]=${id}&populate=*`)
     
     let forum = [];
     let sections = [];
@@ -33,6 +34,7 @@ const ForumDetail = () => {
         forum = data.data[0].attributes
         sections = forum.Forum_Body
 
+        console.log(data)
         for (let i = 0; i < sections.length; i ++) {
             if (sections[i].__component === "forum.forum-text") {
                 display.push(<Text data={sections[i]} />)
@@ -70,4 +72,4 @@ const ForumDetail = () => {
     
 }
 
-export default ForumDetail;
+export default CalendarView;

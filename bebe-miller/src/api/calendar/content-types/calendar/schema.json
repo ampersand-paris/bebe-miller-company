@@ -41,6 +41,29 @@
     },
     "Description": {
       "type": "blocks"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Event_Title"
+    },
+    "Additional_Event_Info": {
+      "type": "dynamiczone",
+      "components": [
+        "forum.forum-text",
+        "forum.multiple-image-field",
+        "about-page.full-image",
+        "forum.video"
+      ]
+    },
+    "Feature_Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

@@ -98,8 +98,13 @@ const ArchiveDetail = (props) => {
                     ) : ( <div className="gallery"></div> )
                     }
                     <div className="credits-header">
+                        { project.Press_Quote ? (
+                        <>
                         <h3>Press Quotes</h3>
                         <ReactMarkdown className="press-quote">{project.Press_Quote}</ReactMarkdown>
+                        </>
+                        ) : null 
+                    }
                     </div>
                 </div>
                 <div>

@@ -202,7 +202,9 @@ li {
 }
 
 .nav-wrapper {
-  position: relative;
+  position: fixed;
+  width: 100vW;
+  z-index: 2;
 }
 
 /* === FOOTER === */
@@ -215,6 +217,8 @@ li {
   justify-content: space-between;
   padding: 30px 50px;
   width: auto;
+  z-index: 20;
+  position: relative;
 }
 
 .socials-container {
@@ -331,9 +335,7 @@ label {
 
 .calendar-page {
   display: flex;
-  height: calc(var(--app-height) - 100px);
   justify-content: center;
-  align-items: center;
   position: relative;
 }
 
@@ -353,30 +355,34 @@ label {
 
 .calendar-line {
   background-color: var(--main-green);
-  height: 80%;
-  position: absolute;
+  height: calc(var(--app-height) - 120px);
+  position: sticky;
   width: 3px;
+  top: 100px; left: 50%;
+  margin-bottom: 20px;
+  z-index: 1;
 }
 
 .calendar-container {
   display: flex;
-  height: 80%;
   justify-content: center;
-  overflow: scroll;
   position: relative;
   width: 80%;
   z-index: 0;
-  -webkit-mask-image: linear-gradient(0deg, rgba(0,0,0,1), rgba(0,0,0,0)), linear-gradient(180deg, rgba(0,0,0,1), rgba(0,0,0,0));
+  /* -webkit-mask-image: linear-gradient(0deg, rgba(0,0,0,1), rgba(0,0,0,0)), linear-gradient(180deg, rgba(0,0,0,1), rgba(0,0,0,0));
   -webkit-mask-size: 100% 50%;
   -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: left top, left bottom;
+  -webkit-mask-position: left top, left bottom; */
 }
 
 .event-list {
-  height: 100%;
-  padding-top: calc(var(--app-height) / 3);
-  margin-bottom: calc(var(--app-height) / 3);
+  margin-top: 100px;
+  padding-bottom: 100px;
   width: 100%;
+}
+
+.year-container {
+  scroll-margin-top: 100px;
 }
 
 .event-container {
@@ -385,6 +391,7 @@ label {
 }
 
 .time-location-container {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -393,8 +400,13 @@ label {
 }
 
 .description-link-container {
+  box-sizing: border-box;
   padding-left: 20px;
   width: 50%;
+}
+
+.year-emph {
+  font-size: 3em;
 }
 
 .description-link-container a {
@@ -435,8 +447,12 @@ label {
   display: flex;
   flex-direction: column;
   left: 50px;
-  position: absolute;
+  z-index: 10px;
+  position: fixed;
   row-gap: 3px;
+  height: var(--app-height);
+  top: 0;
+  justify-content: center;
 }
 
 .calendar-logic-container h1 {
