@@ -792,6 +792,16 @@ export interface ApiCalendarCalendar extends Schema.CollectionType {
     Time: Attribute.String;
     Additional_Date_Information: Attribute.String;
     Description: Attribute.Blocks;
+    slug: Attribute.UID<'api::calendar.calendar', 'Event_Title'>;
+    Additional_Event_Info: Attribute.DynamicZone<
+      [
+        'forum.forum-text',
+        'forum.multiple-image-field',
+        'about-page.full-image',
+        'forum.video'
+      ]
+    >;
+    Feature_Image: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

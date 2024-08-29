@@ -7,7 +7,7 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 const Quote = (props) => {
    
     let quote = props.data
-    let quote_image = props.data.Quote_Image.data.attributes.url
+    let quote_image = props.data.Quote_Image.data.attributes
 
     return (
         <>
@@ -16,7 +16,10 @@ const Quote = (props) => {
                 <div className="quote-color-block-black"></div>
             </div>
             <div className="quote-container"> 
-                <img className="quote-image" src={`${quote_image}`}/>
+                <div className="quote-image-wrapper">
+                    <img className="quote-image" src={`${quote_image.url}`}/>
+                    <p className="quote-image-caption">{quote_image.caption}</p>
+                </div>
                 <div className="quote-text">              
                     <ReactMarkdown>{ quote.Quote }</ReactMarkdown>
                 </div> 

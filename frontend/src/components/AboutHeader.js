@@ -6,8 +6,7 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 const AboutHeader = (props) => {
    
     let header = props.data
-    let header_image = props.data.Header_Image.data.attributes.url
-    console.log('header', header)
+    let header_image = props.data.Header_Image.data.attributes
 
     return (
         <>
@@ -19,7 +18,8 @@ const AboutHeader = (props) => {
                 <div className="header-text">
                     <ReactMarkdown>{ header.Header_Text }</ReactMarkdown>
                 </div> 
-                <div className="header-image" style={{backgroundImage: `url(${header_image})`}}>
+                <div className="header-image" style={{backgroundImage: `url(${header_image.url})`}}>
+                    <p className="header-text-caption">{header_image.caption}</p>
                 </div>
             </div>      
         </>

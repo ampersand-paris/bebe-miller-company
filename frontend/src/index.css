@@ -197,11 +197,14 @@ li {
 }
 
 .relative {
+  background-color: var(--main-black);
   position: relative;
 }
 
 .nav-wrapper {
-  position: relative;
+  position: fixed;
+  width: 100vW;
+  z-index: 2;
 }
 
 /* === FOOTER === */
@@ -214,6 +217,8 @@ li {
   justify-content: space-between;
   padding: 30px 50px;
   width: auto;
+  z-index: 20;
+  position: relative;
 }
 
 .socials-container {
@@ -330,9 +335,7 @@ label {
 
 .calendar-page {
   display: flex;
-  height: calc(var(--app-height) - 100px);
   justify-content: center;
-  align-items: center;
   position: relative;
 }
 
@@ -352,30 +355,34 @@ label {
 
 .calendar-line {
   background-color: var(--main-green);
-  height: 80%;
-  position: absolute;
+  height: calc(var(--app-height) - 120px);
+  position: sticky;
   width: 3px;
+  top: 100px; left: 50%;
+  margin-bottom: 20px;
+  z-index: 1;
 }
 
 .calendar-container {
   display: flex;
-  height: 80%;
   justify-content: center;
-  overflow: scroll;
   position: relative;
   width: 80%;
   z-index: 0;
-  -webkit-mask-image: linear-gradient(0deg, rgba(0,0,0,1), rgba(0,0,0,0)), linear-gradient(180deg, rgba(0,0,0,1), rgba(0,0,0,0));
+  /* -webkit-mask-image: linear-gradient(0deg, rgba(0,0,0,1), rgba(0,0,0,0)), linear-gradient(180deg, rgba(0,0,0,1), rgba(0,0,0,0));
   -webkit-mask-size: 100% 50%;
   -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: left top, left bottom;
+  -webkit-mask-position: left top, left bottom; */
 }
 
 .event-list {
-  height: 100%;
-  padding-top: calc(var(--app-height) / 3);
-  margin-bottom: calc(var(--app-height) / 3);
+  margin-top: 100px;
+  padding-bottom: 100px;
   width: 100%;
+}
+
+.year-container {
+  scroll-margin-top: 100px;
 }
 
 .event-container {
@@ -384,6 +391,7 @@ label {
 }
 
 .time-location-container {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -392,8 +400,13 @@ label {
 }
 
 .description-link-container {
+  box-sizing: border-box;
   padding-left: 20px;
   width: 50%;
+}
+
+.year-emph {
+  font-size: 3em;
 }
 
 .description-link-container a {
@@ -434,8 +447,12 @@ label {
   display: flex;
   flex-direction: column;
   left: 50px;
-  position: absolute;
+  z-index: 10px;
+  position: fixed;
   row-gap: 3px;
+  height: var(--app-height);
+  top: 0;
+  justify-content: center;
 }
 
 .calendar-logic-container h1 {
@@ -762,6 +779,7 @@ label {
 
 .funders-info {
   color: white;
+  font-size: 12px;
   background-color: var(--light-grey);
   width: calc(60% - 120px);
   padding: 20px 60px;
@@ -830,6 +848,19 @@ label {
   width: 50%;
 }
 
+.header-text-caption {
+  background-color: var(--light-brown);
+  box-sizing: border-box;
+  color: var(--white);
+  font-style: italic;
+  margin: 0;
+  padding: 5px 50px;
+  position: absolute;
+  text-align: right;
+  bottom: 0px;
+  width: 100%;
+}
+
 .header-text > h1 {
   margin: 0px;
 }
@@ -842,6 +873,7 @@ label {
 .header-image {
   background-size: cover;
   background-position: center;
+  position: relative;
   width: 50%;
 }
 
@@ -850,10 +882,29 @@ label {
   width: 100%;
 }
 
+.about-body-caption {
+  font-style: italic;
+  padding-right: 50px;
+  text-align: right;
+}
+
 .about-header-image {
   height: 92vH;
   width: 100vW;
   object-fit: cover;
+}
+
+.about-header-image-caption {
+  background-color: var(--main-black);
+  color: white;
+  font-style: italic;
+  text-align: right;
+  margin: 0;
+  padding: 5px 50px 8px 50px;
+}
+
+.full-image-caption {
+  font-style: italic;
 }
 
 .quote-container {
@@ -877,12 +928,21 @@ label {
   padding: 0px 50px 50px 50px;
 }
 
+.quote-image-wrapper {
+  width: 50%;
+}
+
+.quote-image-caption {
+  font-style: italic;
+  padding-left: 50px;
+}
+
 .quote-image {
   background-size: contain;
   background-position: center;
   height: auto;
   object-fit: cover;
-  width: 50%;
+  width: 100%;
 }
 
 .body-container{
@@ -909,7 +969,9 @@ label {
 }
 
 .full-image-container {
+  align-items: flex-start;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding: 50px;
   width: var(--app-width);

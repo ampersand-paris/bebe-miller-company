@@ -49,7 +49,7 @@ const Navigation = () => {
     if (data) {
 
         navLinks = data.data
-        console.log(menuHeight)
+
         if (mobile === true ) {
             return (
                 <div className="nav-wrapper">                

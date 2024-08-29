@@ -88,6 +88,7 @@ const About = (props) => {
                     </div>  
                     <img className="about-header-image" src={`${about.attributes.Header_Image.data.attributes.url}`} />
                 </div>
+                <p className="about-header-image-caption">{about.attributes.Header_Image.data.attributes.caption}</p>
                 {display.map((section, index) => 
                     <div key={ index }>
                         { section }
