@@ -213,7 +213,7 @@ li {
   align-items: center;
   background-color: var(--main-black);
   display: flex;
-  height: auto;
+  height: auto; 
   justify-content: space-between;
   padding: 30px 50px;
   width: auto;
@@ -407,6 +407,12 @@ label {
 
 .year-emph {
   font-size: 3em;
+}
+
+.description-link-container > a {
+  color: var(--main-black);
+  transition-duration: 300ms;
+  text-decoration: none !important;
 }
 
 .description-link-container a {
@@ -703,6 +709,20 @@ label {
   z-index: 100;
 }
 
+.event-gallery-caption {
+  background-color: var(--main-black);
+  color: var(--white);
+  padding: 0px 50px;
+  text-align: right;
+  z-index: 100;
+}
+
+.event-gallery-caption > p{
+  font-size: 12px;
+  font-style: italic;
+  padding: 0px;
+}
+
 .caption p {
   font-size: 12px;
   font-style: italic;
@@ -797,6 +817,18 @@ label {
   width: 60vW;
 }
 
+.event-gallery {
+  background-color: var(--white);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column-reverse;   
+  height: 40vW;
+  position: relative; 
+  width: 65%;
+}
+
 .gallery-toggle {
   align-items: center;
   color: var(--white);
@@ -807,6 +839,24 @@ label {
   position: absolute;
   transition-duration: 200ms;
   width: 50px;
+}
+
+.event-gallery-toggle {
+  align-items: center;
+  color: var(--main-black);
+  display: flex;
+  height: calc(100%);
+  justify-content: center;
+  opacity: 50%;
+  position: absolute;
+  transition-duration: 200ms;
+  width: 50px;
+}
+
+.event-gallery-toggle:hover {
+  background-color: var(--main-green);
+  cursor: pointer;
+  opacity: 100%;
 }
 
 .gallery-toggle h1 {
@@ -1010,6 +1060,7 @@ label {
 .page-container {
   display: flex;
   flex-direction: column;
+  padding-top: 82px;
 }
 
 /* ==== Forum === */

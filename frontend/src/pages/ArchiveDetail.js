@@ -29,7 +29,7 @@ const ArchiveDetail = (props) => {
         project = data.data[0].attributes
         galleryImages = project.Gallery.data
         sections = project.Archive_Dynamic_Zone
-        console.log(project)
+        
         for (let i = 0; i < sections.length; i ++) {
             if (sections[i].__component === "forum.video") {
                 console.log('video')
