@@ -15,9 +15,9 @@ import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 
 const CalendarView = () => {
     const { id } = useParams()
-    const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/calendars?filters[slug][$eq]=${id}&populate=*`)
+    const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/calendars?filters[slug][$eq]=${id}&populate=deep`)
     
-    let forum = [];
+    let event = [];
     let sections = [];
     let display = [];
     let i = 0;
@@ -31,8 +31,8 @@ const CalendarView = () => {
 
     if (data) {
 
-        forum = data.data[0].attributes
-        sections = forum.Forum_Body
+        event = data.data[0].attributes
+        sections = event.Additional_Event_Information
 
         console.log(data)
         for (let i = 0; i < sections.length; i ++) {
@@ -51,14 +51,13 @@ const CalendarView = () => {
                     <div className="grey-block"></div>
                     <div className="forum-title-container">
                         <div className="date-and-category">
-                            <p>{forum.Forum_Category}</p>
-                            <p>{new Date(forum.Date_Published).toLocaleString("en-US", options)}</p>
+                            <p>{new Date(event.Date_Published).toLocaleString("en-US", options)}</p>
                         </div>
-                        <h1>{forum.Forum_Title}</h1>
-                        <BlocksRenderer content={forum.Forum_Description_Rich_Text}/>
+                        <h1>{event.Forum_Title}</h1>
+                        <BlocksRenderer content={event.Description}/>
                     </div>
                     <div className="forum-header-image">
-                        <img src={`${forum.Header_Image.data.attributes.url}`}/>
+                        <img src={`${event.Feature_Image.data.attributes.url}`}/>
                     </div>
                 </div>
                 {display.map((section, index) => 
