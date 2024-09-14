@@ -9,6 +9,9 @@
   "attributes": {
     "Choreography_Body_New": {
       "type": "blocks"
+    },
+    "Choreography_Body": {
+      "type": "blocks"
     }
   }
 }

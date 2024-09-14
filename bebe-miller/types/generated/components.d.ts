@@ -20,6 +20,7 @@ export interface ForumTeachings extends Schema.Component {
   };
   attributes: {
     Teaching_Body_New: Attribute.Blocks;
+    Teaching_Body: Attribute.Blocks;
   };
 }
 
@@ -32,6 +33,7 @@ export interface ForumPress extends Schema.Component {
   };
   attributes: {
     Press_Body_New: Attribute.Blocks;
+    Press_Body: Attribute.Blocks;
   };
 }
 
@@ -70,6 +72,7 @@ export interface ForumChoreography extends Schema.Component {
   };
   attributes: {
     Choreography_Body_New: Attribute.Blocks;
+    Choreography_Body: Attribute.Blocks;
   };
 }
 
@@ -82,6 +85,7 @@ export interface AboutPageQuote extends Schema.Component {
   attributes: {
     Quote_Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Quote_New: Attribute.Blocks;
+    Quote: Attribute.Blocks;
   };
 }
 

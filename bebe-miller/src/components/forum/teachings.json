@@ -9,6 +9,9 @@
   "attributes": {
     "Teaching_Body_New": {
       "type": "blocks"
+    },
+    "Teaching_Body": {
+      "type": "blocks"
     }
   }
 }
