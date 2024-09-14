@@ -3,6 +3,7 @@ import useFetch from "../useFetch";
 import { useParams } from "react-router-dom"
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
+import { Link } from 'react-router-dom'
 
 const Text = (props) => {
    
@@ -13,7 +14,11 @@ const Text = (props) => {
         <div className="text-component-card">
             <div className="side-bar"></div>
             <div className="text-component-body">
-                <BlocksRenderer content={text}/>
+                <BlocksRenderer content={text}
+                    blocks={{
+                        link: ({ children, url }) => <Link to={url} target="blank">{children}</Link>,
+                    }}
+                />
             </div>
         </div>
                     

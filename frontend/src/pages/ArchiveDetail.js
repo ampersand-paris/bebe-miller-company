@@ -71,7 +71,12 @@ const ArchiveDetail = (props) => {
                 </div>
                 <div className="description-performances-container">
                     <div className="project-description">
-                        <BlocksRenderer content={project.Archive_Description_Rich_Text}/>
+                        <BlocksRenderer 
+                            content={project.Archive_Description_Rich_Text}
+                            blocks={{
+                                link: ({ children, url }) => <Link to={url} target="blank">{children}</Link>,
+                            }}
+                        />
                         <ReactMarkdown>{project.Bebe_Writing}</ReactMarkdown>
                     </div>
                     <div className="performances">

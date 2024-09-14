@@ -53,11 +53,19 @@ const ForumDetail = () => {
                             <p>{new Date(forum.Date_Published).toLocaleString("en-US", options)}</p>
                         </div>
                         <h1>{forum.Forum_Title}</h1>
-                        <BlocksRenderer content={forum.Forum_Description_Rich_Text}/>
+                        <BlocksRenderer 
+                            content={forum.Forum_Description_Rich_Text}
+                            blocks={{
+                                link: ({ children, url }) => <Link to={url} target="blank">{children}</Link>,
+                              }}/>
                     </div>
                     <div className="forum-header-image">
                         <img src={`${forum.Header_Image.data.attributes.url}`}/>
                     </div>
+                </div>
+                <div className="forum-caption-container">
+                    <div className="side-bar"></div>
+                    <p className="forum-view-caption">{forum.Header_Image.data.attributes.caption}</p>
                 </div>
                 {display.map((section, index) => 
                     <div key={ index }>

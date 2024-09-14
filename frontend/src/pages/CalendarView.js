@@ -63,7 +63,12 @@ const CalendarView = () => {
                             }
                         </h3>
                         <h5>{event.Location}</h5>
-                        <BlocksRenderer content={event.Description}/>
+                        <BlocksRenderer 
+                            content={event.Description}
+                            blocks={{
+                                link: ({ children, url }) => <Link to={url} target="blank">{children}</Link>,
+                            }}
+                        />
                     </div>
                     <div className="forum-header-image">
                         <img src={`${event.Feature_Image.data.attributes.url}`}/>

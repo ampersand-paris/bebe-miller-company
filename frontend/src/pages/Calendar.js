@@ -131,7 +131,12 @@ const Calendar = (props) => {
                                 </div>
                                 <div className="description-link-container">
                                     <a href={`calendar/${ event.attributes.slug }`}><h3>{ event.attributes.Event_Title }</h3></a>
-                                    <BlocksRenderer content={event.attributes.Description}/>
+                                    <BlocksRenderer 
+                                        content={event.attributes.Description}
+                                        blocks={{
+                                            link: ({ children, url }) => <Link to={url} target="blank">{children}</Link>,
+                                        }}
+                                    />
                                         { event.attributes.Ticket_URL ? ( 
                                             <a className="calendar-link" target="_blank" href={event.attributes.Ticket_URL}>
                                                 <h5>Info / RSVP</h5>
