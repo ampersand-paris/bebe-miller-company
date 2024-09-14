@@ -20,9 +20,8 @@ export interface AboutPageHeader extends Schema.Component {
     description: '';
   };
   attributes: {
-    Header_Text: Attribute.RichText;
     Header_Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Header_Text_New: Attribute.Blocks;
+    Header_Text: Attribute.Blocks;
   };
 }
 
@@ -54,7 +53,7 @@ export interface AboutPageBody extends Schema.Component {
     description: '';
   };
   attributes: {
-    Biography_New: Attribute.Blocks;
+    Biography: Attribute.Blocks;
     Single_Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }

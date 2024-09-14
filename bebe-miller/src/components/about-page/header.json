@@ -6,9 +6,6 @@
   },
   "options": {},
   "attributes": {
-    "Header_Text": {
-      "type": "richtext"
-    },
     "Header_Image": {
       "type": "media",
       "multiple": false,
@@ -20,7 +17,7 @@
         "audios"
       ]
     },
-    "Header_Text_New": {
+    "Header_Text": {
       "type": "blocks"
     }
   }
