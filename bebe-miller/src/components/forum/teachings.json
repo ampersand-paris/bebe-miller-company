@@ -7,9 +7,6 @@
   },
   "options": {},
   "attributes": {
-    "Teaching_Body": {
-      "type": "richtext"
-    },
     "Teaching_Body_New": {
       "type": "blocks"
     }

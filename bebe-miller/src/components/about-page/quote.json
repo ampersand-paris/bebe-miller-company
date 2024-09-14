@@ -6,9 +6,6 @@
   },
   "options": {},
   "attributes": {
-    "Quote": {
-      "type": "richtext"
-    },
     "Quote_Image": {
       "type": "media",
       "multiple": false,
