@@ -1,7 +1,8 @@
 {
   "collectionName": "components_about_page_headers",
   "info": {
-    "displayName": "Header"
+    "displayName": "Header",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -9,14 +10,18 @@
       "type": "richtext"
     },
     "Header_Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "Header_Text_New": {
+      "type": "blocks"
     }
   }
 }

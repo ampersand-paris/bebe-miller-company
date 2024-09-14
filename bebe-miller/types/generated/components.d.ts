@@ -1,15 +1,28 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface AboutPageBody extends Schema.Component {
-  collectionName: 'components_about_page_bodies';
+export interface AboutPageQuote extends Schema.Component {
+  collectionName: 'components_about_page_quotes';
   info: {
-    displayName: 'Body';
+    displayName: 'Quote';
+    description: '';
   };
   attributes: {
-    Biography: Attribute.RichText;
-    Single_Image: Attribute.Media;
-    Image_Gallery: Attribute.Media;
-    Quote: Attribute.String;
+    Quote: Attribute.RichText;
+    Quote_Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Quote_New: Attribute.Blocks;
+  };
+}
+
+export interface AboutPageHeader extends Schema.Component {
+  collectionName: 'components_about_page_headers';
+  info: {
+    displayName: 'Header';
+    description: '';
+  };
+  attributes: {
+    Header_Text: Attribute.RichText;
+    Header_Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Header_Text_New: Attribute.Blocks;
   };
 }
 
@@ -19,41 +32,81 @@ export interface AboutPageFullImage extends Schema.Component {
     displayName: 'Full_Image';
   };
   attributes: {
-    Image: Attribute.Media;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
-export interface AboutPageHeader extends Schema.Component {
-  collectionName: 'components_about_page_headers';
+export interface AboutPageCollaborators extends Schema.Component {
+  collectionName: 'components_about_page_collaborators';
   info: {
-    displayName: 'Header';
+    displayName: 'Collaborators';
   };
   attributes: {
-    Header_Text: Attribute.RichText;
-    Header_Image: Attribute.Media;
+    List_Title: Attribute.String;
+    List: Attribute.Blocks;
   };
 }
 
-export interface AboutPageQuote extends Schema.Component {
-  collectionName: 'components_about_page_quotes';
+export interface AboutPageBody extends Schema.Component {
+  collectionName: 'components_about_page_bodies';
   info: {
-    displayName: 'Quote';
+    displayName: 'Body';
+    description: '';
   };
   attributes: {
-    Quote: Attribute.RichText;
-    Quote_Image: Attribute.Media;
+    Biography_New: Attribute.Blocks;
+    Single_Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
-export interface ForumChoreography extends Schema.Component {
-  collectionName: 'components_forum_choreographies';
+export interface ForumVideo extends Schema.Component {
+  collectionName: 'components_forum_videos';
   info: {
-    displayName: 'Choreography';
+    displayName: 'Video';
+    description: '';
+  };
+  attributes: {
+    video_URL: Attribute.String;
+  };
+}
+
+export interface ForumTeachings extends Schema.Component {
+  collectionName: 'components_forum_teachings';
+  info: {
+    displayName: 'Teachings';
     icon: 'bulletList';
     description: '';
   };
   attributes: {
-    Choreography_Body: Attribute.RichText;
+    Teaching_Body: Attribute.RichText;
+    Teaching_Body_New: Attribute.Blocks;
+  };
+}
+
+export interface ForumPress extends Schema.Component {
+  collectionName: 'components_forum_presses';
+  info: {
+    displayName: 'Press';
+    icon: 'bulletList';
+    description: '';
+  };
+  attributes: {
+    Press_Body: Attribute.RichText;
+    Press_Body_New: Attribute.Blocks;
+  };
+}
+
+export interface ForumMultipleImageField extends Schema.Component {
+  collectionName: 'components_forum_multiple_image_fields';
+  info: {
+    displayName: 'Multiple_Image_Field';
+    description: '';
+  };
+  attributes: {
+    Image_Gallery: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
   };
 }
 
@@ -69,64 +122,33 @@ export interface ForumForumText extends Schema.Component {
   };
 }
 
-export interface ForumMultipleImageField extends Schema.Component {
-  collectionName: 'components_forum_multiple_image_fields';
+export interface ForumChoreography extends Schema.Component {
+  collectionName: 'components_forum_choreographies';
   info: {
-    displayName: 'Multiple_Image_Field';
-    description: '';
-  };
-  attributes: {
-    Image_Gallery: Attribute.Media;
-  };
-}
-
-export interface ForumPress extends Schema.Component {
-  collectionName: 'components_forum_presses';
-  info: {
-    displayName: 'Press';
+    displayName: 'Choreography';
     icon: 'bulletList';
     description: '';
   };
   attributes: {
-    Press_Body: Attribute.RichText;
-  };
-}
-
-export interface ForumTeachings extends Schema.Component {
-  collectionName: 'components_forum_teachings';
-  info: {
-    displayName: 'Teachings';
-    icon: 'bulletList';
-  };
-  attributes: {
-    Teaching_Body: Attribute.RichText;
-  };
-}
-
-export interface ForumVideo extends Schema.Component {
-  collectionName: 'components_forum_videos';
-  info: {
-    displayName: 'Video';
-    description: '';
-  };
-  attributes: {
-    video_URL: Attribute.String;
+    Choreography_Body: Attribute.RichText;
+    Choreography_Body_New: Attribute.Blocks;
   };
 }
 
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'about-page.body': AboutPageBody;
-      'about-page.full-image': AboutPageFullImage;
-      'about-page.header': AboutPageHeader;
       'about-page.quote': AboutPageQuote;
-      'forum.choreography': ForumChoreography;
-      'forum.forum-text': ForumForumText;
-      'forum.multiple-image-field': ForumMultipleImageField;
-      'forum.press': ForumPress;
-      'forum.teachings': ForumTeachings;
+      'about-page.header': AboutPageHeader;
+      'about-page.full-image': AboutPageFullImage;
+      'about-page.collaborators': AboutPageCollaborators;
+      'about-page.body': AboutPageBody;
       'forum.video': ForumVideo;
+      'forum.teachings': ForumTeachings;
+      'forum.press': ForumPress;
+      'forum.multiple-image-field': ForumMultipleImageField;
+      'forum.forum-text': ForumForumText;
+      'forum.choreography': ForumChoreography;
     }
   }
 }

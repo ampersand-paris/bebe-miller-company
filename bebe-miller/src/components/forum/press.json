@@ -9,6 +9,9 @@
   "attributes": {
     "Press_Body": {
       "type": "richtext"
+    },
+    "Press_Body_New": {
+      "type": "blocks"
     }
   }
 }

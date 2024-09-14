@@ -39,6 +39,12 @@
         "forum.press",
         "forum.teachings"
       ]
+    },
+    "Collaborator_List": {
+      "displayName": "Collaborators",
+      "type": "component",
+      "repeatable": true,
+      "component": "about-page.collaborators"
     }
   }
 }
