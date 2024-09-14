@@ -1,8 +1,6 @@
 // React Dependendecies
 import React from "react";
-import { useState } from "react";
-import { Link, Routes, Route } from "react-router-dom";
-import ReachMarkdown from 'react-markdown';
+
 // Components
 import useFetch from "../useFetch";
 import FullImage from "../components/FullImage";
@@ -12,8 +10,7 @@ import AboutHeader from "../components/AboutHeader";
 import Choreography from "../components/Choreography";
 import Teachings from "../components/Teachings";
 import Press from "../components/Press";
-
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import Collaborators from "../components/Collaborators";
 
 const About = (props) => {
 
@@ -27,7 +24,6 @@ const About = (props) => {
 
         about = data.data
         sections = about.attributes.About_Page
-        console.log('About', data)
 
         for (let i = 0; i < sections.length; i ++) {
             if (sections[i].__component === "about-page.header") {
@@ -40,9 +36,6 @@ const About = (props) => {
                 display.push(<FullImage data={sections[i]} />)
             }
         }
-
-        console.log('sections', sections)
-
 
         return (
             <div className="page-container">
@@ -94,11 +87,17 @@ const About = (props) => {
                         { section }
                     </div>
                 )}
-                <div className="forum-container-last-row">
-                    <Choreography />
-                    <Teachings />
-                    <Press />
+                
+                <div className="history-container">
+                
+                    <h1>History</h1>
+                    <div className="history-accordian-wrapper">
+                        <Choreography />
+                        <Teachings />
+                        <Press />
+                    </div>
                 </div>
+                <Collaborators />
             </div>                  
         )
     }

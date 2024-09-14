@@ -17,9 +17,6 @@
         "audios"
       ]
     },
-    "Quote_New": {
-      "type": "blocks"
-    },
     "Quote": {
       "type": "blocks"
     }

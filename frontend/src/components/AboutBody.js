@@ -1,19 +1,21 @@
-import { useEffect, useState } from "react";
-import useFetch from "../useFetch";
-import { useParams } from "react-router-dom"
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
+import { Link } from 'react-router-dom'
 
 const AboutBody = (props) => {
 
     let body = props.data
     let single_image = props.data.Single_Image.data.attributes
-    let multiple_images = props.data.Image_Gallery.data
-    
+    console.log(`props`, body)
+
     return (
         <>        
             <div className="body-container">  
                 <div className="body-text">
-                    <ReactMarkdown>{ body.Biography }</ReactMarkdown>
+                    <BlocksRenderer content={ body.Biography }
+                        blocks={{
+                            link: ({ children, url }) => <Link to={url} target="blank">{children}</Link>,
+                        }}
+                    />
                 </div>
                 <div className="body-images">
                     <img className="single-image" src={`${ single_image.url }`} />

@@ -7,9 +7,6 @@
   },
   "options": {},
   "attributes": {
-    "Press_Body_New": {
-      "type": "blocks"
-    },
     "Press_Body": {
       "type": "blocks"
     }

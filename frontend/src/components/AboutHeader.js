@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react";
-import useFetch from "../useFetch";
-import { useParams } from "react-router-dom"
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
+import { Link } from 'react-router-dom'
 
 const AboutHeader = (props) => {
    
@@ -16,7 +14,11 @@ const AboutHeader = (props) => {
             </div>
             <div className="about-header"> 
                 <div className="header-text">
-                    <ReactMarkdown>{ header.Header_Text }</ReactMarkdown>
+                    <BlocksRenderer content={ header.Header_Text }
+                        blocks={{
+                            link: ({ children, url }) => <Link to={url} target="blank">{children}</Link>,
+                        }}
+                    />
                 </div> 
                 <div className="header-image" style={{backgroundImage: `url(${header_image.url})`}}>
                     <p className="header-text-caption">{header_image.caption}</p>

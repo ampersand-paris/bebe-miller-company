@@ -1,13 +1,11 @@
 {
   "collectionName": "components_about_page_collaborators",
   "info": {
-    "displayName": "Collaborators"
+    "displayName": "Collaborators",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "List_Title": {
-      "type": "string"
-    },
     "List": {
       "type": "blocks"
     }

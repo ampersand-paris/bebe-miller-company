@@ -1,8 +1,5 @@
-import { useEffect, useState } from "react";
-import useFetch from "../useFetch";
-import { useParams } from "react-router-dom"
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
-
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
+import { Link } from 'react-router-dom'
 
 const Quote = (props) => {
    
@@ -20,8 +17,12 @@ const Quote = (props) => {
                     <img className="quote-image" src={`${quote_image.url}`}/>
                     <p className="quote-image-caption">{quote_image.caption}</p>
                 </div>
-                <div className="quote-text">              
-                    <ReactMarkdown>{ quote.Quote }</ReactMarkdown>
+                <div className="quote-text">   
+                    <BlocksRenderer content={ quote.Quote }
+                        blocks={{
+                            link: ({ children, url }) => <Link to={url} target="blank">{children}</Link>,
+                        }}
+                    />    
                 </div> 
             </div>   
         </>

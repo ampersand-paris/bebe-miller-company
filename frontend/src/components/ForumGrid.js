@@ -10,7 +10,6 @@ import Quote from "../components/Quote";
 import AboutBody from "../components/AboutBody";
 import AboutHeader from "../components/AboutHeader";
 
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import Teachings from "./Teachings";
 import Press from "./Press";
 import Choreography from "./Choreography";
