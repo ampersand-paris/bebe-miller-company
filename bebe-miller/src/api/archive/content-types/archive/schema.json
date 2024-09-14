@@ -86,6 +86,24 @@
     },
     "Archive_Description_Rich_Text": {
       "type": "blocks"
+    },
+    "Bebe_Writing_New": {
+      "type": "blocks"
+    },
+    "People_New": {
+      "type": "blocks"
+    },
+    "Performance_Dates_New": {
+      "type": "blocks"
+    },
+    "Funders_New": {
+      "type": "blocks"
+    },
+    "Press_Quote_New": {
+      "type": "blocks"
+    },
+    "Description": {
+      "type": "blocks"
     }
   }
 }

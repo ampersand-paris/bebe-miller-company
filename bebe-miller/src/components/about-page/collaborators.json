@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_about_page_collaborators",
+  "info": {
+    "displayName": "Collaborators"
+  },
+  "options": {},
+  "attributes": {
+    "List_Title": {
+      "type": "string"
+    },
+    "List": {
+      "type": "blocks"
+    }
+  }
+}

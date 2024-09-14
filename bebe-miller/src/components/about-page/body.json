@@ -1,35 +1,24 @@
 {
   "collectionName": "components_about_page_bodies",
   "info": {
-    "displayName": "Body"
+    "displayName": "Body",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Biography": {
-      "type": "richtext"
+    "Biography_New": {
+      "type": "blocks"
     },
     "Single_Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
-    },
-    "Image_Gallery": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": true
-    },
-    "Quote": {
-      "type": "string"
+      ]
     }
   }
 }
