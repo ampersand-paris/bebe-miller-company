@@ -29,7 +29,7 @@ const ArchiveDetail = (props) => {
         project = data.data[0].attributes
         galleryImages = project.Gallery.data
         sections = project.Archive_Dynamic_Zone
-        console.log(project)
+        
         for (let i = 0; i < sections.length; i ++) {
             if (sections[i].__component === "forum.video") {
                 console.log('video')
@@ -71,7 +71,12 @@ const ArchiveDetail = (props) => {
                 </div>
                 <div className="description-performances-container">
                     <div className="project-description">
-                        <BlocksRenderer content={project.Archive_Description_Rich_Text}/>
+                        <BlocksRenderer 
+                            content={project.Archive_Description_Rich_Text}
+                            blocks={{
+                                link: ({ children, url }) => <Link to={url} target="blank">{children}</Link>,
+                            }}
+                        />
                         <ReactMarkdown>{project.Bebe_Writing}</ReactMarkdown>
                     </div>
                     <div className="performances">

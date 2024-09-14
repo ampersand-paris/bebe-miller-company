@@ -18,14 +18,18 @@ import Choreography from "./Choreography";
 const ForumGrid = (props) => {
 
     // const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/forum-page?populate[Forum_Page][populate]=*&populate[forums]=*?pagination[page]=1&pagination[pageSize]=3`)
-    const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/forums?filters[featured][$not]=true&[populate]=*`)
-    const [index, setIndex] = useState(0)
+    // const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/forums?filters[featured][$not]=true&[populate]=*&pagination[pageSize]=10`)
+    const [index, setIndex] = useState(1)
+    const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/forums?pagination[page]=${index}&pagination[pageSize]=6&[populate]=*`)
+    const [first, setFirst] = useState(0)
+    const [middle, setMiddle] = useState(1)
+    const [last, setLast] = useState(2)
 
     let forums = [];
-    let display = [];
+    let pagination = [];
     let start = 1;
     let end = null;
-    let current = 1;
+    let current = start + 1;
 
     const options = {
         month: "long",
@@ -34,97 +38,108 @@ const ForumGrid = (props) => {
 
     if (data) {
 
+        pagination = data.meta.pagination
         forums = data.data
+        
+        console.log(data)
 
         function findStartAndEnd() {
-            let length = forums.length;
-            if (forums.length > 6) {
-                end = Math.ceil(length / 6);
-            } else {
-                return
-            }       
+            end = pagination.pageCount;
         }
 
         function increasePagination() {
-            setIndex(index + 6)
+            setFirst(first + 1)
+            setMiddle(middle + 1)
+            setLast(last + 1)
+            setIndex(index + 1)
+            // document.getElementsByClassName("pagination-selected")[0].classList.remove("pagination-selected")
+            // document.getElementById(index).classList.add("pagination-selected")
         }
 
         function decreasePagination() {
-            setIndex(index - 6)
+            setFirst(first - 1)
+            setMiddle(middle - 1)
+            setLast(last - 1)
+            setIndex(index - 1)
+            // document.getElementsByClassName("pagination-selected")[0].classList.remove("pagination-selected")
+            // document.getElementById(index).classList.add("pagination-selected")
         }
 
+        function setPagination(id) {
+            setFirst(id - 1)
+            setMiddle(id)
+            setLast(id + 1)
+            setIndex(id)
+        }
+
+        function setFirstBox(id) {
+            setFirst(0)
+            setMiddle(1)
+            setLast(2)
+            setIndex(1)
+            // document.getElementsByClassName("pagination-selected")[0].classList.remove("pagination-selected")
+            // document.getElementById(id).classList.add("pagination-selected")
+        }
+
+        function setLastBox() {
+            setFirst(pagination.pageCount - 1)
+            setMiddle(pagination.pageCount)
+            setLast(pagination.pageCount + 1)
+            setIndex(pagination.pageCount)
+            // document.getElementsByClassName("pagination-selected")[0].classList.remove("pagination-selected")
+            // document.getElementById(pagination.pageCount).classList.add("pagination-selected")
+        }
+
+
         findStartAndEnd()
+
+        console.log(`index`, index, pagination.total % 6)
 
         return (
      
             <>
                 <div className="forum-container">
-                    { forums[index] ? (
-                        <div className="forum-card" style={{backgroundImage: `url(${forums[index].attributes.Header_Image.data.attributes.url})`}}>
+                    {forums.map((forum) =>
+                        <div className="forum-card" style={{backgroundImage: `url(${forum.attributes.Header_Image.data.attributes.url})`}}>
                             <div className="forum-title">
-                                <h1>{forums[index].attributes.Forum_Title}</h1>
-                                <a href={`/chronicle/${forums[index].attributes.slug}`}><h5>Read more</h5></a>
+                                <h1>{forum.attributes.Forum_Title}</h1>
+                                <a href={`/chronicle/${forum.attributes.slug}`}><h5>Read more</h5></a>
                             </div>
                         </div>
-                    ) : <div className="forum-card"></div> }
-                    <div className="forum-card">
-                    </div>
-                    <div className="forum-card pagination">
-                        {/* { index + 6 < 7 ? ( null ) : ( 
-                            <h3 onClick={() => decreasePagination()}>&#60; ...</h3>
-                        )}
-                        <h3>{ start } ...</h3>
-                        <h3>{ current } ...</h3>
-                        <h3>{ end }</h3>
-                        { index + 6 > forums.length ? ( null ) : ( 
-                            <h3 onClick={() => increasePagination()}>&#62;</h3>
-                        )} */}
-                    </div>
-                    { forums[index+1] ? (
-                        <div className="forum-card" style={{backgroundImage: `url(${forums[index+1].attributes.Header_Image.data.attributes.url})`}}>
-                            <div className="forum-title">
-                                <h1>{forums[index+1].attributes.Forum_Title}</h1>
-                                <a href={`/chronicle/${forums[index+1].attributes.slug}`}><h5>Read more</h5></a>
-                            </div>
-                        </div>
-                    ) : <div className="forum-card"></div> }
-                    { forums[index+2] ? (
-                    <div className="forum-card" style={{backgroundImage: `url(${forums[index+2].attributes.Header_Image.data.attributes.url})`}}>
-                        <div className="forum-title">
-                            <h1>{forums[index+2].attributes.Forum_Title}</h1>
-                            <a href={`/chronicle/${forums[index+2].attributes.slug}`}><h5>Read more</h5></a>
-                        </div>
-                    </div>
-                    ): <div className="forum-card"></div> }
-                    { forums[index+2] ? (
-                    <div className="forum-card">
-                    </div>
-                    ): <div className="forum-card"></div> }
-                    { forums[index+3] ? (
-                    <div className="forum-card" style={{backgroundImage: `url(${forums[index+3].attributes.Header_Image.data.attributes.url})`}}>
-                        <div className="forum-title">
-                            <h1>{forums[index+3].attributes.Forum_Title}</h1>
-                            <a href={`/chronicle/${forums[index+3].attributes.slug}`}><h5>Read more</h5></a>
-                        </div>
-                    </div>
-                    ): <div className="forum-card"></div> }
-                    { forums[index+4] ? (
-                    <div className="forum-card" style={{backgroundImage: `url(${forums[index+4].attributes.Header_Image.data.attributes.url})`}}>
-                        <div className="forum-title">
-                            <h1>{forums[index+4].attributes.Forum_Title}</h1>
-                            <a href={`/chronicle/${forums[index+4].attributes.slug}`}></a><h5>Read more</h5>
-                        </div>
-                    </div>
-                    ): <div className="forum-card"></div> }
-                    { forums[index+5] ? (
-                    <div className="forum-card" style={{backgroundImage: `url(${forums[index+5].attributes.Header_Image.data.attributes.url})`}}>
-                        <div className="forum-title">
-                            <h1>{forums[index+5].attributes.Forum_Title}</h1>
-                            <a href={`/chronicle/${forums[index+5].attributes.slug}`}></a><h5>Read more</h5>
-                        </div>
-                    </div>
-                    ): <div className="forum-card"></div> }
+                    )}  
+                    { index === pagination.pageCount && pagination.total % 6 > 0 ? ( 
+                        <div className="forum-card-message">
+                            <h2>Stay tuned for more.</h2>    
+                        </div>  ) : (null) }           
                 </div>    
+                <div className="pagination">
+                    { index === 1 ? ( <h3 className="invisible">&#60;</h3> ) : ( 
+                        <h3 className="pagination-bttn" onClick={() => setFirstBox(1)}>&#60; &#60;</h3>
+                    )}
+                    { index === 1 ? ( <h3 className="invisible">&#60;</h3> ) : ( 
+                        <h3 className="pagination-bttn" onClick={() => decreasePagination()}>&#60;</h3>
+                    )}
+                        { first === 0 ? ( null ) : ( 
+                        <h3 className="pagination-page" 
+                            onClick={() => setPagination( first )} 
+                            id={ index }>{ first }</h3>
+                        )}
+                        { pagination.pageCount < 3 ? ( null ) : ( 
+                            <h3 className="pagination-page pagination-selected"  
+                            id={ index + 1 }>{ middle }</h3>
+                        )}
+                        { last > pagination.pageCount ? ( null ) : ( 
+                        <h3 className="pagination-page" 
+                            onClick={() => setPagination( last )}
+                            id={ index + 2 }>{ last }</h3>
+                        )}
+                    { index === pagination.pageCount ? ( <h3 className="invisible">&#62;</h3> ) : ( 
+                        <h3 className="pagination-bttn" onClick={() => increasePagination()}>&#62;</h3>
+                    )}
+                    { index === pagination.pageCount ? ( <h3 className="invisible">&#62;</h3> ) : ( 
+                        <h3 className="pagination-bttn" onClick={() => setLastBox(pagination.pageCount)}> &#62; &#62;</h3>
+                    )}
+                </div>
             </>       
         )
     }

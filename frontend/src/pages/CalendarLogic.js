@@ -22,26 +22,7 @@ const CalendarLogic = () => {
             behavior: 'smooth', 
             inline: 'start'
         })
-        // document.getElementById('test').firstChild.style.textDecoration = 'none';
-        // setYear(arg)
-        // if (id == selected) {
-        //     setYear(arg)
-        // } else {
-        //     selectedYear = document.getElementById(id)
-        //     document.querySelectorAll('.underline-emph').forEach( (element)=> {
-        //     element.classList.remove('underline-emph')
-        //     })
-        //     selectedYear.classList.add('underline-emph')
-        //     setSelectd(id)
-        // }
     }
-
-    // useEffect((data) => {
-    //     console.log(selected)
-    //     selectedYear = document.getElementById(selected)
-    //     console.log(selectedYear)
-    //     selectedYear.classList.add('underline-emph')
-    // });
 
     if (data) {
 

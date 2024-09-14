@@ -213,7 +213,7 @@ li {
   align-items: center;
   background-color: var(--main-black);
   display: flex;
-  height: auto;
+  height: auto; 
   justify-content: space-between;
   padding: 30px 50px;
   width: auto;
@@ -407,6 +407,12 @@ label {
 
 .year-emph {
   font-size: 3em;
+}
+
+.description-link-container > a {
+  color: var(--main-black);
+  transition-duration: 300ms;
+  text-decoration: none !important;
 }
 
 .description-link-container a {
@@ -703,6 +709,20 @@ label {
   z-index: 100;
 }
 
+.event-gallery-caption {
+  background-color: var(--main-black);
+  color: var(--white);
+  padding: 0px 50px;
+  text-align: right;
+  z-index: 100;
+}
+
+.event-gallery-caption > p{
+  font-size: 12px;
+  font-style: italic;
+  padding: 0px;
+}
+
 .caption p {
   font-size: 12px;
   font-style: italic;
@@ -797,6 +817,18 @@ label {
   width: 60vW;
 }
 
+.event-gallery {
+  background-color: var(--white);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column-reverse;   
+  height: 40vW;
+  position: relative; 
+  width: 65%;
+}
+
 .gallery-toggle {
   align-items: center;
   color: var(--white);
@@ -807,6 +839,24 @@ label {
   position: absolute;
   transition-duration: 200ms;
   width: 50px;
+}
+
+.event-gallery-toggle {
+  align-items: center;
+  color: var(--main-black);
+  display: flex;
+  height: calc(100%);
+  justify-content: center;
+  opacity: 50%;
+  position: absolute;
+  transition-duration: 200ms;
+  width: 50px;
+}
+
+.event-gallery-toggle:hover {
+  background-color: var(--main-green);
+  cursor: pointer;
+  opacity: 100%;
 }
 
 .gallery-toggle h1 {
@@ -1010,22 +1060,28 @@ label {
 .page-container {
   display: flex;
   flex-direction: column;
+  padding-top: 82px;
 }
 
 /* ==== Forum === */
 
 .forum-container {
+  background-color: var(--main-green);
   display: grid;
   grid-template-columns: [first] 1fr [line2] 1fr [line3] 1fr [end];
-  grid-template-rows: [first] 1fr [line2] 1fr [line3] 1fr [end];
-  padding: 0px 50px;
-  margin-bottom: 50px;
+  grid-template-rows: [first] 1fr [line2] 1fr [end];
+  padding: 0px 250px;
+  margin-top: 50px;
+  height: auto;
+  transition-duration: 300ms;
+  box-sizing: border-box;
+
 }
 
 .forum-recent-container {
   display: grid;
   grid-template-columns: [first] 1fr [line2] 1fr [end];
-  padding: 50px 50px 0px 50px;
+  padding: 50px 250px 0px 250px;
 }
 
 .forum-card {
@@ -1039,6 +1095,12 @@ label {
   text-wrap: wrap;
 }
 
+.forum-card-message {
+  align-items: flex-end;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .forum-container-last-row {
   align-items: start;
   background-color: var(--main-green);
@@ -1049,8 +1111,23 @@ label {
   transition-duration: 600ms;
 }
 
+.forum-caption-container {
+  display: flex;
+}
+
+.forum-view-caption {
+  box-sizing: border-box;
+  background-color: var(--main-black);
+  color:var(--white);
+  font-size: 12px;
+  width: 65%;
+  text-align: right;
+  margin: 0;
+  padding: 5px 20px;
+}
+
 .forum-card-last-row {
-  border: 2px solid var(--main-green);
+  border: 2px solid var(--white);
   background-color: #FFF;
   background-size: cover;
   background-position: center;
@@ -1200,6 +1277,11 @@ label {
   justify-content: center;
 }
 
+.pagination > h3 {
+  margin-bottom: 50px;  
+  margin-top: 10px;
+}
+
 .bebe-miller-logo-container-teachings {
   background-color: var(--main-black);
   aspect-ratio: 1;
@@ -1258,7 +1340,6 @@ label {
 
 .text-component-card {
   display: flex;
-
 }
 
 .text-component-body {
@@ -1294,4 +1375,43 @@ label {
 #vertical {
   transition-duration: 300ms;
   transform-origin: 50% 50%;
+}
+
+.invisible {
+  opacity: 0%;
+}
+
+.pagination-page {
+  border: 2px solid var(--main-green);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  height: 25px;
+  width: 25px;
+  transition-duration: 300ms;
+}
+
+.pagination-page:hover {
+  background-color: var(--main-green);
+  color: var(--white);
+  cursor: pointer;
+  transition-duration: 300ms;
+}
+
+.pagination-selected {
+  background-color: var(--main-green);
+  color: var(--white);
+}
+
+.pagination-bttn {
+  transition-duration: 300ms;
+}
+
+.pagination-bttn:hover {
+  color: var(--main-green);
+  cursor: pointer;
+  text-decoration: underline;
+  transition-duration: 300ms;
 }

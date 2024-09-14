@@ -14,6 +14,7 @@ import CalendarLogic from "./pages/CalendarLogic";
 import About from "./pages/About";
 import Forum from "./pages/Forum";
 import ForumDetail from "./pages/ForumDetail";
+import CalendarView from "./pages/CalendarView";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route element={<ArchiveMenu />} path="/archives"></Route>
           <Route element={<ArchiveDetail />} path="/archives/:id"></Route>
           <Route element={<CalendarLogic />} path="/calendar"></Route>
+          <Route element={<CalendarView />} path="/calendar/:id"></Route>
           <Route element={<Forum />} path="/chronicle"></Route>
           <Route element={<ForumDetail />} path="/chronicle/:id"></Route>
         </Routes>

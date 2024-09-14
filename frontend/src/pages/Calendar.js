@@ -108,31 +108,6 @@ const Calendar = (props) => {
                 inline: 'center'
             })
         }, 1000); 
-
-
-
-        // year = data.data[0]
-        // events = year.attributes.calendars.data
-
-        // events.sort(function(a,b){
-        //     // Turn your strings into dates, and then subtract them
-        //     // to get a value that is either negative, positive, or zero.
-        //     return new Date(b.attributes.Start_Date) - new Date(a.attributes.Start_Date);
-        // }); 
-
-        // setCalendar(events)
-
-        // if (year.attributes.Year === '2024') {
-        //     console.log(year.attributes.Year)
-        //     window.setTimeout( () => {
-        //         // console.log(`setTimeout`, document.getElementById(eventBlock))
-        //         document.getElementById(eventBlock).scrollIntoView({ 
-        //             block: 'center', 
-        //             behavior: 'smooth', 
-        //             inline: 'center'
-        //         })
-        //     }, 3000); 
-        // }
         
 
         return (
@@ -152,12 +127,16 @@ const Calendar = (props) => {
                                             <span className="thin-roman"> | { event.attributes.Time }</span>) : (null)
                                         }
                                     </h3>
-                                    <h3>{new Date(event.attributes.Start_Date).toLocaleString("en-US", options)} – {new Date(event.attributes.End_Date).toLocaleString("en-US", options)} <span className="thin-roman">| {new Date(toDateWithOutTimeZone(event.attributes.Time)).toLocaleString("en-US", timeOption)}</span></h3>
                                     <h5>{event.attributes.Location}</h5>
                                 </div>
                                 <div className="description-link-container">
-                                    <h3>{ event.attributes.Event_Title }</h3>
-                                    <BlocksRenderer content={event.attributes.Description}/>
+                                    <a href={`calendar/${ event.attributes.slug }`}><h3>{ event.attributes.Event_Title }</h3></a>
+                                    <BlocksRenderer 
+                                        content={event.attributes.Description}
+                                        blocks={{
+                                            link: ({ children, url }) => <Link to={url} target="blank">{children}</Link>,
+                                        }}
+                                    />
                                         { event.attributes.Ticket_URL ? ( 
                                             <a className="calendar-link" target="_blank" href={event.attributes.Ticket_URL}>
                                                 <h5>Info / RSVP</h5>
