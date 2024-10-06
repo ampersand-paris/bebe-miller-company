@@ -19,7 +19,7 @@ const Press = () => {
         if (open == false) {
             vertical.style.transform = "rotate(90deg)"
             setOpen(true)
-            setHeight('80vH')
+            setHeight('200vH')
 
         } else {
             vertical.style.transform = "rotate(0deg)"
@@ -39,7 +39,7 @@ const Press = () => {
         }
 
         return (
-            <div className="forum-card-last-row">
+            <div className="history-card">
                  <div className="column-title">
                     <h3>Press</h3>
                     <svg onClick={()=> svgMouseClick()} className="accordian-bttn" id="press" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
