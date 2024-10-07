@@ -204,7 +204,7 @@ li {
 .nav-wrapper {
   position: fixed;
   width: 100vW;
-  z-index: 2;
+  z-index: 200;
 }
 
 /* === FOOTER === */
@@ -453,7 +453,7 @@ label {
   display: flex;
   flex-direction: column;
   left: 50px;
-  z-index: 10px;
+  z-index: 10;
   position: fixed;
   row-gap: 3px;
   height: var(--app-height);
@@ -464,12 +464,6 @@ label {
 .calendar-logic-container h1 {
   position: relative;
   margin-bottom: 0px;
-}
-
-.calendar-logic-container h1:first-child {
-  text-decoration: underline;
-  text-decoration-thickness: 3px;
-  text-underline-offset: 7.5px;
 }
 
 .calendar-logic-container h1:hover {
@@ -518,6 +512,11 @@ label {
   transition: transform 0.3s ease;
 }
 
+.underline {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 7.5px;
+}
 
 /* === Archive Menu === */
 
@@ -1223,10 +1222,6 @@ label {
 
 .choreography > ul > li > em {
   color: var(--main-green);
-}
-
-.teachings {
-
 }
 
 .teachings > ul {

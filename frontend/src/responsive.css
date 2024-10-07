@@ -130,6 +130,7 @@
         transition-duration: 200ms;
         transform-origin: 50%;
     }
+
     /* === PROJECT/PIECES === */
 
     .project-header {
@@ -170,6 +171,8 @@
    }
 
    .credits-header {
+    box-sizing: border-box;
+    padding: 5px 20px;
     width: 100%;
    }
 
@@ -191,6 +194,19 @@
         padding: 20px;
     }
 
+    .funders-info {
+        box-sizing: border-box;
+        padding: 0px 20px;
+        width: 100%;
+    }
+
+    .funders {
+        background-color: var(--light-grey);
+    }
+
+    .caption {
+        padding: 0px 20px;
+    }
     /* === COMPONENTS === */
 
     /* === QUOTE === */
@@ -229,4 +245,140 @@
     .full-image-container {
         padding: 0;
     }
+
+    /* ======= CHRONICLE ====== */
+
+    .forum-container {
+        background-color: var(--main-green);
+        display: grid;
+        grid-template-columns: [first] 1fr [end];
+        padding: 20px;
+        margin-top: 0px;
+        height: auto;
+        transition-duration: 300ms;
+        box-sizing: border-box;
+    
+    }
+    
+    .forum-recent-container {
+        display: grid;
+        grid-template-columns: [first] 1fr [end];
+        padding: 20px;
+    }
+    
+    .forum-card {
+        aspect-ratio: 1;
+        border: 2px solid var(--main-green);
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        text-wrap: wrap;
+    }
+
+    /* ====== CHRONICLE DETAIL ======*/
+
+    .forum-detail-container {
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .forum-title-container {
+        box-sizing: border-box;
+        padding: 20px;
+        width: 100%;
+    }
+
+    .forum-header-image {
+        display: flex;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+   .side-bar {
+        width: 10px;
+   }
+
+   .forum-caption-container {
+        width: 100%;
+   }
+
+   .forum-view-caption {
+    width: 100%;
+   }
+
+   .text-component-body {
+    padding: 5px 20px 5px 10px;
+    width: 100%;
+   }
+
+   /* ====== CALENDAR ======*/
+
+   .calendar-logic-container {
+    background-color: var(--white);
+    column-gap: 20px;
+    flex-direction: row;
+    left: 0px;
+    z-index: 10;
+    position: fixed;
+    row-gap: 3px;
+    height: auto;
+    top: 62px;
+    justify-content: flex-start;
+    overflow: scroll;
+    padding: 5px 20px 20px 20px;
+    width: 100%;
+  }
+  
+  .calendar-logic-container > h1 {
+    margin-top: 0px;
+  }
+
+  .underline {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5.5px;
+  }
+
+  .calendar-container {
+    padding: 0px 20px;
+    width: 100%;
+  }
+
+  .calendar-page h3 {
+    font-size: 18px;
+  }
+
+  .calendar-page p {
+    font-size: 1em;
+  }
+
+  .description-link-container h5 {
+    width: 100%;
+  }
+
+  /* ====== FOOTER ====== */
+  
+  .footer-container {
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .mailing-list-container {
+    row-gap: 10px;
+    width: 100%;
+  }
+
+  .mailing-list-container > h3 {
+    margin-left: 0px;
+  }
+
+  .IP-container {
+    align-items: flex-start;
+    width: 100%;
+  }
+
   }
