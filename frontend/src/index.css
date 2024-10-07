@@ -204,7 +204,7 @@ li {
 .nav-wrapper {
   position: fixed;
   width: 100vW;
-  z-index: 2;
+  z-index: 200;
 }
 
 /* === FOOTER === */
@@ -453,7 +453,7 @@ label {
   display: flex;
   flex-direction: column;
   left: 50px;
-  z-index: 10px;
+  z-index: 10;
   position: fixed;
   row-gap: 3px;
   height: var(--app-height);
@@ -464,12 +464,6 @@ label {
 .calendar-logic-container h1 {
   position: relative;
   margin-bottom: 0px;
-}
-
-.calendar-logic-container h1:first-child {
-  text-decoration: underline;
-  text-decoration-thickness: 3px;
-  text-underline-offset: 7.5px;
 }
 
 .calendar-logic-container h1:hover {
@@ -518,6 +512,11 @@ label {
   transition: transform 0.3s ease;
 }
 
+.underline {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 7.5px;
+}
 
 /* === Archive Menu === */
 
@@ -631,7 +630,7 @@ label {
   height: 20px;
   width: 20px;
   transform: rotate(180deg);
-  transition: transform 200ms ease-out;
+  transition: transform 200ms ease-out; 
 } 
 
 .cls-1 {
@@ -963,19 +962,14 @@ label {
 
 .quote-text {
   align-items: flex-end;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   font-style: italic;
   justify-content: center;
   width: 50%;
-}
-
-.quote-text > p {
   padding: 50px 50px 0px 50px;
-}
 
-.quote-text > h3 {
-  padding: 0px 50px 50px 50px;
 }
 
 .quote-image-wrapper {
@@ -1000,6 +994,7 @@ label {
 }
 
 .body-text {
+  box-sizing: border-box;
   padding: 10px 50px;
   width: 50%;
 }
@@ -1095,6 +1090,17 @@ label {
   column-gap: 20px;
   display: flex;
   transition-duration: 600ms;
+}
+
+.history-card {
+  border: 2px solid var(--white);
+  background-color: #FFF;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  text-wrap: wrap;
+  width: 33%;
 }
 
 /* ==== Forum === */
@@ -1216,10 +1222,6 @@ label {
 
 .choreography > ul > li > em {
   color: var(--main-green);
-}
-
-.teachings {
-
 }
 
 .teachings > ul {

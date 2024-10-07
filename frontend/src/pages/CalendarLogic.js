@@ -14,9 +14,11 @@ const CalendarLogic = () => {
    
     let years = [];
     let selectedYear = null;
+    let yearsDisplay = null;
 
     function calendarHandle(id) {
-        console.log(document.getElementById(id))
+        document.getElementsByClassName('underline')[0].classList.remove('underline')
+        document.getElementById(`year${id}`).classList.add('underline')
         document.getElementById(id).scrollIntoView({ 
             block: 'start', 
             behavior: 'smooth', 
@@ -28,13 +30,19 @@ const CalendarLogic = () => {
 
         years = data.data;
 
+        yearsDisplay = years.map((year, index) => {
+            if (index === 0) {
+                return <h1 className="calendar-logic-year underline" id={ `year${year.attributes.Year}` } onClick={()=> calendarHandle(year.attributes.Year)}>{year.attributes.Year }</h1>
+            } else {
+                return <h1 className="calendar-logic-year" id={ `year${year.attributes.Year}` }  onClick={()=> calendarHandle(year.attributes.Year)}>{year.attributes.Year }</h1>
+            }
+        })
+
         return (
             <div className="calendar-page"> 
                 <div className="calendar-line"></div>
                 <div id='test' className="calendar-logic-container"> 
-                {years.map((year, index) => 
-                    <h1 className="calendar-logic-year" index={ year.attributes.Year } onClick={()=> calendarHandle(year.attributes.Year)}>{year.attributes.Year }</h1>
-                )}
+                    { yearsDisplay }
                 </div>
                 <div className="calendar-container"> 
                     <Calendar year={year}/>

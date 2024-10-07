@@ -95,19 +95,17 @@ const Calendar = (props) => {
     if (data) {
 
         years = data.data;
-        console.log(years)
         
         parseArray(years);
         setCalendar(years);
 
-        window.setTimeout( () => {
-            console.log(`setTimeout`, document.getElementById(eventBlock))
-            document.getElementById(eventBlock).scrollIntoView({ 
-                block: 'center', 
-                behavior: 'smooth', 
-                inline: 'center'
-            })
-        }, 1000); 
+        // window.setTimeout( () => {
+        //     document.getElementById(eventBlock).scrollIntoView({ 
+        //         block: 'center', 
+        //         behavior: 'smooth', 
+        //         inline: 'center'
+        //     })
+        // }, 500); 
         
 
         return (
@@ -122,7 +120,7 @@ const Calendar = (props) => {
                             <div id={event.id} className="event-container">
                                 <div className="time-location-container">
                                     <h3>{new Date(event.attributes.Start_Date).toLocaleString("en-US", options)} 
-                                        { event.attributes.End_Date ? ( <span>– {new Date(event.attributes.End_Date).toLocaleString("en-US", options)}</span> ) : null } 
+                                        { event.attributes.End_Date ? ( <span> – {new Date(event.attributes.End_Date).toLocaleString("en-US", options)}</span> ) : null } 
                                         { event.attributes.Time ? (
                                             <span className="thin-roman"> | { event.attributes.Time }</span>) : (null)
                                         }
