@@ -843,24 +843,18 @@ export interface ApiArchiveArchive extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    Title: Attribute.String;
-    Bebe_Writing: Attribute.RichText;
-    People: Attribute.RichText;
+    Title: Attribute.String & Attribute.Required;
     Premiere_Date: Attribute.String;
     Premiere_Location: Attribute.String;
-    Performance_Dates: Attribute.RichText;
-    Funders: Attribute.RichText;
-    Header_Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Gallery: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    Header_Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Attribute.Required;
+    Gallery: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true> &
+      Attribute.Required;
     Year_Order: Attribute.String;
-    Photo_Credit: Attribute.String;
     slug: Attribute.UID<'api::archive.archive', 'Title'> & Attribute.Required;
-    Category: Attribute.String;
-    Press_Quote: Attribute.RichText;
-    Description_Rich_Text: Attribute.RichText;
+    Category: Attribute.String & Attribute.Required;
     Archive_Dynamic_Zone: Attribute.DynamicZone<['forum.video']>;
     Year_Written: Attribute.String;
-    Archive_Description_Rich_Text: Attribute.Blocks;
     Bebe_Writing_New: Attribute.Blocks;
     People_New: Attribute.Blocks;
     Performance_Dates_New: Attribute.Blocks;

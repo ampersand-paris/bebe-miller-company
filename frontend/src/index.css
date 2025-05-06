@@ -24,6 +24,7 @@ code {
   --white: #FFF;
   --app-height: 100%;
   --app-width: calc(100vw - 100px);
+  --app-padding: 40px;
 }
 
 .green-bar {
@@ -665,6 +666,7 @@ label {
 .project-people {
   background-color: var(--light-brown);
   color: var(--white);
+  padding: var(--app-padding);
   width: 40%;
 }
 
@@ -734,22 +736,25 @@ label {
 
 .project-description {
   background-color: var(--white);
-  padding: 20px 50px;
-  width: calc(60% - 100px);
+  padding: var(--app-padding);
+  width: calc(60% - 80px);
 }
 
 .project-description h6 {
   padding: 20px 50px;
 }
 
+.blocks-renderer > *:first-child {
+  margin-top: 0px;
+}
 
 .performances {
   background-color: var(--lightest-grey);
   display: flex;
   flex-direction: column;
   justify-content: start;
-  padding: 40px 50px;
-  width: calc(40% - 100px);
+  padding: var(--app-padding);
+  width: calc(40% - 80px);
 }
 
 .performances li {
@@ -784,8 +789,8 @@ label {
   color: var(--white);
   display: flex;
   flex-direction: column;
-  padding: 0px 50px 10px 50px;
-  width: calc(40% - 100px);
+  padding: var(--app-padding);
+  width: calc(40% - 80px);
 }
 
 .credits-header > p {
@@ -798,10 +803,9 @@ label {
 
 .funders-info {
   color: white;
-  font-size: 12px;
   background-color: var(--light-grey);
-  width: calc(60% - 120px);
-  padding: 20px 60px;
+  width: calc(60% - 80px);
+  padding: var(--app-padding);
 }
 
 .gallery {
