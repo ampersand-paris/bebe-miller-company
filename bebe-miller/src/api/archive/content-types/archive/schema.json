@@ -13,13 +13,8 @@
   "pluginOptions": {},
   "attributes": {
     "Title": {
-      "type": "string"
-    },
-    "Bebe_Writing": {
-      "type": "richtext"
-    },
-    "People": {
-      "type": "richtext"
+      "type": "string",
+      "required": true
     },
     "Premiere_Date": {
       "type": "string"
@@ -27,16 +22,10 @@
     "Premiere_Location": {
       "type": "string"
     },
-    "Performance_Dates": {
-      "type": "richtext"
-    },
-    "Funders": {
-      "type": "richtext"
-    },
     "Header_Image": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
@@ -47,7 +36,7 @@
     "Gallery": {
       "type": "media",
       "multiple": true,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
@@ -58,22 +47,14 @@
     "Year_Order": {
       "type": "string"
     },
-    "Photo_Credit": {
-      "type": "string"
-    },
     "slug": {
       "type": "uid",
       "targetField": "Title",
       "required": true
     },
     "Category": {
-      "type": "string"
-    },
-    "Press_Quote": {
-      "type": "richtext"
-    },
-    "Description_Rich_Text": {
-      "type": "richtext"
+      "type": "string",
+      "required": true
     },
     "Archive_Dynamic_Zone": {
       "type": "dynamiczone",
@@ -83,9 +64,6 @@
     },
     "Year_Written": {
       "type": "string"
-    },
-    "Archive_Description_Rich_Text": {
-      "type": "blocks"
     },
     "Bebe_Writing_New": {
       "type": "blocks"

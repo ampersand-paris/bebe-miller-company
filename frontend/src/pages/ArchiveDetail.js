@@ -29,7 +29,8 @@ const ArchiveDetail = (props) => {
         project = data.data[0].attributes
         galleryImages = project.Gallery.data
         sections = project.Archive_Dynamic_Zone
-        
+        console.log(project)
+
         for (let i = 0; i < sections.length; i ++) {
             if (sections[i].__component === "forum.video") {
                 console.log('video')
@@ -65,26 +66,41 @@ const ArchiveDetail = (props) => {
                             <p>{project.Header_Image.data.attributes.caption}</p>
                         </div>
                     </div>
-                    <div className="project-people">
-                        <ReactMarkdown>{project.People}</ReactMarkdown>
+                    <div className="project-people blocks-renderer">
+                        <BlocksRenderer 
+                            content={project.People_New}
+                            blocks={{
+                                link: ({ children, url }) => <Link to={url} target="blank">{children}</Link>,
+                            }}    
+                        />
                     </div>
                 </div>
                 <div className="description-performances-container">
-                    <div className="project-description">
+                    <div className="project-description blocks-renderer">
                         <BlocksRenderer 
-                            content={project.Archive_Description_Rich_Text}
+                            content={project.Description}
                             blocks={{
                                 link: ({ children, url }) => <Link to={url} target="blank">{children}</Link>,
                             }}
                         />
-                        <ReactMarkdown>{project.Bebe_Writing}</ReactMarkdown>
+                        <BlocksRenderer 
+                            content={project.Bebe_Writing_New}
+                            blocks={{
+                                link: ({ children, url }) => <Link to={url} target="blank">{children}</Link>,
+                            }}
+                        />
                     </div>
                     <div className="performances">
                         <div className="premiere">
                             <p><b>{project.Premiere_Date}</b></p>
                             <p>{project.Premiere_Location}</p>
                         </div>
-                        <ReactMarkdown>{project.Performance_Dates}</ReactMarkdown>
+                        <BlocksRenderer 
+                            content={project.Performance_Dates_New}
+                            blocks={{
+                                link: ({ children, url }) => <Link to={url} target="blank">{children}</Link>,
+                            }}
+                        />
                     </div>
                 </div>
                 <div className="header-image-people-container">
@@ -106,7 +122,12 @@ const ArchiveDetail = (props) => {
                         { project.Press_Quote ? (
                         <>
                         <h3>Press Quotes</h3>
-                        <ReactMarkdown className="press-quote">{project.Press_Quote}</ReactMarkdown>
+                        <BlocksRenderer 
+                            content={project.Press_Quote_New}
+                            blocks={{
+                                link: ({ children, url }) => <Link to={url} target="blank">{children}</Link>,
+                            }}
+                        />
                         </>
                         ) : null 
                     }
@@ -119,7 +140,12 @@ const ArchiveDetail = (props) => {
                     <div className="funders">
                         <div className="funders-info">
                             <h3>Funders</h3>
-                            <ReactMarkdown>{project.Funders}</ReactMarkdown>
+                            <BlocksRenderer 
+                                content={project.Funders_New}
+                                blocks={{
+                                    link: ({ children, url }) => <Link to={url} target="blank">{children}</Link>,
+                                }}
+                            />
                         </div>
                     </div>
                 ) : <div className="credits-header"></div> }
