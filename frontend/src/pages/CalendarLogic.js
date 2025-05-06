@@ -29,6 +29,14 @@ const CalendarLogic = () => {
     if (data) {
 
         years = data.data;
+        
+        years.sort(function(a,b){
+            // Turn your strings into dates, and then subtract them
+            // to get a value that is either negative, positive, or zero.
+            console.log(a,b)
+            return new Date(b.attributes.Year) - new Date(a.attributes.Year);
+        }); 
+        
 
         yearsDisplay = years.map((year, index) => {
             if (index === 0) {

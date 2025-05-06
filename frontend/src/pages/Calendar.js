@@ -61,6 +61,8 @@ const Calendar = (props) => {
             }
         } 
 
+
+
         date.reverse()
 
         for (let i = 0; i < date.length; i++) {
@@ -95,6 +97,13 @@ const Calendar = (props) => {
     if (data) {
 
         years = data.data;
+        
+        years.sort(function(a,b){
+            // Turn your strings into dates, and then subtract them
+            // to get a value that is either negative, positive, or zero.
+            console.log(a,b)
+            return new Date(b.attributes.Year) - new Date(a.attributes.Year);
+        }); 
         
         parseArray(years);
         setCalendar(years);

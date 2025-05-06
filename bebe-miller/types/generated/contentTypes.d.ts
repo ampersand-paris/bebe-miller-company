@@ -1053,38 +1053,6 @@ export interface ApiForumPageForumPage extends Schema.SingleType {
   };
 }
 
-export interface ApiMainNavigationMainNavigation extends Schema.CollectionType {
-  collectionName: 'main_navigations';
-  info: {
-    singularName: 'main-navigation';
-    pluralName: 'main-navigations';
-    displayName: 'Main Navigation';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Link: Attribute.String;
-    Page_Title: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::main-navigation.main-navigation',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::main-navigation.main-navigation',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiYearYear extends Schema.CollectionType {
   collectionName: 'years';
   info: {
@@ -1136,7 +1104,6 @@ declare module '@strapi/types' {
       'api::footer.footer': ApiFooterFooter;
       'api::forum.forum': ApiForumForum;
       'api::forum-page.forum-page': ApiForumPageForumPage;
-      'api::main-navigation.main-navigation': ApiMainNavigationMainNavigation;
       'api::year.year': ApiYearYear;
     }
   }
