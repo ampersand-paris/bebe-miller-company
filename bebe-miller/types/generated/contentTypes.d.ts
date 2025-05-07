@@ -848,8 +848,7 @@ export interface ApiArchiveArchive extends Schema.CollectionType {
     Premiere_Location: Attribute.String;
     Header_Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
       Attribute.Required;
-    Gallery: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true> &
-      Attribute.Required;
+    Gallery: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
     Year_Order: Attribute.String;
     slug: Attribute.UID<'api::archive.archive', 'Title'> & Attribute.Required;
     Category: Attribute.String & Attribute.Required;

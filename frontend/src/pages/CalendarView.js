@@ -53,25 +53,33 @@ const CalendarView = () => {
             <div className="page-container">
                 <div className="forum-detail-container">
                     <div className="grey-block"></div>
-                    <div className="forum-title-container">
-                        <h1>{ event.Event_Title }</h1>
-                        <h3>{new Date(event.Start_Date).toLocaleString("en-US", options)} 
-                            { event.End_Date ? ( <span>– {new Date(event.End_Date).toLocaleString("en-US", options)}</span> ) : null } 
-                            <br></br>
-                            { event.Time ? (
-                                <span className="thin-roman">{ event.Time }</span>) : (null)
-                            }
-                        </h3>
-                        <h5>{event.Location}</h5>
-                        <BlocksRenderer 
-                            content={event.Description}
-                            blocks={{
-                                link: ({ children, url }) => <Link to={url} target="blank">{children}</Link>,
-                            }}
-                        />
+                    <div className="calendar-title-container">
+                        <div>
+                            <h1>{ event.Event_Title }</h1>
+                            <h3>{new Date(event.Start_Date).toLocaleString("en-US", options)} 
+                                { event.End_Date ? ( <span>– {new Date(event.End_Date).toLocaleString("en-US", options)}</span> ) : null } 
+                                <br></br>
+                                { event.Time ? (
+                                    <span className="thin-roman">{ event.Time }</span>) : (null)
+                                }
+                            </h3>
+                            <h5>{event.Location}</h5> 
+                            <BlocksRenderer 
+                                content={event.Description}
+                                blocks={{
+                                    link: ({ children, url }) => <Link to={url} target="blank">{children}</Link>,
+                                }}
+                            />
+                        </div>
+                        { event.Ticket_URL ? (
+                            <a className="rsvp-link" target="_blank" href={event.Ticket_URL}>
+                                <h3>RSVP</h3>
+                            </a>) : (null)
+                        }
                     </div>
                     <div className="forum-header-image">
                         <img src={`${event.Feature_Image.data.attributes.url}`}/>
+                        <p className="calendar-caption">{event.Feature_Image.data.attributes.caption}</p>
                     </div>
                 </div>
                 {display.map((section, index) => 

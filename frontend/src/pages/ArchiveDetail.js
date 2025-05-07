@@ -148,7 +148,7 @@ const ArchiveDetail = (props) => {
                             />
                         </div>
                     </div>
-                ) : <div className="credits-header"></div> }
+                ) : (null) }
             </div>                  
         )
     }
