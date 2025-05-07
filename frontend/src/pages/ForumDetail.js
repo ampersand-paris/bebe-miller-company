@@ -27,6 +27,15 @@ const ForumDetail = () => {
         year: "numeric"
       };
 
+    function scrollToSection(sectionId) {
+        const element = document.getElementById(sectionId);
+        console.log('console')
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          console.warn(`Element with id "${sectionId}" not found.`);
+        }
+      }
 
     if (data) {
 
@@ -48,27 +57,30 @@ const ForumDetail = () => {
                 <div className="forum-detail-container">
                     <div className="grey-block"></div>
                     <div className="forum-title-container">
-                        <div className="date-and-category">
-                            <p>{forum.Forum_Category}</p>
-                            <p>{new Date(forum.Date_Published).toLocaleString("en-US", options)}</p>
+                        <div>
+                            <div className="date-and-category">
+                                <p>{forum.Forum_Category}</p>
+                                <p>{new Date(forum.Date_Published).toLocaleString("en-US", options)}</p>
+                            </div>
+                            <h1>{forum.Forum_Title}</h1>
+                            <BlocksRenderer 
+                                content={forum.Forum_Description_Rich_Text}
+                                blocks={{
+                                    link: ({ children, url }) => <Link to={url} target="blank">{children}</Link>,
+                                }}/>
                         </div>
-                        <h1>{forum.Forum_Title}</h1>
-                        <BlocksRenderer 
-                            content={forum.Forum_Description_Rich_Text}
-                            blocks={{
-                                link: ({ children, url }) => <Link to={url} target="blank">{children}</Link>,
-                              }}/>
+                        <h3 className="read-more" onClick={() => scrollToSection(0)}>Read More</h3>
                     </div>
                     <div className="forum-header-image">
                         <img src={`${forum.Header_Image.data.attributes.url}`}/>
+                        <p className="calendar-caption">{forum.Header_Image.data.attributes.caption}</p>
                     </div>
                 </div>
                 <div className="forum-caption-container">
                     <div className="side-bar"></div>
-                    <p className="forum-view-caption">{forum.Header_Image.data.attributes.caption}</p>
                 </div>
                 {display.map((section, index) => 
-                    <div key={ index }>
+                    <div id={index} key={ index }>
                         { section }
                     </div>
                 )}

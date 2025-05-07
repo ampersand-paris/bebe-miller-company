@@ -136,7 +136,7 @@ const Calendar = (props) => {
                                     </h3>
                                     <h5>{event.attributes.Location}</h5>
                                 </div>
-                                <div className="description-link-container">
+                                <div className="description-link-container blocks-renderer">
                                     <a href={`calendar/${ event.attributes.slug }`}><h3>{ event.attributes.Event_Title }</h3></a>
                                     <BlocksRenderer 
                                         content={event.attributes.Description}
@@ -146,7 +146,7 @@ const Calendar = (props) => {
                                     />
                                         { event.attributes.Ticket_URL ? ( 
                                             <a className="calendar-link" target="_blank" href={event.attributes.Ticket_URL}>
-                                                <h5>Info / RSVP</h5>
+                                                <h5>More Info</h5>
                                             </a>
                                             ) : (null)
                                         }

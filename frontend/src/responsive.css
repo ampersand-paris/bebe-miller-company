@@ -3,6 +3,7 @@
     /* === ROOT === */
     :root {
         --app-width: 100vW;
+        --app-padding: 20px;
     }
 
     /* === FONTS === */
@@ -150,6 +151,7 @@
     }
 
     .project-people {
+        box-sizing: border-box;
         width: 100%;
     }
 
@@ -297,7 +299,7 @@
     }
 
    .side-bar {
-        width: 10px;
+        display: none;
    }
 
    .forum-caption-container {
