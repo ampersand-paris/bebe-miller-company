@@ -105,33 +105,31 @@ const ArchiveDetail = (props) => {
                 </div>
                 <div className="header-image-people-container">
                     { project.Gallery.data ? (
-                    <div className="gallery" style={{backgroundImage: `url(${galleryImages[galleryInt].attributes.url})`}}>
-                        <div className="caption">
-                            <p>{project.Gallery.data[galleryInt].attributes.caption}</p>
+                        <div className="gallery" style={{backgroundImage: `url(${galleryImages[galleryInt].attributes.url})`}}>
+                            <div className="caption">
+                                <p>{project.Gallery.data[galleryInt].attributes.caption}</p>
+                            </div>
+                            <div onClick={() => galleryLeft()} className="gallery-toggle" id="gallery-toggle-left">
+                                <h1> &#x3c; </h1>
+                            </div>
+                            <div onClick={() => galleryRight()} className="gallery-toggle" id="gallery-toggle-right">
+                                <h1> &#x3e; </h1>
+                            </div>
                         </div>
-                        <div onClick={() => galleryLeft()} className="gallery-toggle" id="gallery-toggle-left">
-                            <h1> &#x3c; </h1>
-                        </div>
-                        <div onClick={() => galleryRight()} className="gallery-toggle" id="gallery-toggle-right">
-                            <h1> &#x3e; </h1>
-                        </div>
-                    </div>
-                    ) : ( <div className="gallery"></div> )
+                        ) : ( null )
                     }
-                    <div className="credits-header">
-                        { project.Press_Quote ? (
-                        <>
-                        <h3>Press Quotes</h3>
-                        <BlocksRenderer 
-                            content={project.Press_Quote_New}
-                            blocks={{
-                                link: ({ children, url }) => <Link to={url} target="blank">{children}</Link>,
-                            }}
-                        />
-                        </>
-                        ) : null 
+                    { project.Press_Quote_New ? (
+                        <div className="credits-header">
+                            <h3>Press Quotes</h3>
+                            <BlocksRenderer 
+                                content={project.Press_Quote_New}
+                                blocks={{
+                                    link: ({ children, url }) => <Link to={url} target="blank">{children}</Link>,
+                                }}
+                            />
+                        </div>
+                        ) : ( null )
                     }
-                    </div>
                 </div>
                 <div>
                     { display }

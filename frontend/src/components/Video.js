@@ -8,7 +8,7 @@ const Video = (props) => {
     let video = props.data.video_URL
 
     return (
-        <div className="full-image-container">        
+        <div className="full-video-container">        
             <iframe className="video" src={video} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>          
     )
