@@ -248,6 +248,14 @@
         padding: 0;
     }
 
+    .full-video-container {
+        padding: 0;
+    }
+
+    .video {
+        width: 100%;
+    }
+
     /* ======= CHRONICLE ====== */
 
     .forum-container {

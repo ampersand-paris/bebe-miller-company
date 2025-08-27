@@ -888,7 +888,7 @@ label {
 }
 
 .video {
-  width: 100%;
+  width: 80%;
   aspect-ratio: 16/9;
 }
 /* === About === */
@@ -1043,6 +1043,15 @@ label {
 
 .full-image-container {
   align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+  width: var(--app-width);
+}
+
+.full-video-container {
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
