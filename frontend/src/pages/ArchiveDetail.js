@@ -148,7 +148,7 @@ const ArchiveDetail = (props) => {
                             />
                         </div>
                     </div>
-                ) : null }
+                ) : (null) }
             </div>                  
         )
     }
