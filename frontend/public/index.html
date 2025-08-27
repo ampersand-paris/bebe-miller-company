@@ -27,6 +27,16 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <script>
+      // Example placed inside iframe content
+      document.addEventListener('click', function (event) {
+        const target = event.target.closest('a');
+        if (target && target.href) {
+          const path = new URL(target.href).pathname;
+          parent.postMessage({ type: 'navigation', path }, '*');
+        }
+      });
+    </script>
     <title>Bebe Miller Company</title>
   </head>
   <body>
