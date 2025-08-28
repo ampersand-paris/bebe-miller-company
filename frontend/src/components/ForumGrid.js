@@ -19,7 +19,7 @@ const ForumGrid = (props) => {
     // const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/forum-page?populate[Forum_Page][populate]=*&populate[forums]=*?pagination[page]=1&pagination[pageSize]=3`)
     // const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/forums?filters[featured][$not]=true&[populate]=*&pagination[pageSize]=10`)
     const [index, setIndex] = useState(1)
-    const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/forums?pagination[page]=${index}&pagination[pageSize]=6&[populate]=*`)
+    const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/forums?sort=Date_Published&filters[featured][$ne]=featured&pagination[page]=${index}&pagination[pageSize]=6&[populate]=*`)
     const [first, setFirst] = useState(0)
     const [middle, setMiddle] = useState(1)
     const [last, setLast] = useState(2)
@@ -39,9 +39,9 @@ const ForumGrid = (props) => {
 
         pagination = data.meta.pagination
         forums = data.data
-        
-        console.log(data)
 
+        console.log(forums)
+        
         function findStartAndEnd() {
             end = pagination.pageCount;
         }
@@ -89,22 +89,23 @@ const ForumGrid = (props) => {
             // document.getElementById(pagination.pageCount).classList.add("pagination-selected")
         }
 
-
         findStartAndEnd()
-
-        console.log(`index`, index, pagination.total % 6)
 
         return (
      
             <>
                 <div className="forum-container">
                     {forums.map((forum) =>
-                        <div className="forum-card" style={{backgroundImage: `url(${forum.attributes.Header_Image.data.attributes.url})`}}>
-                            <div className="forum-title">
-                                <h1>{forum.attributes.Forum_Title}</h1>
-                                <a href={`/chronicle/${forum.attributes.slug}`}><h5>Read more</h5></a>
-                            </div>
-                        </div>
+                        <>
+                            { forum.attributes.featured ? ( null ) : (
+                                <div className="forum-card" style={{backgroundImage: `url(${forum.attributes.Header_Image.data.attributes.url})`}}>
+                                    <a className="no-underline forum-title" href={`/chronicle/${forum.attributes.slug}`}>
+                                        <h2>{forum.attributes.Forum_Title}</h2>
+                                        <a href={`/chronicle/${forum.attributes.slug}`}><h5>Read more</h5></a>
+                                    </a>
+                                </div>  
+                            )}
+                        </>
                     )}  
                     { index === pagination.pageCount && pagination.total % 6 > 0 ? ( 
                         <div className="forum-card-message">
@@ -112,13 +113,15 @@ const ForumGrid = (props) => {
                         </div>  ) : (null) }           
                 </div>    
                 <div className="pagination">
-                    { index === 1 ? ( <h3 className="invisible">&#60;</h3> ) : ( 
+                    { index === 1 ? ( <h3 className="pagination-bttn-disabled" >&#60; &#60;</h3> ) : ( 
                         <h3 className="pagination-bttn" onClick={() => setFirstBox(1)}>&#60; &#60;</h3>
                     )}
-                    { index === 1 ? ( <h3 className="invisible">&#60;</h3> ) : ( 
+                    { index === 1 ? (  <h3 className="pagination-bttn-disabled">&#60;</h3> ) : ( 
                         <h3 className="pagination-bttn" onClick={() => decreasePagination()}>&#60;</h3>
                     )}
-                        { first === 0 ? ( null ) : ( 
+
+                    {/* There was a moment when we were including the pagination page numbers, and this code was solving for that display.  */}
+                        {/* { first === 0 ? ( null ) : ( 
                         <h3 className="pagination-page" 
                             onClick={() => setPagination( first )} 
                             id={ index }>{ first }</h3>
@@ -131,11 +134,12 @@ const ForumGrid = (props) => {
                         <h3 className="pagination-page" 
                             onClick={() => setPagination( last )}
                             id={ index + 2 }>{ last }</h3>
-                        )}
-                    { index === pagination.pageCount ? ( <h3 className="invisible">&#62;</h3> ) : ( 
+                        )} */}
+
+                    { index === pagination.pageCount ? ( <h3 className="pagination-bttn-disabled" onClick={() => increasePagination()}>&#62;</h3>) : ( 
                         <h3 className="pagination-bttn" onClick={() => increasePagination()}>&#62;</h3>
                     )}
-                    { index === pagination.pageCount ? ( <h3 className="invisible">&#62;</h3> ) : ( 
+                    { index === pagination.pageCount ? ( <h3 className="pagination-bttn-disabled" onClick={() => setLastBox(pagination.pageCount)}> &#62; &#62;</h3> ) : ( 
                         <h3 className="pagination-bttn" onClick={() => setLastBox(pagination.pageCount)}> &#62; &#62;</h3>
                     )}
                 </div>

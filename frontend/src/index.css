@@ -114,6 +114,7 @@ a {
 a:hover { 
   color: var(--main-green);
   transition-duration: 300ms;
+  cursor: pointer;
 }
 
 /* === STYLING SPECIALS === */
@@ -1286,8 +1287,13 @@ label {
 
 .forum-title {
   background-color: rgba(255, 255, 255, .8);
+  color: var(--main-black);
   padding: 0px 20px;
   transition-duration: 300ms;
+}
+
+.forum-title > h2 {
+  color: var(--main-black);
 }
 
 .forum-title a {
@@ -1327,7 +1333,7 @@ label {
   border-bottom: 1px solid var(--light-grey);
   color: var(--light-grey);
   margin-top: 5px;
-  width: 50%;
+  width: 80%;
   transition-duration: 300ms;
 }
 
@@ -1526,9 +1532,22 @@ flex-direction: column;
   transition-duration: 300ms;
 }
 
+.pagination-bttn-disabled {
+  opacity: 10%;
+}
+
 .pagination-bttn:hover {
   color: var(--main-green);
   cursor: pointer;
   text-decoration: underline;
   transition-duration: 300ms;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+.no-underline:hover {
+  color: var(--main-green);
+  text-decoration: none;
 }
