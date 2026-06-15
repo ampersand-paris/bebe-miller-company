@@ -20,7 +20,6 @@ const Calendar = (props) => {
     let yearsArr = [];
     let currentDate = new Date();
     let currentYear = currentDate.getFullYear().toString()
-    let eventBlock = null;
     let style = getComputedStyle(document.body)
     let height = style.getPropertyValue('--app-height') / 2 
 
@@ -61,8 +60,6 @@ const Calendar = (props) => {
             }
         } 
 
-
-
         date.reverse()
 
         for (let i = 0; i < date.length; i++) {
@@ -70,15 +67,13 @@ const Calendar = (props) => {
             if ( new Date(date[i].attributes.Start_Date) < currentDate ) {
 
             } else {
-                eventBlock = date[i].id
-
                 date.reverse()
                 return           
             }
         }
 
         date.reverse()
-        eventBlock = date[0].id
+        console.log('console', date[0])
         return 
     }
   
@@ -107,15 +102,6 @@ const Calendar = (props) => {
         
         parseArray(years);
         setCalendar(years);
-
-        // window.setTimeout( () => {
-        //     document.getElementById(eventBlock).scrollIntoView({ 
-        //         block: 'center', 
-        //         behavior: 'smooth', 
-        //         inline: 'center'
-        //     })
-        // }, 500); 
-        
 
         return (
             <div className="event-list">
