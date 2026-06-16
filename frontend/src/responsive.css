@@ -378,11 +378,13 @@
   }
 
   .mailing-list-container {
+    align-items: flex-start;
+    align-content: center;
     row-gap: 10px;
     width: 100%;
   }
 
-  .mailing-list-container > h3 {
+  .mailing-list-input > h3 {
     margin-left: 0px;
   }
 

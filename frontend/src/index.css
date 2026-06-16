@@ -259,12 +259,14 @@ a:hover {
 
 .mailing-list-container {
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
   width: 33%;
 }
 
 .mailing-list-container h3 {
+  align-content: center;
   color: var(--white);
   margin: 0 0 0 20px;
 }
@@ -295,6 +297,7 @@ label {
 
 .mailing-list-input {
   display: flex;
+  column-gap: 10px;
 }
 
 #mailchimp-footer-subscribe {

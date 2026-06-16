@@ -68,17 +68,12 @@ const Footer = () => {
                     </a> 
                 </div>
                 <div className="mailing-list-container">
-                {/* <!-- Begin Constant Contact Inline Form Code --> */}
-                <div class="ctct-inline-form" data-form-id="b54bbde4-3af9-48b5-ac5b-f7516d80e582">
                     
-                </div>
-                {/* <!-- End Constant Contact Inline Form Code --> */}
-                    <h3>Join Our Mailing List</h3>
                     <div className="mailing-list-input">
-                        <div className="input-field">
-                            <label>Your Email</label>
-                        </div>
-                        <button id="mailchimp-footer-subscribe">Go</button>
+                        <h3>Join Our Mailing List</h3>
+                        <button id="mailchimp-footer-subscribe">
+                            <a href="https://lp.constantcontactpages.com/sl/anm0kxr/bebemillercompany" target="_blank">Go</a>
+                        </button>
                     </div>
                 </div>
                 <div className="IP-container">
@@ -125,7 +120,7 @@ const Footer = () => {
                         </svg>
                     </div>
                     <p><em>© Bebe Miller Company {year}</em></p>
-                    <p><em>Designed and developed by <a target="_blank" href="http://www.failspacenyc.com/design-services">FAILSPACE</a></em></p>
+                    <p><em>Designed and developed by <a target="_blank" href="http://www.failspacenyc.com/">FAILSPACE</a></em></p>
 
             </div>
         </>
