@@ -40,7 +40,7 @@ const ForumGrid = (props) => {
         pagination = data.meta.pagination
         forums = data.data
 
-        console.log(forums)
+        console.log(`forums`, forums)
         
         function findStartAndEnd() {
             end = pagination.pageCount;

@@ -12,11 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "forums": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::forum.forum"
-    },
     "Title": {
       "type": "string"
     },

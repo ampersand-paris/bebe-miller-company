@@ -984,7 +984,6 @@ export interface ApiForumForum extends Schema.CollectionType {
       ['forum.forum-text', 'forum.multiple-image-field', 'forum.video']
     >;
     Header_Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    featured: Attribute.Boolean & Attribute.Required;
     slug: Attribute.UID<'api::forum.forum', 'Forum_Title'>;
     Forum_Description_Rich_Text: Attribute.Blocks;
     createdAt: Attribute.DateTime;
@@ -1017,11 +1016,6 @@ export interface ApiForumPageForumPage extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    forums: Attribute.Relation<
-      'api::forum-page.forum-page',
-      'oneToMany',
-      'api::forum.forum'
-    >;
     Title: Attribute.String;
     featuredForums: Attribute.Relation<
       'api::forum-page.forum-page',
