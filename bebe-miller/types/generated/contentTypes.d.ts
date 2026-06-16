@@ -1005,42 +1005,6 @@ export interface ApiForumForum extends Schema.CollectionType {
   };
 }
 
-export interface ApiForumPageForumPage extends Schema.SingleType {
-  collectionName: 'forum_pages';
-  info: {
-    singularName: 'forum-page';
-    pluralName: 'forum-pages';
-    displayName: 'Forum_Page';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.String;
-    featuredForums: Attribute.Relation<
-      'api::forum-page.forum-page',
-      'oneToMany',
-      'api::forum.forum'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::forum-page.forum-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::forum-page.forum-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiYearYear extends Schema.CollectionType {
   collectionName: 'years';
   info: {
@@ -1091,7 +1055,6 @@ declare module '@strapi/types' {
       'api::calendar.calendar': ApiCalendarCalendar;
       'api::footer.footer': ApiFooterFooter;
       'api::forum.forum': ApiForumForum;
-      'api::forum-page.forum-page': ApiForumPageForumPage;
       'api::year.year': ApiYearYear;
     }
   }

@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom'
 
 const Forum = (props) => {
 
-    // const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/forum-page?populate[Forum_Page][populate]=*&populate[featuredForums][populate]=*`)
     const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/forums?sort=Date_Published&filters[featured][$eq]=true&[populate]=*`)
 
     let forums = [];
