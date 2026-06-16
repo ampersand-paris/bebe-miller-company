@@ -28,6 +28,16 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Bebe Miller Company</title>
+    <script>
+      // Example placed inside iframe content
+      document.addEventListener('click', function (event) {
+        const target = event.target.closest('a');
+        if (target && target.href) {
+          const path = new URL(target.href).pathname;
+          parent.postMessage({ type: 'navigation', path }, '*');
+        }
+      });
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
