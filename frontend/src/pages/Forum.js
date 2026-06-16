@@ -9,7 +9,8 @@ import { Link } from 'react-router-dom'
 
 const Forum = (props) => {
 
-    const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/forum-page?populate[Forum_Page][populate]=*&populate[featuredForums][populate]=*`)
+    // const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/forum-page?populate[Forum_Page][populate]=*&populate[featuredForums][populate]=*`)
+    const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/forums?sort=Date_Published&filters[featured][$eq]=true&[populate]=*`)
 
     let forums = [];
 
@@ -23,8 +24,8 @@ const Forum = (props) => {
 
     if (data) {
 
-        forums = data.data.attributes.featuredForums.data
-        console.log(forums)
+        forums = data.data
+        console.log(`featured`, forums)
         return (
             <div className="page-container">
                 <div className="forum-recent-container">

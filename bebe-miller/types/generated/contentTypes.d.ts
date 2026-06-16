@@ -986,6 +986,7 @@ export interface ApiForumForum extends Schema.CollectionType {
     Header_Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     slug: Attribute.UID<'api::forum.forum', 'Forum_Title'>;
     Forum_Description_Rich_Text: Attribute.Blocks;
+    featured: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
