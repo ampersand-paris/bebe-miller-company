@@ -1554,3 +1554,400 @@ flex-direction: column;
   color: var(--main-green);
   text-decoration: none;
 }
+
+@media only screen and (max-width: 900px) {
+
+    /* === ROOT === */
+    :root {
+        --app-width: 100vW;
+        --app-padding: 20px;
+    }
+
+    /* === FONTS === */
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .page-container {
+        padding-top: 62px;
+    }
+
+    /* === ABOUT === */
+    .about-header {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+    }
+
+    .about-header-image-caption {
+        padding: 5px 20px;
+    }
+
+    .header-text {
+        padding: 20px 0px 20px 0px;
+        width: 100%;
+    }
+
+    .header-text-caption {
+        padding: 5px 20px;
+    }
+
+    .header-color-block-white {
+        background-color: var(--white);
+        width: 0%;
+    }
+
+    .color-block {
+        height: 10px;
+    }
+
+    .header-color-block-black {
+        background-color: var(--main-black);
+        width: 100%;
+    }
+
+    .header-image {
+        aspect-ratio: 1;
+        width: 100vW;
+    }
+
+    .quote-image-wrapper {
+        width: 100%;
+    }
+
+    .quote-image-caption {
+        padding: 5px 20px;
+    }
+
+    .quote-text {
+        padding: 0px 20px;
+    }
+
+    .body-text {
+        padding: 0px 20px;
+    }
+
+    .full-image-caption {
+        padding: 0px 20px;
+    }
+
+    .history-container {
+        padding: 0px 20px;
+    }
+
+    .history-accordian-wrapper {
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    .history-card {
+        width: 100%;
+    }
+
+    .collaborator-container {
+        padding: 0px 20px;
+    }
+    /* === NAVIGATION === */
+
+    .header-container {
+        padding: 0px 10px;
+    }
+
+    .mobile-navigation-link-container {
+        background-color: var(--main-green);
+        box-sizing: border-box;
+        display: grid;
+        padding: 0px 10px;
+        overflow: hidden;
+        transition-duration: 300ms;
+    }
+
+    .mobile-navigation-link-container a {
+        text-decoration: none;
+    }
+
+    .mobile-navigation-link-container h2 {
+        margin: 5px
+    }
+
+    .archive-menu-link-container {
+        width: 100%;
+    }
+
+    #archive-menu-triangle {
+        transform: rotate(0deg);
+    }
+
+    #mobile-triangle {
+        fill: var(--main-black);
+        transition-duration: 200ms;
+        transform-origin: 50%;
+    }
+
+    /* === PROJECT/PIECES === */
+
+    .project-header {
+        padding: 10px;
+    }
+
+    .project-header h1 {
+        font-size: 24px;
+    }
+
+    .header-image-people-container {
+        flex-direction: column;
+    }
+
+    .project-header-image {
+        width: 100%;
+    }
+
+    .project-people {
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .project-people ul {
+        padding: 10px 0px 0px 0px;
+    }
+
+    .project-people li {
+        margin: 0px 20px 20px 20px;
+    }
+
+    .description-performances-container {
+        flex-direction: column-reverse;
+    }
+
+   .gallery {
+    height: 30.7vH;
+    width: 100%;
+   }
+
+   .credits-header {
+    box-sizing: border-box;
+    padding: 5px 20px;
+    width: 100%;
+   }
+
+    .project-description {
+        width: calc(100% - 40px);
+        padding: 20px;
+    }
+
+    .project-description li{
+        margin: 20px;
+    }
+
+    .press-quote p {
+        margin: 0px 20px;
+    }
+
+    .performances {
+        width: calc(100% - 40px);
+        padding: 20px;
+    }
+
+    .funders-info {
+        box-sizing: border-box;
+        padding: 0px 20px;
+        width: 100%;
+    }
+
+    .funders {
+        background-color: var(--light-grey);
+    }
+
+    .caption {
+        padding: 0px 20px;
+    }
+    /* === COMPONENTS === */
+
+    /* === QUOTE === */
+    .quote-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .quote-color-block-white {
+        background-color: var(--white);
+        width: 0%;
+    }
+
+    .quote-color-block-black {
+        background-color: var(--main-black);
+        width: 100%;
+    }
+
+    .quote-text {
+        width: 100vW;
+    }
+
+    .body-container {
+        flex-direction: column-reverse;
+    }
+
+    .body-text {
+        width: 100%;
+    }
+
+    .body-images {
+        width: 100%;
+    }
+
+    /* === FULL IMAGE === */
+    .full-image-container {
+        padding: 0;
+    }
+
+    .full-video-container {
+        padding: 0;
+    }
+
+    .video {
+        width: 100%;
+    }
+
+    /* ======= CHRONICLE ====== */
+
+    .forum-container {
+        background-color: var(--main-green);
+        display: grid;
+        grid-template-columns: [first] 1fr [end];
+        padding: 20px;
+        margin-top: 0px;
+        height: auto;
+        transition-duration: 300ms;
+        box-sizing: border-box;
+
+    }
+
+    .forum-recent-container {
+        display: grid;
+        grid-template-columns: [first] 1fr [end];
+        padding: 20px;
+    }
+
+    .forum-card {
+        aspect-ratio: 1;
+        border: 2px solid var(--main-green);
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        text-wrap: wrap;
+    }
+
+    /* ====== CHRONICLE DETAIL ======*/
+
+    .forum-detail-container {
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .forum-title-container {
+        box-sizing: border-box;
+        padding: 20px;
+        width: 100%;
+    }
+
+    .forum-header-image {
+        display: flex;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+   .side-bar {
+        display: none;
+   }
+
+   .forum-caption-container {
+        width: 100%;
+   }
+
+   .forum-view-caption {
+    width: 100%;
+   }
+
+   .text-component-body {
+    padding: 5px 20px 5px 10px;
+    width: 100%;
+   }
+
+   /* ====== CALENDAR ======*/
+
+   .calendar-logic-container {
+    background-color: var(--white);
+    column-gap: 20px;
+    flex-direction: row;
+    left: 0px;
+    z-index: 10;
+    position: fixed;
+    row-gap: 3px;
+    height: auto;
+    top: 62px;
+    justify-content: flex-start;
+    overflow: scroll;
+    padding: 5px 20px 20px 20px;
+    width: 100%;
+  }
+
+  .calendar-logic-container > h1 {
+    margin-top: 0px;
+  }
+
+  .underline {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5.5px;
+  }
+
+  .calendar-container {
+    padding: 0px 20px;
+    width: 100%;
+  }
+
+  .calendar-page h3 {
+    font-size: 18px;
+  }
+
+  .calendar-page p {
+    font-size: 1em;
+  }
+
+  .description-link-container h5 {
+    width: 100%;
+  }
+
+  /* ====== FOOTER ====== */
+
+  .footer-container {
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .mailing-list-container {
+    align-items: flex-start;
+    align-content: center;
+    row-gap: 10px;
+    width: 100%;
+  }
+
+  .mailing-list-input > h3 {
+    margin-left: 0px;
+  }
+
+  .IP-container {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+}
