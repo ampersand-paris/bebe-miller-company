@@ -16,7 +16,6 @@ import Choreography from "./Choreography";
 
 const ForumGrid = (props) => {
 
-    // const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/forum-page?populate[Forum_Page][populate]=*&populate[forums]=*?pagination[page]=1&pagination[pageSize]=3`)
     // const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/forums?filters[featured][$not]=true&[populate]=*&pagination[pageSize]=10`)
     const [index, setIndex] = useState(1)
     const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/forums?sort=Date_Published&filters[featured][$ne]=featured&pagination[page]=${index}&pagination[pageSize]=6&[populate]=*`)
