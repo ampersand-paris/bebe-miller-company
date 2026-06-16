@@ -46,6 +46,9 @@
     },
     "Forum_Description_Rich_Text": {
       "type": "blocks"
+    },
+    "featured": {
+      "type": "boolean"
     }
   }
 }

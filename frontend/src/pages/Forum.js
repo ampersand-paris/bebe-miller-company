@@ -24,7 +24,7 @@ const Forum = (props) => {
     if (data) {
 
         forums = data.data.attributes.featuredForums.data
-        console.log(forums)
+        console.log(`featured`, forums)
         return (
             <div className="page-container">
                 <div className="forum-recent-container">
